@@ -2,14 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QMessageBox>
+#include <QSqlQueryModel>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
+namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -17,14 +13,18 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
     void on_btnAjouter_clicked();
+    void on_btnModifier_clicked();
+    void on_btnSupprimer_clicked();
+    void on_btnAfficher_clicked();
 
 private:
     Ui::MainWindow *ui;
+    QSqlQueryModel *model;
 };
 
 #endif // MAINWINDOW_H

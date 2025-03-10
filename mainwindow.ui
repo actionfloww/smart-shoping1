@@ -466,565 +466,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </property>
     </widget>
    </widget>
-   <widget class="QFrame" name="frame_3">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>0</y>
-      <width>241</width>
-      <height>561</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #7eb6bf; /* Change to your desired color */
-border: 1px solid lightgray; /* Optional: Change the border color */
-border-radius: 19px; /* Change the value for more or less rounding */
-
-
-</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <widget class="QTextEdit" name="textEdit_13">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit {
-    border: none;                    /* Remove border */
-    background: transparent;         /* Make background transparent */
-    padding: 0;                      /* No padding */
-    margin: 0;                       /* No margin */
-    color: white;                    /* Text color */
-    font-weight: white;               /* Bold text */
-    font-size: 20px;                 /* Font size 20 */
-    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
-    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
-}
-</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Id client&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_15">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>130</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit {
-    border: none;                    /* Remove border */
-    background: transparent;         /* Make background transparent */
-    padding: 0;                      /* No padding */
-    margin: 0;                       /* No margin */
-    color: white;                    /* Text color */
-    font-weight: white;               /* Bold text */
-    font-size: 20px;                 /* Font size 20 */
-    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
-    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
-}
-</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Prenom&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_16">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>70</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit {
-    border: none;                    /* Remove border */
-    background: transparent;         /* Make background transparent */
-    padding: 0;                      /* No padding */
-    margin: 0;                       /* No margin */
-    color: white;                    /* Text color */
-    font-weight: white;               /* Bold text */
-    font-size: 20px;                 /* Font size 20 */
-    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
-    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
-}
-</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Nom&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_17">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>190</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit {
-    border: none;                    /* Remove border */
-    background: transparent;         /* Make background transparent */
-    padding: 0;                      /* No padding */
-    margin: 0;                       /* No margin */
-    color: white;                    /* Text color */
-    font-weight: white;               /* Bold text */
-    font-size: 20px;                 /* Font size 20 */
-    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
-    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
-}
-</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Email&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_24">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>250</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit {
-    border: none;                    /* Remove border */
-    background: transparent;         /* Make background transparent */
-    padding: 0;                      /* No padding */
-    margin: 0;                       /* No margin */
-    color: white;                    /* Text color */
-    font-weight: white;               /* Bold text */
-    font-size: 20px;                 /* Font size 20 */
-    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
-    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
-}
-</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;Telephone&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_25">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>320</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit {
-    border: none;                    /* Remove border */
-    background: transparent;         /* Make background transparent */
-    padding: 0;                      /* No padding */
-    margin: 0;                       /* No margin */
-    color: white;                    /* Text color */
-    font-weight: white;               /* Bold text */
-    font-size: 20px;                 /* Font size 20 */
-    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
-    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
-}
-</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;Total achat&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QWidget" name="widget_30" native="true">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>220</y>
-       <width>201</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; /* Change to your desired color */
-border: 1px solid lightgray; /* Optional: Change the border color */
-border-radius: 10px; /* Change the value for more or less rounding */
-
-</string>
-     </property>
-     <widget class="QLineEdit" name="lineEditEmail">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>201</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="widget_31" native="true">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>160</y>
-       <width>201</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; /* Change to your desired color */
-border: 1px solid lightgray; /* Optional: Change the border color */
-border-radius: 10px; /* Change the value for more or less rounding */
-
-</string>
-     </property>
-     <widget class="QLineEdit" name="lineEditPrenom">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>201</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="widget_32" native="true">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>40</y>
-       <width>201</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; /* Change to your desired color */
-border: 1px solid lightgray; /* Optional: Change the border color */
-border-radius: 10px; /* Change the value for more or less rounding */
-
-</string>
-     </property>
-     <widget class="QLineEdit" name="lineEditID">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>201</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="widget_33" native="true">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>100</y>
-       <width>201</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; /* Change to your desired color */
-border: 1px solid lightgray; /* Optional: Change the border color */
-border-radius: 10px; /* Change the value for more or less rounding */
-
-</string>
-     </property>
-     <widget class="QLineEdit" name="lineEditNom">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>201</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="widget_34" native="true">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>280</y>
-       <width>201</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; /* Change to your desired color */
-border: 1px solid lightgray; /* Optional: Change the border color */
-border-radius: 10px; /* Change the value for more or less rounding */
-
-</string>
-     </property>
-     <widget class="QLineEdit" name="lineEditTelephone">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>201</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="widget_35" native="true">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>350</y>
-       <width>201</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; /* Change to your desired color */
-border: 1px solid lightgray; /* Optional: Change the border color */
-border-radius: 10px; /* Change the value for more or less rounding */
-
-</string>
-     </property>
-     <widget class="QLineEdit" name="lineEditTotalAchat">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>201</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_26">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>380</y>
-       <width>191</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit {
-    border: none;                    /* Remove border */
-    background: transparent;         /* Make background transparent */
-    padding: 0;                      /* No padding */
-    margin: 0;                       /* No margin */
-    color: white;                    /* Text color */
-    font-weight: white;               /* Bold text */
-    font-size: 20px;                 /* Font size 20 */
-    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
-    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
-}
-</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Derniere visite&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btnAjouter">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>510</y>
-       <width>81</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    border: 2px solid #5C6BC0; /* Bordure bleue */
-    background-color: white; /* Couleur de fond blanche */
-    color: #5C6BC0; /* Couleur du texte bleue */
-    border-radius: 15px; /* Rend le bouton rond, ajusté pour petite taille */
-    padding: 5px; /* Espace intérieur réduit */
-    min-width: 15px; /* Largeur minimum */
-    min-height: 15px; /* Hauteur minimum */
-}
-
-QPushButton:hover {
-    background-color: #F0F0F0; /* Couleur de fond plus claire au survol */
-}
-
-QPushButton:pressed {
-    background-color: #E0E0E0; /* Couleur de fond plus foncée lorsque pressé */
-}
-</string>
-     </property>
-     <property name="text">
-      <string>Ajouter</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="modifier_2">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>510</y>
-       <width>81</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    border: 2px solid #5C6BC0; /* Bordure bleue */
-    background-color: white; /* Couleur de fond blanche */
-    color: #5C6BC0; /* Couleur du texte bleue */
-    border-radius: 15px; /* Rend le bouton rond, ajusté pour petite taille */
-    padding: 5px; /* Espace intérieur réduit */
-    min-width: 15px; /* Largeur minimum */
-    min-height: 15px; /* Hauteur minimum */
-}
-
-QPushButton:hover {
-    background-color: #F0F0F0; /* Couleur de fond plus claire au survol */
-}
-
-QPushButton:pressed {
-    background-color: #E0E0E0; /* Couleur de fond plus foncée lorsque pressé */
-}
-</string>
-     </property>
-     <property name="text">
-      <string>modifier</string>
-     </property>
-    </widget>
-    <widget class="QDateEdit" name="dateEditDerniereVisite">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>410</y>
-       <width>181</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_27">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>440</y>
-       <width>191</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit {
-    border: none;                    /* Remove border */
-    background: transparent;         /* Make background transparent */
-    padding: 0;                      /* No padding */
-    margin: 0;                       /* No margin */
-    color: white;                    /* Text color */
-    font-weight: white;               /* Bold text */
-    font-size: 20px;                 /* Font size 20 */
-    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
-    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
-}
-</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Point fidelite&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_11">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>470</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <italic>false</italic>
-       <underline>false</underline>
-       <strikeout>false</strikeout>
-       <fontweight>Medium</fontweight>
-      </font>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;☆☆☆☆☆&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-   </widget>
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
@@ -1036,26 +477,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #7eb6bf;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_10">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>240</y>
-      <width>91</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <italic>true</italic>
-      <bold>true</bold>
-      <underline>true</underline>
-     </font>
-    </property>
-    <property name="text">
-     <string>Listes clients inactif</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -1092,7 +513,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </font>
     </property>
     <property name="text">
-     <string>Ajouter un etoile</string>
+     <string>Fidelité</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
@@ -1165,6 +586,582 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>Trier par etoile</string>
     </property>
    </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>-10</y>
+      <width>1031</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(208, 208, 208);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frame_3">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>10</y>
+       <width>241</width>
+       <height>501</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #7eb6bf; /* Change to your desired color */
+border: 1px solid lightgray; /* Optional: Change the border color */
+border-radius: 19px; /* Change the value for more or less rounding */
+
+
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QTextEdit" name="textEdit_13">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextEdit {
+    border: none;                    /* Remove border */
+    background: transparent;         /* Make background transparent */
+    padding: 0;                      /* No padding */
+    margin: 0;                       /* No margin */
+    color: white;                    /* Text color */
+    font-weight: white;               /* Bold text */
+    font-size: 20px;                 /* Font size 20 */
+    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
+    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
+}
+</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Id_client&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_15">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextEdit {
+    border: none;                    /* Remove border */
+    background: transparent;         /* Make background transparent */
+    padding: 0;                      /* No padding */
+    margin: 0;                       /* No margin */
+    color: white;                    /* Text color */
+    font-weight: white;               /* Bold text */
+    font-size: 20px;                 /* Font size 20 */
+    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
+    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
+}
+</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Prenom_client&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_16">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextEdit {
+    border: none;                    /* Remove border */
+    background: transparent;         /* Make background transparent */
+    padding: 0;                      /* No padding */
+    margin: 0;                       /* No margin */
+    color: white;                    /* Text color */
+    font-weight: white;               /* Bold text */
+    font-size: 20px;                 /* Font size 20 */
+    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
+    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
+}
+</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Nom_client&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_17">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextEdit {
+    border: none;                    /* Remove border */
+    background: transparent;         /* Make background transparent */
+    padding: 0;                      /* No padding */
+    margin: 0;                       /* No margin */
+    color: white;                    /* Text color */
+    font-weight: white;               /* Bold text */
+    font-size: 20px;                 /* Font size 20 */
+    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
+    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
+}
+</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Email_client&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_24">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextEdit {
+    border: none;                    /* Remove border */
+    background: transparent;         /* Make background transparent */
+    padding: 0;                      /* No padding */
+    margin: 0;                       /* No margin */
+    color: white;                    /* Text color */
+    font-weight: white;               /* Bold text */
+    font-size: 20px;                 /* Font size 20 */
+    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
+    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
+}
+</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;Telephone&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="widget_30" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white; /* Change to your desired color */
+border: 1px solid lightgray; /* Optional: Change the border color */
+border-radius: 10px; /* Change the value for more or less rounding */
+
+</string>
+      </property>
+      <widget class="QLineEdit" name="lineEditEmail">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_31" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white; /* Change to your desired color */
+border: 1px solid lightgray; /* Optional: Change the border color */
+border-radius: 10px; /* Change the value for more or less rounding */
+
+</string>
+      </property>
+      <widget class="QLineEdit" name="lineEditPrenom">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_32" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white; /* Change to your desired color */
+border: 1px solid lightgray; /* Optional: Change the border color */
+border-radius: 10px; /* Change the value for more or less rounding */
+
+</string>
+      </property>
+      <widget class="QLineEdit" name="lineEditID">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_33" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white; /* Change to your desired color */
+border: 1px solid lightgray; /* Optional: Change the border color */
+border-radius: 10px; /* Change the value for more or less rounding */
+
+</string>
+      </property>
+      <widget class="QLineEdit" name="lineEditNom">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_34" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>280</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white; /* Change to your desired color */
+border: 1px solid lightgray; /* Optional: Change the border color */
+border-radius: 10px; /* Change the value for more or less rounding */
+
+</string>
+      </property>
+      <widget class="QLineEdit" name="lineEditTelephone">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_35" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>350</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white; /* Change to your desired color */
+border: 1px solid lightgray; /* Optional: Change the border color */
+border-radius: 10px; /* Change the value for more or less rounding */
+
+</string>
+      </property>
+      <widget class="QLineEdit" name="lineEditPointFidelite">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="btnAjouter">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>410</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border: 2px solid #5C6BC0; /* Bordure bleue */
+    background-color: white; /* Couleur de fond blanche */
+    color: #5C6BC0; /* Couleur du texte bleue */
+    border-radius: 15px; /* Rend le bouton rond, ajusté pour petite taille */
+    padding: 5px; /* Espace intérieur réduit */
+    min-width: 15px; /* Largeur minimum */
+    min-height: 15px; /* Hauteur minimum */
+}
+
+QPushButton:hover {
+    background-color: #F0F0F0; /* Couleur de fond plus claire au survol */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* Couleur de fond plus foncée lorsque pressé */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Ajouter</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnModifier">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>410</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border: 2px solid #5C6BC0; /* Bordure bleue */
+    background-color: white; /* Couleur de fond blanche */
+    color: #5C6BC0; /* Couleur du texte bleue */
+    border-radius: 15px; /* Rend le bouton rond, ajusté pour petite taille */
+    padding: 5px; /* Espace intérieur réduit */
+    min-width: 15px; /* Largeur minimum */
+    min-height: 15px; /* Hauteur minimum */
+}
+
+QPushButton:hover {
+    background-color: #F0F0F0; /* Couleur de fond plus claire au survol */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* Couleur de fond plus foncée lorsque pressé */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>modifier</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_27">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>320</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextEdit {
+    border: none;                    /* Remove border */
+    background: transparent;         /* Make background transparent */
+    padding: 0;                      /* No padding */
+    margin: 0;                       /* No margin */
+    color: white;                    /* Text color */
+    font-weight: white;               /* Bold text */
+    font-size: 20px;                 /* Font size 20 */
+    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */
+    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */
+}
+</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;Point_fidelite&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSupprimer">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>460</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border: 2px solid #5C6BC0; /* Bordure bleue */
+    background-color: white; /* Couleur de fond blanche */
+    color: #5C6BC0; /* Couleur du texte bleue */
+    border-radius: 15px; /* Rend le bouton rond, ajusté pour petite taille */
+    padding: 5px; /* Espace intérieur réduit */
+    min-width: 15px; /* Largeur minimum */
+    min-height: 15px; /* Hauteur minimum */
+}
+
+QPushButton:hover {
+    background-color: #F0F0F0; /* Couleur de fond plus claire au survol */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* Couleur de fond plus foncée lorsque pressé */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Supprimer</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>210</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+       <bold>true</bold>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>Listes clients inactif</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btnAfficher">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>340</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border: 2px solid #5C6BC0; /* Bordure bleue */
+    background-color: white; /* Couleur de fond blanche */
+    color: #5C6BC0; /* Couleur du texte bleue */
+    border-radius: 15px; /* Rend le bouton rond, ajusté pour petite taille */
+    padding: 5px; /* Espace intérieur réduit */
+    min-width: 15px; /* Largeur minimum */
+    min-height: 15px; /* Hauteur minimum */
+}
+
+QPushButton:hover {
+    background-color: #F0F0F0; /* Couleur de fond plus claire au survol */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* Couleur de fond plus foncée lorsque pressé */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Afficher</string>
+    </property>
+   </widget>
+   <zorder>frame_2</zorder>
+   <zorder>frame</zorder>
+   <zorder>tableView</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>pushButton_12</zorder>
+   <zorder>label</zorder>
+   <zorder>pushButton_11</zorder>
+   <zorder>btnAfficher</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

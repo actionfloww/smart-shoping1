@@ -301,17 +301,13 @@ release/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/qt/6.7.3/mingw_64/include/QtCore/qlocale.h \
 		C:/qt/6.7.3/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/qt/6.7.3/mingw_64/include/QtWidgets/qtabwidget.h \
-		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlDatabase \
-		C:/qt/6.7.3/mingw_64/include/QtSql/qsqldatabase.h \
+		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlQueryModel \
+		C:/qt/6.7.3/mingw_64/include/QtSql/qsqlquerymodel.h \
 		C:/qt/6.7.3/mingw_64/include/QtSql/qtsqlglobal.h \
 		C:/qt/6.7.3/mingw_64/include/QtSql/qtsql-config.h \
 		C:/qt/6.7.3/mingw_64/include/QtSql/qtsqlexports.h \
-		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlQuery \
-		C:/qt/6.7.3/mingw_64/include/QtSql/qsqlquery.h \
-		C:/qt/6.7.3/mingw_64/include/QtWidgets/QMessageBox \
-		C:/qt/6.7.3/mingw_64/include/QtWidgets/qmessagebox.h \
-		C:/qt/6.7.3/mingw_64/include/QtWidgets/qdialog.h \
-		C:/qt/6.7.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		C:/qt/6.7.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/qt/6.7.3/mingw_64/include/QtSql/qsqldatabase.h \
 		release/moc_predefs.h \
 		C:/qt/6.7.3/mingw_64/bin/moc.exe
 	C:\qt\6.7.3\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/ahmed/OneDrive/Documents/interface1/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/qt/6.7.3/mingw_64/mkspecs/win32-g++ -IC:/Users/ahmed/OneDrive/Documents/interface1 -IC:/qt/6.7.3/mingw_64/include -IC:/qt/6.7.3/mingw_64/include/QtWidgets -IC:/qt/6.7.3/mingw_64/include/QtGui -IC:/qt/6.7.3/mingw_64/include/QtSql -IC:/qt/6.7.3/mingw_64/include/QtCore -I. -IC:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o release\moc_mainwindow.cpp
@@ -653,23 +649,26 @@ release/main.o: ../../main.cpp ../../mainwindow.h \
 		C:/qt/6.7.3/mingw_64/include/QtCore/qlocale.h \
 		C:/qt/6.7.3/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/qt/6.7.3/mingw_64/include/QtWidgets/qtabwidget.h \
-		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlDatabase \
-		C:/qt/6.7.3/mingw_64/include/QtSql/qsqldatabase.h \
+		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlQueryModel \
+		C:/qt/6.7.3/mingw_64/include/QtSql/qsqlquerymodel.h \
 		C:/qt/6.7.3/mingw_64/include/QtSql/qtsqlglobal.h \
 		C:/qt/6.7.3/mingw_64/include/QtSql/qtsql-config.h \
 		C:/qt/6.7.3/mingw_64/include/QtSql/qtsqlexports.h \
-		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlQuery \
-		C:/qt/6.7.3/mingw_64/include/QtSql/qsqlquery.h \
-		C:/qt/6.7.3/mingw_64/include/QtWidgets/QMessageBox \
-		C:/qt/6.7.3/mingw_64/include/QtWidgets/qmessagebox.h \
-		C:/qt/6.7.3/mingw_64/include/QtWidgets/qdialog.h \
-		C:/qt/6.7.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		C:/qt/6.7.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/qt/6.7.3/mingw_64/include/QtSql/qsqldatabase.h \
 		C:/qt/6.7.3/mingw_64/include/QtWidgets/QApplication \
 		C:/qt/6.7.3/mingw_64/include/QtWidgets/qapplication.h \
 		../../connection.h \
+		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlDatabase \
 		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlError \
 		C:/qt/6.7.3/mingw_64/include/QtSql/qsqlerror.h \
-		C:/qt/6.7.3/mingw_64/include/QtCore/QDebug
+		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlQuery \
+		C:/qt/6.7.3/mingw_64/include/QtSql/qsqlquery.h \
+		C:/qt/6.7.3/mingw_64/include/QtCore/QDebug \
+		C:/qt/6.7.3/mingw_64/include/QtWidgets/QMessageBox \
+		C:/qt/6.7.3/mingw_64/include/QtWidgets/qmessagebox.h \
+		C:/qt/6.7.3/mingw_64/include/QtWidgets/qdialog.h \
+		C:/qt/6.7.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\..\main.cpp
 
 release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
@@ -861,18 +860,22 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/qt/6.7.3/mingw_64/include/QtCore/qlocale.h \
 		C:/qt/6.7.3/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/qt/6.7.3/mingw_64/include/QtWidgets/qtabwidget.h \
-		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlDatabase \
-		C:/qt/6.7.3/mingw_64/include/QtSql/qsqldatabase.h \
+		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlQueryModel \
+		C:/qt/6.7.3/mingw_64/include/QtSql/qsqlquerymodel.h \
 		C:/qt/6.7.3/mingw_64/include/QtSql/qtsqlglobal.h \
 		C:/qt/6.7.3/mingw_64/include/QtSql/qtsql-config.h \
 		C:/qt/6.7.3/mingw_64/include/QtSql/qtsqlexports.h \
-		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlQuery \
-		C:/qt/6.7.3/mingw_64/include/QtSql/qsqlquery.h \
+		C:/qt/6.7.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/qt/6.7.3/mingw_64/include/QtSql/qsqldatabase.h \
+		ui_mainwindow.h \
 		C:/qt/6.7.3/mingw_64/include/QtWidgets/QMessageBox \
 		C:/qt/6.7.3/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/qt/6.7.3/mingw_64/include/QtWidgets/qdialog.h \
 		C:/qt/6.7.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		ui_mainwindow.h
+		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlQuery \
+		C:/qt/6.7.3/mingw_64/include/QtSql/qsqlquery.h \
+		C:/qt/6.7.3/mingw_64/include/QtSql/QSqlError \
+		C:/qt/6.7.3/mingw_64/include/QtSql/qsqlerror.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\..\mainwindow.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 
