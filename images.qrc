@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Ressources/0d2b7296-e560-4214-8609-4b38df57a580-removebg-preview.png</file>
+        <file>Ressources/0de86780-dae2-4175-a752-c75985b139c6-removebg-preview.png</file>
+        <file>Ressources/7ed93b2a-3029-43e1-a8af-caeb54114d5d.jfif</file>
+        <file>Ressources/90d9c75d-e672-4dbf-982f-7d130f84ba63-removebg-preview.png</file>
+        <file>Ressources/533d5754-eb8b-4f0c-b5cc-20e9398429f1.jfif</file>
+        <file>Ressources/784af967-2908-40f5-b1f5-4f9c4b507445-removebg-preview.png</file>
+        <file>Ressources/2162ce39-4c0d-42f7-840c-267a7f92fa5e-removebg-preview.png</file>
+        <file>Ressources/6263f4c5-d9f8-480b-92a2-150814f67102-removebg-preview.png</file>
+        <file>Ressources/14969dc4-2e2e-4a3e-9017-665a2be581d1-removebg-preview.png</file>
+        <file>Ressources/a3bf4b75-0b5f-43a0-8f10-0fe17c8627c5.jfif</file>
+        <file>Ressources/bc53b400-770d-4dd2-a8f8-23c5bdd6cfea-removebg-preview.png</file>
+        <file>Ressources/c430b531-1625-4d28-9dc8-eea32d5d70c2.jfif</file>
+        <file>Ressources/cff87cf7-fcc3-49f6-b133-8db62c629784.jfif</file>
+        <file>Ressources/e0ec6219-c4fb-4760-86fd-b2a65558677f-removebg-preview (1).png</file>
+        <file>Ressources/e4e7d7a1-3112-4eaa-b81a-523a1825371c-removebg-preview.png</file>
+        <file>Ressources/fd3d32a9-12bd-4c72-928e-76b7ac72c09d-removebg-preview.png</file>
+    </qresource>
+</RCC>
