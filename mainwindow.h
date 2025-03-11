@@ -1,11 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include <QPixmap>
-#include <QIcon>
+
 #include <QMainWindow>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QMessageBox>
+#include <QPixmap>
+#include <QIcon>
+#include "Event.h"
+#include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -23,10 +26,17 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+    void on_tab_affichage_clicked(const QModelIndex &index);
+    void on_sup_clicked();
+    void on_update_clicked();
+    void on_sup_2_clicked();
+    void actualiserTableau ();
+    void viderFormulaire();
 
 private:
     Ui::MainWindow *ui;
-     void remplirTableau();
+    Event* event;
+    int currentEventID ;
 };
 
 #endif // MAINWINDOW_H
