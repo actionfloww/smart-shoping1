@@ -1,6 +1,14 @@
 QT       += core gui \
     quick
 QT+= sql
+QT += core gui widgets printsupport
+QT += charts
+SOURCES += qrcodegen.cpp \
+    qrcodegenerator.cpp
+HEADERS += qrcodegen.h \
+    qrcodegenerator.h
+
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,12 +21,14 @@ CONFIG += c++17
 SOURCES += \
     Event.cpp \
     connection.cpp \
+    customcalendarwidget.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     Event.h \
     connection.h \
+    customcalendarwidget.h \
     mainwindow.h
 
 FORMS += \

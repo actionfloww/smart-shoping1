@@ -408,7 +408,10 @@ Makefile: ../../projet.pro C:/qt/6.7.3/mingw_64/mkspecs/win32-g++/qmake.conf C:/
 		C:/qt/6.7.3/mingw_64/mkspecs/features/lex.prf \
 		../../projet.pro \
 		C:/qt/6.7.3/mingw_64/lib/Qt6Quick.prl \
+		C:/qt/6.7.3/mingw_64/lib/Qt6Charts.prl \
+		C:/qt/6.7.3/mingw_64/lib/Qt6OpenGLWidgets.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6OpenGL.prl \
+		C:/qt/6.7.3/mingw_64/lib/Qt6PrintSupport.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6Widgets.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6Gui.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6QmlModels.prl \
@@ -757,7 +760,10 @@ C:/qt/6.7.3/mingw_64/mkspecs/features/yacc.prf:
 C:/qt/6.7.3/mingw_64/mkspecs/features/lex.prf:
 ../../projet.pro:
 C:/qt/6.7.3/mingw_64/lib/Qt6Quick.prl:
+C:/qt/6.7.3/mingw_64/lib/Qt6Charts.prl:
+C:/qt/6.7.3/mingw_64/lib/Qt6OpenGLWidgets.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6OpenGL.prl:
+C:/qt/6.7.3/mingw_64/lib/Qt6PrintSupport.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6Widgets.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6Gui.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6QmlModels.prl:

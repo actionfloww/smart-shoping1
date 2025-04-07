@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../../mainwindow.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -44,8 +45,20 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "on_sup_clicked",
     "on_update_clicked",
     "on_sup_2_clicked",
-    "actualiserTableau",
-    "viderFormulaire"
+    "viderFormulaire",
+    "generatePDF",
+    "rechercherEvent",
+    "refreshPage",
+    "trierParType",
+    "goToStatisticsPage",
+    "afficherStatistiques",
+    "switchToStatisticsPage",
+    "switchTocalender",
+    "afficherEvenementsSurCalendrier",
+    "afficherDetailsEvenement",
+    "date",
+    "afficherAfficheEvenement",
+    "masquerAfficheEvenement"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -58,7 +71,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -66,13 +79,24 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   56,    2, 0x08,    1 /* Private */,
-       3,    1,   57,    2, 0x08,    2 /* Private */,
-       6,    0,   60,    2, 0x08,    4 /* Private */,
-       7,    0,   61,    2, 0x08,    5 /* Private */,
-       8,    0,   62,    2, 0x08,    6 /* Private */,
-       9,    0,   63,    2, 0x08,    7 /* Private */,
-      10,    0,   64,    2, 0x08,    8 /* Private */,
+       1,    0,  122,    2, 0x08,    1 /* Private */,
+       3,    1,  123,    2, 0x08,    2 /* Private */,
+       6,    0,  126,    2, 0x08,    4 /* Private */,
+       7,    0,  127,    2, 0x08,    5 /* Private */,
+       8,    0,  128,    2, 0x08,    6 /* Private */,
+       9,    0,  129,    2, 0x08,    7 /* Private */,
+      10,    0,  130,    2, 0x08,    8 /* Private */,
+      11,    0,  131,    2, 0x08,    9 /* Private */,
+      12,    0,  132,    2, 0x08,   10 /* Private */,
+      13,    0,  133,    2, 0x08,   11 /* Private */,
+      14,    0,  134,    2, 0x08,   12 /* Private */,
+      15,    0,  135,    2, 0x08,   13 /* Private */,
+      16,    0,  136,    2, 0x08,   14 /* Private */,
+      17,    0,  137,    2, 0x08,   15 /* Private */,
+      18,    0,  138,    2, 0x08,   16 /* Private */,
+      19,    1,  139,    2, 0x08,   17 /* Private */,
+      21,    0,  142,    2, 0x08,   19 /* Private */,
+      22,    0,  143,    2, 0x08,   20 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -80,6 +104,17 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QDate,   20,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -106,9 +141,32 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_sup_2_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'actualiserTableau'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'viderFormulaire'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'generatePDF'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'rechercherEvent'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'refreshPage'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'trierParType'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'goToStatisticsPage'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'afficherStatistiques'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'switchToStatisticsPage'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'switchTocalender'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'afficherEvenementsSurCalendrier'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'afficherDetailsEvenement'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QDate &, std::false_type>,
+        // method 'afficherAfficheEvenement'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'masquerAfficheEvenement'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -125,8 +183,19 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_sup_clicked(); break;
         case 3: _t->on_update_clicked(); break;
         case 4: _t->on_sup_2_clicked(); break;
-        case 5: _t->actualiserTableau(); break;
-        case 6: _t->viderFormulaire(); break;
+        case 5: _t->viderFormulaire(); break;
+        case 6: _t->generatePDF(); break;
+        case 7: _t->rechercherEvent(); break;
+        case 8: _t->refreshPage(); break;
+        case 9: _t->trierParType(); break;
+        case 10: _t->goToStatisticsPage(); break;
+        case 11: _t->afficherStatistiques(); break;
+        case 12: _t->switchToStatisticsPage(); break;
+        case 13: _t->switchTocalender(); break;
+        case 14: _t->afficherEvenementsSurCalendrier(); break;
+        case 15: _t->afficherDetailsEvenement((*reinterpret_cast< std::add_pointer_t<QDate>>(_a[1]))); break;
+        case 16: _t->afficherAfficheEvenement(); break;
+        case 17: _t->masquerAfficheEvenement(); break;
         default: ;
         }
     }
@@ -151,13 +220,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 18)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 18;
     }
     return _id;
 }

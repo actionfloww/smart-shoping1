@@ -5,10 +5,18 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QMessageBox>
+#include <QSortFilterProxyModel>
 #include <QPixmap>
 #include <QIcon>
 #include "Event.h"
 #include <QMainWindow>
+#include <QFileDialog>
+#include <QPrinter>
+#include <QPainter>
+#include <QTextDocument>
+#include <QTabWidget>
+#include <QTimer>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -30,13 +38,34 @@ private slots:
     void on_sup_clicked();
     void on_update_clicked();
     void on_sup_2_clicked();
-    void actualiserTableau ();
+    //void actualiserTableau ();
     void viderFormulaire();
+    void generatePDF();
+    void rechercherEvent();
+    void refreshPage();
+    void trierParType();
+    void goToStatisticsPage();
+    void afficherStatistiques();
+    void switchToStatisticsPage();
+    void switchTocalender();
+    void afficherEvenementsSurCalendrier();
+    void afficherDetailsEvenement(const QDate &date) ;
+    void afficherAfficheEvenement();
+    void masquerAfficheEvenement();
+
+
 
 private:
     Ui::MainWindow *ui;
     Event* event;
     int currentEventID ;
+    QSortFilterProxyModel *proxyModel;    // Modèle proxy pour le filtrage et le tri
+    QAbstractItemModel *originalModel;
+     QTimer *timerAffichage;
+    QTimer *timerMasquage;
+
+
+
 };
 
 #endif // MAINWINDOW_H
