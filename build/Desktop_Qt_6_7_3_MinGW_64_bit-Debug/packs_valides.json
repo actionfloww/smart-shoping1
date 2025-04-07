@@ -1,0 +1,50 @@
+[
+    {
+        "dateCreation": "07/04/2025",
+        "idMoinsVendu": 69,
+        "idPlusVendu": 68,
+        "nomPack": "Pack innovation ee",
+        "prixMoinsVendu": 2.5,
+        "prixPack": 5.4,
+        "prixPlusVendu": 3.5,
+        "produitMoinsVendu": "Lait",
+        "produitPlusVendu": "Jus dorange",
+        "statut": "validé"
+    },
+    {
+        "dateCreation": "07/04/2025",
+        "idMoinsVendu": 57,
+        "idPlusVendu": 58,
+        "nomPack": "Pack innovation YSL",
+        "prixMoinsVendu": 55,
+        "prixPack": 54,
+        "prixPlusVendu": 5,
+        "produitMoinsVendu": "Rouge à lèvres",
+        "produitPlusVendu": "Mascara",
+        "statut": "validé"
+    },
+    {
+        "dateCreation": "07/04/2025",
+        "idMoinsVendu": 70,
+        "idPlusVendu": 71,
+        "nomPack": "Pack innovation ss",
+        "prixMoinsVendu": 55,
+        "prixPack": 103.5,
+        "prixPlusVendu": 60,
+        "produitMoinsVendu": "ss",
+        "produitPlusVendu": "aa",
+        "statut": "validé"
+    },
+    {
+        "dateCreation": "07/04/2025",
+        "idMoinsVendu": 86,
+        "idPlusVendu": 87,
+        "nomPack": "Pack innovation  inspiré  de la gamme delice",
+        "prixMoinsVendu": 10,
+        "prixPack": 27,
+        "prixPlusVendu": 20,
+        "produitMoinsVendu": "laitx ",
+        "produitPlusVendu": "laity",
+        "statut": "validé"
+    }
+]

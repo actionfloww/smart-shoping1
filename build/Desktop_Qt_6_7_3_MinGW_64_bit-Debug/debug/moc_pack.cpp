@@ -1,37 +1,12 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'dialog.h'
+** Meta object code from reading C++ file 'pack.h'
 **
 ** Created by: The Qt Meta Object Compiler version 68 (Qt 6.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../dialog.h"
-#include <QtGui/qtextcursor.h>
-#include <QtGui/qscreen.h>
-#include <QtCharts/qlineseries.h>
-#include <QtCharts/qabstractbarseries.h>
-#include <QtCharts/qvbarmodelmapper.h>
-#include <QtCharts/qboxplotseries.h>
-#include <QtCharts/qcandlestickseries.h>
-#include <QtCore/qabstractitemmodel.h>
-#include <QtCharts/qpieseries.h>
-#include <QtCore/qabstractitemmodel.h>
-#include <QtCharts/qboxplotseries.h>
-#include <QtCore/qabstractitemmodel.h>
-#include <QtCharts/qpieseries.h>
-#include <QtCharts/qpieseries.h>
-#include <QtCore/qabstractitemmodel.h>
-#include <QtCharts/qxyseries.h>
-#include <QtCharts/qxyseries.h>
-#include <QtCore/qabstractitemmodel.h>
-#include <QtCore/qabstractitemmodel.h>
-#include <QtCharts/qboxplotseries.h>
-#include <QtCore/qabstractitemmodel.h>
-#include <QtCharts/qpieseries.h>
-#include <QtCore/qabstractitemmodel.h>
-#include <QtCharts/qxyseries.h>
-#include <QtCore/qabstractitemmodel.h>
+#include "../../../pack.h"
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -41,7 +16,7 @@
 
 #include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'dialog.h' doesn't include <QObject>."
+#error "The header file 'pack.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
 #error "This file was generated using the moc from 6.7.3. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -58,19 +33,19 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSDialogENDCLASS_t {};
-constexpr auto qt_meta_stringdata_CLASSDialogENDCLASS = QtMocHelpers::stringData(
-    "Dialog",
-    "on_ACCEUIL_clicked",
+struct qt_meta_stringdata_CLASSpackENDCLASS_t {};
+constexpr auto qt_meta_stringdata_CLASSpackENDCLASS = QtMocHelpers::stringData(
+    "pack",
+    "on_pushButton_acceuil_2_clicked",
     "",
-    "on_pushButton_pack_2_clicked"
+    "on_pushButton_gererpack_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
 #endif // !QT_MOC_HAS_STRINGDATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSDialogENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSpackENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -94,51 +69,51 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSDialogENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject Dialog::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject pack::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_CLASSDialogENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSDialogENDCLASS,
+    qt_meta_stringdata_CLASSpackENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSpackENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSDialogENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSpackENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<Dialog, std::true_type>,
-        // method 'on_ACCEUIL_clicked'
+        QtPrivate::TypeAndForceComplete<pack, std::true_type>,
+        // method 'on_pushButton_acceuil_2_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_pack_2_clicked'
+        // method 'on_pushButton_gererpack_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
 
-void Dialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void pack::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<Dialog *>(_o);
+        auto *_t = static_cast<pack *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_ACCEUIL_clicked(); break;
-        case 1: _t->on_pushButton_pack_2_clicked(); break;
+        case 0: _t->on_pushButton_acceuil_2_clicked(); break;
+        case 1: _t->on_pushButton_gererpack_clicked(); break;
         default: ;
         }
     }
     (void)_a;
 }
 
-const QMetaObject *Dialog::metaObject() const
+const QMetaObject *pack::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Dialog::qt_metacast(const char *_clname)
+void *pack::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSDialogENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSpackENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int Dialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int pack::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

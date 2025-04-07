@@ -1,0 +1,11 @@
+debug/connexion.o
+debug/main.o
+debug/mainwindow.o
+debug/pack.o
+debug/produit.o
+debug/dialog.o
+debug/qrc_ressources.o
+debug/moc_mainwindow.o
+debug/moc_pack.o
+debug/moc_produit.o
+debug/moc_dialog.o

@@ -1,6 +1,8 @@
+QT += core gui sql charts widgets
 QT       += core gui
 QT       += core gui sql  # Ajout de SQL pour la base de données
-
+QT += printsupport
+QT += sql charts
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
@@ -11,20 +13,23 @@ CONFIG += c++17
 
 SOURCES += \
     connexion.cpp \
-    dialog.cpp \
     main.cpp \
     mainwindow.cpp \
-    produit.cpp
+    pack.cpp \
+    produit.cpp \
+    dialog.cpp
 
 HEADERS += \
     connexion.h \
-    dialog.h \
     mainwindow.h \
-    produit.h
+    pack.h \
+    produit.h \
+    dialog.h
 
 FORMS += \
     dialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    pack.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
