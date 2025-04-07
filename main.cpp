@@ -2,9 +2,12 @@
 #include <QApplication>
 #include "connection.h"
 #include <QMessageBox>
+#include <QDebug>
+#include <stdexcept>
 
 int main(int argc, char *argv[])
 {
+
     QApplication a(argc, argv);
 
     // Création et initialisation de la connexion
@@ -18,8 +21,20 @@ int main(int argc, char *argv[])
         return -1; // Quitter si la connexion échoue
     }
 
-    MainWindow w;
-    w.show();
+    try {
+        MainWindow w;
+        w.show();
+        return a.exec();
+    }
 
-    return a.exec();
+catch (const std::exception& e) {
+    QMessageBox::critical(nullptr, "Erreur Critique",
+                          QString("Exception non gérée : %1").arg(e.what()));
+    return -1;
+}
+catch (...) {
+    QMessageBox::critical(nullptr, "Erreur Critique",
+                          "Exception inconnue");
+    return -1;
+}
 }

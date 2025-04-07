@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -31,9 +32,9 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QFrame *frame;
-    QTextEdit *textEdit;
+    QTextEdit *textEditDashboard;
     QTextEdit *textEdit_2;
-    QTextEdit *textEdit_3;
+    QTextEdit *textEditEmploye;
     QTextEdit *textEdit_4;
     QTextEdit *textEdit_5;
     QTextEdit *textEdit_7;
@@ -46,12 +47,8 @@ public:
     QPushButton *pushButton_10;
     QTextEdit *textEdit_8;
     QTableView *tableView;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton_12;
-    QLabel *label;
-    QPushButton *pushButton_11;
+    QPushButton *btnEnvoyerSMS;
+    QLineEdit *lineEditRecherche;
     QFrame *frame_2;
     QFrame *frame_3;
     QTextEdit *textEdit_13;
@@ -76,6 +73,13 @@ public:
     QTextEdit *textEdit_27;
     QPushButton *btnSupprimer;
     QLabel *label_10;
+    QPushButton *btnPDF;
+    QComboBox *comboBoxTri;
+    QTableView *tableViewAchats;
+    QPushButton *buttonAchat;
+    QPushButton *buttonStats;
+    QLabel *label;
+    QLabel *label_2;
     QPushButton *btnAfficher;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -96,10 +100,10 @@ public:
 ""));
         frame->setFrameShape(QFrame::Shape::StyledPanel);
         frame->setFrameShadow(QFrame::Shadow::Raised);
-        textEdit = new QTextEdit(frame);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(40, 50, 121, 21));
-        textEdit->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
+        textEditDashboard = new QTextEdit(frame);
+        textEditDashboard->setObjectName("textEditDashboard");
+        textEditDashboard->setGeometry(QRect(40, 60, 121, 21));
+        textEditDashboard->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
 "    border: none;                    /* Remove border */\n"
 "    background: transparent;         /* Make background transparent */\n"
 "    padding: 0;                      /* No padding */\n"
@@ -124,10 +128,10 @@ public:
 " qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
 "    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
 "}"));
-        textEdit_3 = new QTextEdit(frame);
-        textEdit_3->setObjectName("textEdit_3");
-        textEdit_3->setGeometry(QRect(40, 150, 101, 21));
-        textEdit_3->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
+        textEditEmploye = new QTextEdit(frame);
+        textEditEmploye->setObjectName("textEditEmploye");
+        textEditEmploye->setGeometry(QRect(40, 150, 101, 21));
+        textEditEmploye->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
 "    border: none;                    /* Remove border */\n"
 "    background: transparent;         /* Make background transparent */\n"
 "    padding: 0;                      /* No padding */\n"
@@ -299,46 +303,25 @@ public:
 "}"));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(530, 220, 231, 171));
+        tableView->setGeometry(QRect(490, 200, 361, 181));
         tableView->setStyleSheet(QString::fromUtf8("background-color: #7eb6bf;"));
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(560, 350, 61, 18));
+        btnEnvoyerSMS = new QPushButton(centralwidget);
+        btnEnvoyerSMS->setObjectName("btnEnvoyerSMS");
+        btnEnvoyerSMS->setGeometry(QRect(530, 350, 81, 21));
         QFont font;
         font.setBold(true);
-        pushButton_3->setFont(font);
-        pushButton_4 = new QPushButton(centralwidget);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(600, 160, 81, 20));
-        QFont font1;
-        font1.setBold(true);
-        font1.setItalic(true);
-        pushButton_4->setFont(font1);
-        lineEdit = new QLineEdit(centralwidget);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(610, 50, 171, 21));
-        pushButton_12 = new QPushButton(centralwidget);
-        pushButton_12->setObjectName("pushButton_12");
-        pushButton_12->setGeometry(QRect(690, 110, 56, 18));
-        pushButton_12->setFont(font);
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setGeometry(QRect(490, 50, 101, 20));
-        QFont font2;
-        font2.setPointSize(18);
-        font2.setBold(true);
-        font2.setItalic(true);
-        font2.setStrikeOut(false);
-        label->setFont(font2);
-        pushButton_11 = new QPushButton(centralwidget);
-        pushButton_11->setObjectName("pushButton_11");
-        pushButton_11->setGeometry(QRect(510, 110, 91, 20));
-        pushButton_11->setFont(font);
-        pushButton_11->setStyleSheet(QString::fromUtf8("background=rgb(85, 0, 255)"));
+        btnEnvoyerSMS->setFont(font);
+        btnEnvoyerSMS->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255)"));
+        lineEditRecherche = new QLineEdit(centralwidget);
+        lineEditRecherche->setObjectName("lineEditRecherche");
+        lineEditRecherche->setGeometry(QRect(610, 50, 171, 21));
         frame_2 = new QFrame(centralwidget);
         frame_2->setObjectName("frame_2");
-        frame_2->setGeometry(QRect(9, -10, 1031, 621));
-        frame_2->setStyleSheet(QString::fromUtf8("background-color: rgb(208, 208, 208);"));
+        frame_2->setGeometry(QRect(9, -10, 943, 611));
+        QFont font1;
+        font1.setPointSize(12);
+        frame_2->setFont(font1);
+        frame_2->setStyleSheet(QString::fromUtf8("background-color: rgb(75, 113, 113)"));
         frame_2->setFrameShape(QFrame::Shape::StyledPanel);
         frame_2->setFrameShadow(QFrame::Shadow::Raised);
         frame_3 = new QFrame(frame_2);
@@ -573,12 +556,61 @@ public:
 ""));
         label_10 = new QLabel(frame_2);
         label_10->setObjectName("label_10");
-        label_10->setGeometry(QRect(530, 210, 91, 16));
+        label_10->setGeometry(QRect(490, 190, 141, 16));
+        QFont font2;
+        font2.setBold(true);
+        font2.setItalic(true);
+        font2.setUnderline(true);
+        label_10->setFont(font2);
+        btnPDF = new QPushButton(frame_2);
+        btnPDF->setObjectName("btnPDF");
+        btnPDF->setGeometry(QRect(650, 120, 56, 18));
+        btnPDF->setFont(font);
+        btnPDF->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255)"));
+        comboBoxTri = new QComboBox(frame_2);
+        comboBoxTri->addItem(QString());
+        comboBoxTri->addItem(QString());
+        comboBoxTri->setObjectName("comboBoxTri");
+        comboBoxTri->setGeometry(QRect(720, 160, 71, 22));
+        comboBoxTri->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255)"));
+        tableViewAchats = new QTableView(frame_2);
+        tableViewAchats->setObjectName("tableViewAchats");
+        tableViewAchats->setGeometry(QRect(540, 400, 301, 171));
+        tableViewAchats->setStyleSheet(QString::fromUtf8("background-color: #7eb6bf;"));
+        buttonAchat = new QPushButton(frame_2);
+        buttonAchat->setObjectName("buttonAchat");
+        buttonAchat->setGeometry(QRect(450, 410, 81, 20));
         QFont font3;
         font3.setBold(true);
         font3.setItalic(true);
-        font3.setUnderline(true);
-        label_10->setFont(font3);
+        buttonAchat->setFont(font3);
+        buttonAchat->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255)"));
+        buttonStats = new QPushButton(frame_2);
+        buttonStats->setObjectName("buttonStats");
+        buttonStats->setGeometry(QRect(510, 130, 56, 18));
+        QFont font4;
+        font4.setPointSize(10);
+        font4.setBold(true);
+        buttonStats->setFont(font4);
+        buttonStats->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255)"));
+        label = new QLabel(frame_2);
+        label->setObjectName("label");
+        label->setGeometry(QRect(500, 60, 101, 20));
+        QFont font5;
+        font5.setPointSize(15);
+        font5.setBold(true);
+        font5.setItalic(true);
+        font5.setStrikeOut(false);
+        label->setFont(font5);
+        label_2 = new QLabel(frame_2);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(690, 160, 16, 16));
+        QFont font6;
+        font6.setPointSize(10);
+        font6.setBold(true);
+        font6.setItalic(true);
+        font6.setUnderline(true);
+        label_2->setFont(font6);
         btnAfficher = new QPushButton(centralwidget);
         btnAfficher->setObjectName("btnAfficher");
         btnAfficher->setGeometry(QRect(660, 340, 81, 31));
@@ -604,12 +636,8 @@ public:
         frame_2->raise();
         frame->raise();
         tableView->raise();
-        pushButton_3->raise();
-        pushButton_4->raise();
-        lineEdit->raise();
-        pushButton_12->raise();
-        label->raise();
-        pushButton_11->raise();
+        btnEnvoyerSMS->raise();
+        lineEditRecherche->raise();
         btnAfficher->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -627,16 +655,16 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        textEdit->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        textEditDashboard->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; color:#404040;\">\360\237\217\240   </span><span style=\" font-size:14pt; font-style:italic;\">Dashboard</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin"
-                        "-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt; font-style:italic;\"><br /></p></body></html>", nullptr));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; color:#404040;\">\360\237\217\240</span><span style=\" font-size:12pt; font-style:italic;\">Dashboard</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-le"
+                        "ft:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt; font-style:italic;\"><br /></p></body></html>", nullptr));
         textEdit_2->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -644,15 +672,15 @@ public:
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\221\244   </span><span style=\" font-size:12pt;\">Client</span></p></body></html>", nullptr));
-        textEdit_3->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\221\244</span><span style=\" font-size:10pt;\">Client</span></p></body></html>", nullptr));
+        textEditEmploye->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:4px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\221\250\342\200\215\360\237\222\274   </span><span style=\" font-size:12pt;\">Employee</span></p></body></html>", nullptr));
+"<p style=\" margin-top:4px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\221\250\342\200\215\360\237\222\274</span><span style=\" font-size:10pt;\">Employee</span></p></body></html>", nullptr));
         textEdit_4->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -660,9 +688,9 @@ public:
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:4px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; color:#404040;\">\360\237\233\222   </span><span style=\" font-size:12pt;\">Produit</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:4px; margin-bottom:0px; margin-left:0px; margin-rig"
-                        "ht:0px; -qt-block-indent:0; text-indent:0px; font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\"><br /></p>\n"
+"<p style=\" margin-top:4px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; color:#404040;\">\360\237\233\222</span><span style=\" font-size:10pt;\">Produit</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:4px; margin-bottom:0px; margin-left:0px; margin-right:"
+                        "0px; -qt-block-indent:0; text-indent:0px; font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         textEdit_5->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
@@ -671,7 +699,7 @@ public:
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\223\246   </span><span style=\" font-size:12pt;\">Stock </span></p></body></html>", nullptr));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\223\246</span><span style=\" font-size:10pt;\">Stock </span></p></body></html>", nullptr));
         textEdit_7->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -679,8 +707,8 @@ public:
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\216\252   </span><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','"
-                        "Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:12pt; color:#404040;\">Evenement</span></p></body></html>", nullptr));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\216\252</span><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Hel"
+                        "vetica Neue','Oxygen','Open Sans','sans-serif'; font-size:10pt; color:#404040;\">Evenement</span></p></body></html>", nullptr));
         pushButton->setText(QString());
         pushButton_2->setText(QString());
         pushButton_5->setText(QString());
@@ -695,12 +723,8 @@ public:
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; color:#404040;\">\360\237\217\254   </span><span style=\" font-size:12pt;\">Magasines</span></p></body></html>", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Envoyer sms", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "Fidelit\303\251", nullptr));
-        pushButton_12->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Recherche :", nullptr));
-        pushButton_11->setText(QCoreApplication::translate("MainWindow", "Trier par etoile", nullptr));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; color:#404040;\">\360\237\217\254</span><span style=\" font-size:10pt;\">Magasines</span></p></body></html>", nullptr));
+        btnEnvoyerSMS->setText(QCoreApplication::translate("MainWindow", "Envoyer sms", nullptr));
         textEdit_13->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -758,7 +782,15 @@ public:
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Point_fidelite</span></p></body></html>", nullptr));
         btnSupprimer->setText(QCoreApplication::translate("MainWindow", "Supprimer", nullptr));
-        label_10->setText(QCoreApplication::translate("MainWindow", "Listes clients inactif", nullptr));
+        label_10->setText(QCoreApplication::translate("MainWindow", "Listes clients ", nullptr));
+        btnPDF->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
+        comboBoxTri->setItemText(0, QCoreApplication::translate("MainWindow", "prenom", nullptr));
+        comboBoxTri->setItemText(1, QCoreApplication::translate("MainWindow", "email", nullptr));
+
+        buttonAchat->setText(QCoreApplication::translate("MainWindow", "Achat", nullptr));
+        buttonStats->setText(QCoreApplication::translate("MainWindow", "Stat", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Recherche :", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Tri :", nullptr));
         btnAfficher->setText(QCoreApplication::translate("MainWindow", "Afficher", nullptr));
     } // retranslateUi
 

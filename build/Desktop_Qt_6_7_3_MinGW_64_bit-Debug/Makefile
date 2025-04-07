@@ -407,9 +407,14 @@ Makefile: ../../interface1.pro C:/qt/6.7.3/mingw_64/mkspecs/win32-g++/qmake.conf
 		C:/qt/6.7.3/mingw_64/mkspecs/features/yacc.prf \
 		C:/qt/6.7.3/mingw_64/mkspecs/features/lex.prf \
 		../../interface1.pro \
+		C:/qt/6.7.3/mingw_64/lib/Qt6PrintSupport.prl \
+		C:/qt/6.7.3/mingw_64/lib/Qt6Charts.prl \
+		C:/qt/6.7.3/mingw_64/lib/Qt6OpenGLWidgets.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6Widgets.prl \
+		C:/qt/6.7.3/mingw_64/lib/Qt6OpenGL.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6Gui.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6Sql.prl \
+		C:/qt/6.7.3/mingw_64/lib/Qt6Network.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6Core.prl \
 		C:/qt/6.7.3/mingw_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\..\interface1.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -750,9 +755,14 @@ C:/qt/6.7.3/mingw_64/mkspecs/features/exceptions.prf:
 C:/qt/6.7.3/mingw_64/mkspecs/features/yacc.prf:
 C:/qt/6.7.3/mingw_64/mkspecs/features/lex.prf:
 ../../interface1.pro:
+C:/qt/6.7.3/mingw_64/lib/Qt6PrintSupport.prl:
+C:/qt/6.7.3/mingw_64/lib/Qt6Charts.prl:
+C:/qt/6.7.3/mingw_64/lib/Qt6OpenGLWidgets.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6Widgets.prl:
+C:/qt/6.7.3/mingw_64/lib/Qt6OpenGL.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6Gui.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6Sql.prl:
+C:/qt/6.7.3/mingw_64/lib/Qt6Network.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6Core.prl:
 C:/qt/6.7.3/mingw_64/mkspecs/features/build_pass.prf:
 qmake: FORCE

@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../../mainwindow.h"
+#include <QtNetwork/QSslError>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -40,7 +41,22 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "",
     "on_btnModifier_clicked",
     "on_btnSupprimer_clicked",
-    "on_btnAfficher_clicked"
+    "on_btnAfficher_clicked",
+    "on_lineEditRecherche_textChanged",
+    "arg1",
+    "on_comboBoxTri_currentIndexChanged",
+    "index",
+    "on_btnPDF_clicked",
+    "on_buttonAchat_clicked",
+    "mettreAJourAffichagePoints",
+    "idClient",
+    "actualiserTableauAchats",
+    "on_buttonStats_clicked",
+    "on_btnEnvoyerSMS_clicked",
+    "onSmsSent",
+    "QNetworkReply*",
+    "reply",
+    "on_btnTestSMS_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -53,7 +69,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -61,15 +77,35 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   38,    2, 0x08,    1 /* Private */,
-       3,    0,   39,    2, 0x08,    2 /* Private */,
-       4,    0,   40,    2, 0x08,    3 /* Private */,
-       5,    0,   41,    2, 0x08,    4 /* Private */,
+       1,    0,   98,    2, 0x08,    1 /* Private */,
+       3,    0,   99,    2, 0x08,    2 /* Private */,
+       4,    0,  100,    2, 0x08,    3 /* Private */,
+       5,    0,  101,    2, 0x08,    4 /* Private */,
+       6,    1,  102,    2, 0x08,    5 /* Private */,
+       8,    1,  105,    2, 0x08,    7 /* Private */,
+      10,    0,  108,    2, 0x08,    9 /* Private */,
+      11,    0,  109,    2, 0x08,   10 /* Private */,
+      12,    1,  110,    2, 0x08,   11 /* Private */,
+      14,    0,  113,    2, 0x08,   13 /* Private */,
+      15,    0,  114,    2, 0x08,   14 /* Private */,
+      16,    0,  115,    2, 0x08,   15 /* Private */,
+      17,    1,  116,    2, 0x08,   16 /* Private */,
+      20,    0,  119,    2, 0x08,   18 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::Int,    9,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   13,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 18,   19,
     QMetaType::Void,
 
        0        // eod
@@ -91,6 +127,30 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'on_btnSupprimer_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnAfficher_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_lineEditRecherche_textChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'on_comboBoxTri_currentIndexChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_btnPDF_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_buttonAchat_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'mettreAJourAffichagePoints'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'actualiserTableauAchats'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_buttonStats_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_btnEnvoyerSMS_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onSmsSent'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QNetworkReply *, std::false_type>,
+        // method 'on_btnTestSMS_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -106,10 +166,30 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->on_btnModifier_clicked(); break;
         case 2: _t->on_btnSupprimer_clicked(); break;
         case 3: _t->on_btnAfficher_clicked(); break;
+        case 4: _t->on_lineEditRecherche_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 5: _t->on_comboBoxTri_currentIndexChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 6: _t->on_btnPDF_clicked(); break;
+        case 7: _t->on_buttonAchat_clicked(); break;
+        case 8: _t->mettreAJourAffichagePoints((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 9: _t->actualiserTableauAchats(); break;
+        case 10: _t->on_buttonStats_clicked(); break;
+        case 11: _t->on_btnEnvoyerSMS_clicked(); break;
+        case 12: _t->onSmsSent((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 13: _t->on_btnTestSMS_clicked(); break;
         default: ;
         }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+        case 12:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QNetworkReply* >(); break;
+            }
+            break;
+        }
     }
-    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -131,13 +211,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
-            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        if (_id < 14)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 14;
     }
     return _id;
 }

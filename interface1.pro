@@ -1,5 +1,9 @@
 QT       += core gui
 QT       += sql
+QT       += core gui sql printsupport
+QT       += printsupport
+QT       += charts sql
+QT       += network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
@@ -9,11 +13,15 @@ CONFIG += console
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    achat.cpp \
+    client.cpp \
     connection.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    achat.h \
+    client.h \
     connection.h \
     mainwindow.h
 
