@@ -1,0 +1,62 @@
+[
+    {
+        "categorie": "Alimentation",
+        "etat": "Critique",
+        "jours_restants": 4,
+        "nature_remise": "Expiration",
+        "nom": "zizou",
+        "pourcentage": 50,
+        "prix_original": 80,
+        "prix_remise": 40
+    },
+    {
+        "categorie": "Alimentation",
+        "etat": "Critique",
+        "jours_restants": 3,
+        "nature_remise": "Expiration",
+        "nom": "hh",
+        "pourcentage": 50,
+        "prix_original": 25,
+        "prix_remise": 12.5
+    },
+    {
+        "categorie": "Alimentation",
+        "etat": "Critique",
+        "jours_restants": 4,
+        "nature_remise": "Expiration",
+        "nom": "qqq",
+        "pourcentage": 50,
+        "prix_original": 25,
+        "prix_remise": 12.5
+    },
+    {
+        "categorie": "Alimentation",
+        "etat": "Critique",
+        "jours_restants": 3,
+        "nature_remise": "Expiration",
+        "nom": "zizou",
+        "pourcentage": 50,
+        "prix_original": 25,
+        "prix_remise": 12.5
+    },
+    {
+        "categorie": "Alimentation",
+        "etat": "Critique",
+        "jours_restants": 6,
+        "nature_remise": "Expiration",
+        "nom": "AZIZ",
+        "pourcentage": 50,
+        "prix_original": 100,
+        "prix_remise": 50
+    },
+    {
+        "categorie": "Mode & Accessoires",
+        "etat": "Critique",
+        "jours_restants": 7,
+        "nature_remise": "Saisonnière",
+        "nom": "dd",
+        "pourcentage": 50,
+        "prix_original": 200,
+        "prix_remise": 100
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "categorie": "Mode & Accessoires",
+        "etat": "Critique",
+        "jours_restants": 7,
+        "nature_remise": "Saisonnière",
+        "nom": "maryem",
+        "pourcentage": 50,
+        "prix_original": 35,
+        "prix_remise": 17.5
+    },
+    {
+        "categorie": "Mode & Accessoires",
+        "etat": "Critique",
+        "jours_restants": 9,
+        "nature_remise": "Saisonnière",
+        "nom": "amel",
+        "pourcentage": 50,
+        "prix_original": 40,
+        "prix_remise": 20
+    },
+    {
+        "categorie": "Mode & Accessoires",
+        "etat": "Critique",
+        "jours_restants": 0,
+        "nature_remise": "Saisonnière",
+        "nom": "ziza",
+        "pourcentage": 50,
+        "prix_original": 100,
+        "prix_remise": 50
+    },
+    {
+        "categorie": "Mode & Accessoires",
+        "etat": "Critique",
+        "jours_restants": 11,
+        "nature_remise": "Saisonnière",
+        "nom": "ziza",
+        "pourcentage": 50,
+        "prix_original": 50,
+        "prix_remise": 25
+    }
+]

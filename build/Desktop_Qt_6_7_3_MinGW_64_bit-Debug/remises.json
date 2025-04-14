@@ -1,0 +1,10 @@
+[
+    {
+        "id": 0,
+        "nom": "ze",
+        "pourcentage": 50,
+        "prixOriginal": 20,
+        "prixRemise": 10,
+        "type": "Expiration"
+    }
+]

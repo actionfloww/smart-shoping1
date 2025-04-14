@@ -1,0 +1,28 @@
+[
+    {
+        "dateCreation": "13/04/2025",
+        "idMoinsVendu": 187,
+        "idPlusVendu": 196,
+        "nomPack": "Pack innovation inspiré de la gamme samsung",
+        "pourcentageRemise": 40,
+        "prixMoinsVendu": 120,
+        "prixPack": 100.2,
+        "prixPlusVendu": 47,
+        "produitMoinsVendu": "Smartphone",
+        "produitPlusVendu": "Ecouteur",
+        "statut": "validé"
+    },
+    {
+        "dateCreation": "13/04/2025",
+        "idMoinsVendu": 197,
+        "idPlusVendu": 199,
+        "nomPack": "Pack innovation inspiré de la gamme ELLE",
+        "pourcentageRemise": 5,
+        "prixMoinsVendu": 76,
+        "prixPack": 153.9,
+        "prixPlusVendu": 86,
+        "produitMoinsVendu": "vase",
+        "produitPlusVendu": "biblots",
+        "statut": "validé"
+    }
+]

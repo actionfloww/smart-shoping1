@@ -1,4 +1,3 @@
-
 #ifndef PACK_H
 #define PACK_H
 
@@ -11,9 +10,10 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QFile>
-
-    namespace Ui {
-    class pack;
+#include <QSpinBox>
+#include <QLabel>
+namespace Ui {
+class pack;
 }
 
 class pack : public QDialog
@@ -27,16 +27,21 @@ public:
 private:
     void setupUI(); // Ajout de cette déclaration
     void initializeData(); // Ajout de cette déclaration
+
 private slots:
-    void on_pushButton_acceuil_2_clicked();
     void on_pushButton_gererpack_clicked();
+    void on_pushButton_acceuil_2_clicked();
+    void on_pushButton_statistique_clicked();
+
 
 private:
     Ui::pack *ui;
     QVBoxLayout *m_scrollLayout;
     QWidget *m_scrollContent;
     QScrollArea *m_scrollArea;
-    QString m_jsonValidesFilePath = "pack_valide.json";  // Correction du nom de variable
+
+    bool m_modificationsValidees; // Nouveau membre pour suivre l'état des modifications
+    QString m_jsonValidesFilePath = "pack_validef.json";  // Correction du nom de variable
     QJsonObject packToJson(const QString &nomPack,
                            const QString &produitPlusVendu,
                            double prixPlusVendu,
@@ -44,7 +49,8 @@ private:
                            double prixMoinsVendu,
                            double prixPack,
                            int idPlusVendu,
-                           int idMoinsVendu);
+                           int idMoinsVendu,
+                           int pourcentageRemise); // Ajout du paramètre pourcentageRemise
 
     void creerCartePack(const QString &nomPack,
                         const QString &produitPlusVendu,
@@ -54,16 +60,18 @@ private:
                         double prixPack,
                         int idPlusVendu,
                         int idMoinsVendu,
-                        bool estValide);
+                        bool estValide,
+                        int pourcentageRemise); // Ajout du paramètre pourcentageRemise
 
     void validerPack(int idPlusVendu, int idMoinsVendu, QGroupBox* carte, const QJsonObject &packData);
     void rejeterPack(QGroupBox* carte);
+    void modifierPack(QGroupBox* carte, QSpinBox* spinBox, QLabel* labelPrixPack,
+                      double prixPlusVendu, double prixMoinsVendu, QJsonObject packData); // Nouvelle méthode pour modifier le pack
 
     void sauvegarderPackValide(const QJsonObject &packData);
     void chargerPacksValides();
-
-
     void afficherPackDepuisJson(const QJsonObject &packJson);
+    void configureTransition(QWidget *window, const QString &title);
 };
 
 #endif // PACK_H

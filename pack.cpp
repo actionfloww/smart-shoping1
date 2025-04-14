@@ -19,29 +19,25 @@
 #include <QPropertyAnimation>
 #include <QEasingCurve>
 #include <QSqlError>
+#include "mainwindow.h"
+#include "dialog.h"
 
 pack::pack(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::pack),
-    m_jsonValidesFilePath("packs_valides.json")
+    m_jsonValidesFilePath("packs_validef.json")
 {
     ui->setupUi(this);
     this->setWindowTitle("Gestion des Packs");
 
-    // Vérification de la connexion à la base de données
     if (!QSqlDatabase::database().isOpen()) {
         QMessageBox::critical(this, "Erreur", "Pas de connexion à la base de données!");
         this->close();
         return;
     }
 
-    // Configuration de l'interface
     setupUI();
-
-    // Initialisation des données
     initializeData();
-
-    // Charger les packs validés existants
     chargerPacksValides();
 }
 
@@ -52,18 +48,15 @@ pack::~pack()
 
 void pack::setupUI()
 {
-    // Configuration de la zone de défilement
     QWidget *grayZoneContainer = new QWidget(this);
     grayZoneContainer->setGeometry(170, 140, 1175, 600);
     grayZoneContainer->setStyleSheet("background: #f5f5f5; border-radius: 10px;");
 
-    // Configuration du ScrollArea
     m_scrollArea = new QScrollArea(grayZoneContainer);
     m_scrollArea->setWidgetResizable(true);
     m_scrollArea->setGeometry(0, 0, grayZoneContainer->width(), grayZoneContainer->height());
     m_scrollArea->setStyleSheet("QScrollArea { border: none; }");
 
-    // Contenu défilable
     m_scrollContent = new QWidget();
     m_scrollLayout = new QVBoxLayout(m_scrollContent);
     m_scrollLayout->setAlignment(Qt::AlignTop);
@@ -74,25 +67,16 @@ void pack::setupUI()
 
 void pack::initializeData()
 {
-    // Initialisation des catégories
     QStringList categories;
     categories << "Mode & Accessoires" << "Électronique" << "Beauté & Cosmétiques"
                << "Maison & Décoration" << "Alimentation" << "Culture & Loisirs Créatifs";
     ui->comboBox_pack->addItems(categories);
 
-    // Vérifier/Créer le fichier JSON
     QFile file(m_jsonValidesFilePath);
     if (!file.exists() && file.open(QIODevice::WriteOnly)) {
         file.write("[]");
         file.close();
     }
-}
-
-void pack::on_pushButton_acceuil_2_clicked()
-{
-    this->close();
-    MainWindow *mainWindow = new MainWindow();
-    mainWindow->show();
 }
 
 QJsonObject pack::packToJson(const QString &nomPack,
@@ -102,7 +86,8 @@ QJsonObject pack::packToJson(const QString &nomPack,
                              double prixMoinsVendu,
                              double prixPack,
                              int idPlusVendu,
-                             int idMoinsVendu)
+                             int idMoinsVendu,
+                             int pourcentageRemise)
 {
     QJsonObject packJson;
     packJson["nomPack"] = nomPack;
@@ -113,8 +98,9 @@ QJsonObject pack::packToJson(const QString &nomPack,
     packJson["prixPack"] = prixPack;
     packJson["idPlusVendu"] = idPlusVendu;
     packJson["idMoinsVendu"] = idMoinsVendu;
+    packJson["pourcentageRemise"] = pourcentageRemise;
     packJson["dateCreation"] = QDate::currentDate().toString("dd/MM/yyyy");
-    packJson["statut"] = "validé"; // Statut par défaut
+    packJson["statut"] = "validé";
     return packJson;
 }
 
@@ -138,7 +124,6 @@ void pack::chargerPacksValides()
     for (const QJsonValue &packValue : packsArray) {
         if (packValue.isObject()) {
             QJsonObject packObj = packValue.toObject();
-            // Vérifier que le pack est bien validé
             if (packObj["statut"].toString() == "validé") {
                 afficherPackDepuisJson(packObj);
             }
@@ -151,7 +136,6 @@ void pack::sauvegarderPackValide(const QJsonObject &packData)
     QFile file(m_jsonValidesFilePath);
     QJsonArray packsArray;
 
-    // 1. Lire les données existantes
     if (file.exists() && file.open(QIODevice::ReadOnly)) {
         QByteArray data = file.readAll();
         file.close();
@@ -161,24 +145,21 @@ void pack::sauvegarderPackValide(const QJsonObject &packData)
         }
     }
 
-    // 2. Vérifier si le pack existe déjà
     bool packExisteDeja = false;
     for (int i = 0; i < packsArray.size(); ++i) {
         QJsonObject pack = packsArray[i].toObject();
         if (pack["idPlusVendu"] == packData["idPlusVendu"] &&
             pack["idMoinsVendu"] == packData["idMoinsVendu"]) {
-            packsArray[i] = packData; // Mise à jour
+            packsArray[i] = packData;
             packExisteDeja = true;
             break;
         }
     }
 
-    // 3. Ajout si nouveau pack
     if (!packExisteDeja) {
         packsArray.append(packData);
     }
 
-    // 4. Sauvegarde dans le fichier
     if (file.open(QIODevice::WriteOnly)) {
         QJsonDocument doc(packsArray);
         file.write(doc.toJson());
@@ -198,7 +179,8 @@ void pack::afficherPackDepuisJson(const QJsonObject &packJson)
                    packJson["prixPack"].toDouble(),
                    packJson["idPlusVendu"].toInt(),
                    packJson["idMoinsVendu"].toInt(),
-                   packJson["statut"].toString() == "validé");
+                   packJson["statut"].toString() == "validé",
+                   packJson["pourcentageRemise"].toInt());
 }
 
 void pack::on_pushButton_gererpack_clicked()
@@ -211,7 +193,6 @@ void pack::on_pushButton_gererpack_clicked()
         return;
     }
 
-    // Vérifier que les produits existent dans la gamme/catégorie
     QSqlQuery query;
     query.prepare("SELECT COUNT(*) FROM PRODUITS "
                   "WHERE UPPER(GAMME) = UPPER(:gamme) "
@@ -224,7 +205,6 @@ void pack::on_pushButton_gererpack_clicked()
         return;
     }
 
-    // Trouver le produit le plus vendu
     query.prepare("SELECT p.IDPRODUIT, p.NOM, p.PRIX, SUM(a.NOMBREACHAT) as total_achats "
                   "FROM PRODUITS p "
                   "JOIN ACHAT a ON p.IDPRODUIT = a.IDPRODUIT "
@@ -244,7 +224,6 @@ void pack::on_pushButton_gererpack_clicked()
     QString nomPlusVendu = query.value(1).toString();
     double prixPlusVendu = query.value(2).toDouble();
 
-    // Trouver le produit le moins vendu
     QSqlQuery queryMoinsVendu;
     queryMoinsVendu.prepare("SELECT p.IDPRODUIT, p.NOM, p.PRIX, SUM(a.NOMBREACHAT) as total_achats "
                             "FROM PRODUITS p "
@@ -265,22 +244,22 @@ void pack::on_pushButton_gererpack_clicked()
     QString nomMoinsVendu = queryMoinsVendu.value(1).toString();
     double prixMoinsVendu = queryMoinsVendu.value(2).toDouble();
 
-    // Vérification que les produits sont différents
     if (idPlusVendu == idMoinsVendu && queryMoinsVendu.next()) {
         idMoinsVendu = queryMoinsVendu.value(0).toInt();
         nomMoinsVendu = queryMoinsVendu.value(1).toString();
         prixMoinsVendu = queryMoinsVendu.value(2).toDouble();
     }
 
-    // Création du pack avec 10% de réduction
-    double prixPack = (prixPlusVendu + prixMoinsVendu) * 0.9;
-    creerCartePack(QString("Pack innovation  inspiré  de la gamme %1").arg(gammeSelectionnee),
+    int pourcentageRemise = 10;
+    double prixPack = (prixPlusVendu + prixMoinsVendu) * (1 - pourcentageRemise/100.0);
+    creerCartePack(QString("Pack innovation inspiré de la gamme %1").arg(gammeSelectionnee),
                    nomPlusVendu, prixPlusVendu,
                    nomMoinsVendu, prixMoinsVendu,
                    prixPack,
                    idPlusVendu,
                    idMoinsVendu,
-                   false); // false indique que c'est un nouveau pack non validé
+                   false,
+                   pourcentageRemise);
 }
 
 void pack::creerCartePack(const QString &nomPack,
@@ -291,27 +270,27 @@ void pack::creerCartePack(const QString &nomPack,
                           double prixPack,
                           int idPlusVendu,
                           int idMoinsVendu,
-                          bool estValide)
+                          bool estValide,
+                          int pourcentageRemise)
 {
-    // Créer l'objet JSON (sans sauvegarde immédiate)
-    QJsonObject packJson = packToJson(nomPack, produitPlusVendu, prixPlusVendu,
-                                      produitMoinsVendu, prixMoinsVendu, prixPack,
-                                      idPlusVendu, idMoinsVendu);
+    struct PackData {
+        QJsonObject jsonData;
+        bool modificationsValidees = false;
+    };
+    auto *packData = new PackData();
+    packData->jsonData = packToJson(nomPack, produitPlusVendu, prixPlusVendu,
+                                    produitMoinsVendu, prixMoinsVendu, prixPack,
+                                    idPlusVendu, idMoinsVendu, pourcentageRemise);
 
     QGroupBox *carte = new QGroupBox();
-    QString style = estValide ?
-                        "border: 2px solid #28a745;" :  // Vert pour validé
-                        "border: 2px solid #000080;";   // Bleu pour non validé
-
     carte->setStyleSheet(
         "QGroupBox {"
         "   background-color: white;"
-        "   border: 2px solid #000080;"  // Bordure bleu marine plus épaisse (2px)
+       "   border: 2px solid #000080;"
         "   border-radius: 10px;"
         "   padding: 20px;"
         "   margin-bottom: 15px;"
-        "   box-shadow: 0 4px 12px rgba(0, 0, 50, 0.3);"  // Ombre plus forte (bleutée)
-
+        "   box-shadow: 0 4px 12px rgba(0, 0, 50, 0.3);"
         "}"
         );
 
@@ -319,13 +298,12 @@ void pack::creerCartePack(const QString &nomPack,
     layout->setSpacing(8);
 
     // Titre du pack
-    QLabel *titre = new QLabel(nomPack);
+    QLabel *titre = new QLabel( nomPack);
     titre->setStyleSheet(
         "font-size: 22px;"
         "font-weight: 600;"
-        "color:  #d00d27;"
+        "color: #d00d27;"
         "font-family: 'Georgia', 'Times New Roman', serif;"
-        "text-align: center;"
         "margin-bottom: 15px;"
         "text-decoration: underline;"
         "font-style: italic;"
@@ -333,8 +311,7 @@ void pack::creerCartePack(const QString &nomPack,
         );
     layout->addWidget(titre);
 
-
-    // Produit star
+    // Produit le plus vendu
     QLabel *labelPlusVendu = new QLabel(
         QString("<span style='color:#000080; font-family:\"Georgia\",\"Times New Roman\",serif; font-style:italic;'>"
                 "👍️ Produit le plus vendu de la gamme:</span> "
@@ -342,7 +319,7 @@ void pack::creerCartePack(const QString &nomPack,
                 " - "
                 "<span style='color:black;'>%2 TND</span>")
             .arg(produitPlusVendu)
-            .arg(prixPlusVendu)
+            .arg(prixPlusVendu, 0, 'f', 2)
         );
     labelPlusVendu->setStyleSheet(
         "font-size: 17px;"
@@ -353,20 +330,17 @@ void pack::creerCartePack(const QString &nomPack,
     labelPlusVendu->setTextFormat(Qt::RichText);
     layout->addWidget(labelPlusVendu);
 
-
-
-
-    // Produit à découvrir
-    QLabel *labelMoinsVendu = new QLabel(QString("<span style='color:#000080; font-family:\"Georgia\",\"Times New Roman\",serif; font-style:italic;'>"
-                                                 "👎️ Produit le moin vendu de la gamme: </span> "
-                                                 "<span style='color:black ;font-family:\"Georgia\",\"Times New Roman\",serif; font-style:italic;'>%1</span>"
-                                                 " - "
-                                                 "<span style='color:black;'>%2 TND</span>")
-                                             .arg(produitMoinsVendu).arg(prixMoinsVendu));
+    // Produit le moins vendu
+    QLabel *labelMoinsVendu = new QLabel(
+        QString("<span style='color:#000080; font-family:\"Georgia\",\"Times New Roman\",serif; font-style:italic;'>"
+                "👎️ Produit le moin vendu de la gamme: </span> "
+                "<span style='color:black ;font-family:\"Georgia\",\"Times New Roman\",serif; font-style:italic;'>%1</span>"
+                " - "
+                "<span style='color:black;'>%2 TND</span>")
+            .arg(produitMoinsVendu)
+            .arg(prixMoinsVendu, 0, 'f', 2));
     labelMoinsVendu->setStyleSheet(
-        "font-size: 17px;"
-        "font-weight: 600;"
-        "color: #000000;"
+        "font-size: 16px;"
         "font-family: 'Segoe UI', 'Arial', sans-serif;"
         "margin: 8px 0;"
         "background: transparent;"
@@ -374,64 +348,143 @@ void pack::creerCartePack(const QString &nomPack,
     labelMoinsVendu->setTextFormat(Qt::RichText);
     layout->addWidget(labelMoinsVendu);
 
+    // Pourcentage de remise
+    QLabel *labelRemise = new QLabel(QString("<span style='color:#000080; font-family:\"Georgia\",\"Times New Roman\",serif; font-style:italic;'>"
+                                             "🎯 Pourcentage de remise: </span>"));
+    labelRemise->setStyleSheet(
+        "font-size: 16px;"
+        "margin: 8px 0;"
+        "background: transparent;"
+        );
+    labelRemise->setTextFormat(Qt::RichText);
+    layout->addWidget(labelRemise);
+
+    QSpinBox *spinBoxRemise = new QSpinBox();
+    spinBoxRemise->setRange(1, 50);
+    spinBoxRemise->setValue(pourcentageRemise);
+    spinBoxRemise->setSuffix("%");
+    spinBoxRemise->setFixedWidth(110); // Largeur réduite
+    spinBoxRemise->setFixedHeight(28); // Hauteur réduite
+    if (estValide) {
+        spinBoxRemise->setEnabled(false);
+        spinBoxRemise->setStyleSheet(
+            "QSpinBox {"
+            "   font-size: 18px;"
+            "   padding: 5px 12px;"
+            "   border: 1px solid #cccccc;"
+            "   border-radius: 6px;"
+            "   background-color: #f5f5f5;"
+            "   min-width: 57px;"
+            "   color: #666666;"
+            "}"
+            "QSpinBox::up-button, QSpinBox::down-button {"
+            "   width: 25px;"
+            "   border-left: 1px solid #000080;"
+            "   background: #f0f0f0;"
+            "}"
+            "QSpinBox::up-button {"
+            "   subcontrol-position: top right;"
+            "   border-bottom: 1px solid #cccccc;"
+            "}"
+            "QSpinBox::down-button {"
+            "   subcontrol-position: bottom right;"
+            "}"
+            "QSpinBox::up-button:hover, QSpinBox::down-button:hover {"
+            "   background: #e0e0e0;"
+            "}"
+            "QSpinBox::up-arrow {"
+            "   top: 2px;"
+            "}"
+            "QSpinBox::down-arrow {"
+            "   bottom: 2px;"
+            "}"
+
+            );
+    } else {
+        spinBoxRemise->setStyleSheet(
+            "QSpinBox {"
+            "   font-size: 14px;"
+            "   padding: 2px 5px;"
+            "   border: 1px solid #000080;"
+            "   border-radius: 4px;"
+            "   background-color: white;"
+            "   color: black;"
+            "}"
+            "QSpinBox::up-button, QSpinBox::down-button {"
+            "   width: 18px;"
+            "   border-left: 1px solid #000080;"
+            "   background: #f0f0f0;"
+            "}"
+            "QSpinBox::up-button {"
+            "   subcontrol-position: top right;"
+            "   border-bottom: 1px solid #000080;"
+            "}"
+            "QSpinBox::down-button {"
+            "   subcontrol-position: bottom right;"
+            "}"
+            "QSpinBox::up-button:hover, QSpinBox::down-button:hover {"
+            "   background: #e0e0e0;"
+            "}"
+            "QSpinBox::up-arrow {"
+            "   top: 1px;"
+            "}"
+            "QSpinBox::down-arrow {"
+            "   bottom: 1px;"
+            "}"
 
 
+            );
+    }
+    layout->addWidget(spinBoxRemise);
 
-
-    // Prix du pack
+    // Prix total du pack
     QLabel *labelPrixPack = new QLabel(QString("<span style='color:#000080; font-family:\"Georgio\",\"Times New Roman\",serif; font-style:italic;'>"
                                                "🔥 Prix total du pack : </span>"
                                                "<span style='color:black;'>%1 TND</span>"
-                                               "(10%) </span>")
-                                           .arg(prixPack));
+                                               " - "
+                                               "(<span style='color:black;'>%2%</span> de remise)</span>")
+            .arg(prixPack, 0, 'f', 2)
+            .arg(pourcentageRemise));
     labelPrixPack->setStyleSheet(
-        "font-size: 17px;"
-        "font-weight: 600;"
+        "font-size: 16px;"
         "color: #000000;"
         "font-family: 'Segoe UI', 'Arial', sans-serif;"
-        "margin: 12px 0;"
+        "margin: 8px 0;"
         "background: transparent;"
         );
     labelPrixPack->setTextFormat(Qt::RichText);
     layout->addWidget(labelPrixPack);
 
-
-
-
+    // Date de création
     QLabel *labelDate = new QLabel(
         QString("<span style='color:#000080; font-family:\"Georgia\",\"Times New Roman\",serif; font-style:italic;'>"
                 "⏰️ Date de création du pack:</span> "
                 "<span style='color:black; font-family:\"Georgia\",\"Times New Roman\",serif; font-style:italic;'>%1</span>")
-            .arg(QDate::currentDate().toString("dd/MM/yyyy"))
-        );
+            .arg(QDate::currentDate().toString("dd/MM/yyyy")));
     labelDate->setStyleSheet(
-        "font-size: 17px;"
-        "font-weight: 600;"
+        "font-size: 16px;"
         "margin: 8px 0;"
         "background: transparent;"
         );
     labelDate->setTextFormat(Qt::RichText);
     layout->addWidget(labelDate);
 
-
-
     // Statut
     QString statutText = estValide ? "✅ Validé" : "🔄 En attente";
     QString statutColor = estValide ? "#28a745" : "#000080";
-
     QLabel *statut = new QLabel(
         QString("<span style='color:%1; font-family:\"Georgia\",\"Times New Roman\",serif; font-style:italic;'>"
                 "📌 Statut:</span> "
                 "<span style='color:%1; font-family:\"Georgia\",\"Times New Roman\",serif; font-style:italic;'>%2</span>")
             .arg(statutColor, statutText));
     statut->setStyleSheet(
-        "font-size: 17px;"
-        "font-weight: 600;"
+        "font-size: 16px;"
         "margin: 8px 0;"
-        "background: transparent;");
+        "background: transparent;"
+        );
+    statut->setTextFormat(Qt::RichText);
     layout->addWidget(statut);
 
-    // Boutons Valider/Rejeter (seulement si pas déjà validé)
     if (!estValide) {
         QHBoxLayout *btnLayout = new QHBoxLayout();
         btnLayout->setSpacing(10);
@@ -445,11 +498,6 @@ void pack::creerCartePack(const QString &nomPack,
             "   border-radius: 3px;"
             "}"
             "QPushButton:hover { background-color: #218838; }");
-        connect(btnValider, &QPushButton::clicked, [this, idPlusVendu, idMoinsVendu, carte, statut, packJson]() {
-            validerPack(idPlusVendu, idMoinsVendu, carte, packJson);
-            statut->setText("✅ Statut: Validé");
-            statut->setStyleSheet("color: #28a745;");
-        });
 
         QPushButton *btnRejeter = new QPushButton("❌ Rejeter");
         btnRejeter->setStyleSheet(
@@ -460,31 +508,89 @@ void pack::creerCartePack(const QString &nomPack,
             "   border-radius: 3px;"
             "}"
             "QPushButton:hover { background-color: #c82333; }");
-        connect(btnRejeter, &QPushButton::clicked, [this, carte]() {
+
+        QPushButton *btnModifier = new QPushButton("🔄 Modifier");
+
+        btnModifier->setStyleSheet(
+            "QPushButton {"
+            "   background-color: #17a2b8;"
+            "   color: white;"
+            "   padding: 5px 10px;"
+            "   border-radius: 3px;"
+            "}"
+            "QPushButton:hover { background-color: #138496; }");
+
+        // Connexions
+        connect(btnValider, &QPushButton::clicked, [this, idPlusVendu, idMoinsVendu, carte, statut, packData, spinBoxRemise]() {
+            if (spinBoxRemise->value() != packData->jsonData["pourcentageRemise"].toInt() && !packData->modificationsValidees) {
+                QMessageBox::warning(this, "Attention", "Cliquez sur 'Modifier' avant de valider !");
+                return;
+            }
+            validerPack(idPlusVendu, idMoinsVendu, carte, packData->jsonData);
+            statut->setText("✅ Statut: Validé");
+            statut->setStyleSheet("color: #28a745;");
+            delete packData;
+        });
+
+        connect(btnModifier, &QPushButton::clicked, [this, packData, spinBoxRemise, labelPrixPack, prixPlusVendu, prixMoinsVendu, statut]() {
+            packData->jsonData["pourcentageRemise"] = spinBoxRemise->value();
+            packData->jsonData["prixPack"] = (prixPlusVendu + prixMoinsVendu) * (1 - spinBoxRemise->value()/100.0);
+            packData->modificationsValidees = true;
+
+            labelPrixPack->setText(
+                QString("<span style='color:#000080; font-family:\"Georgio\",\"Times New Roman\",serif; font-style:italic; '>"
+                        "🔥 Prix total du pack : </span>"
+                        "<span style='color:black;'>%1 TND</span>"
+                        " - "
+                        "(<span style='color:#d00d27;'>%2%</span> de remise)</span>")
+
+                    .arg(QString::number(packData->jsonData["prixPack"].toDouble(), 'f', 2))
+                    .arg(spinBoxRemise->value())
+                );
+statut->setText("🔄 Statut: Modifications enregistrées");
+            QMessageBox::information(this, "Succès", "Modifications sauvegardées !");
+        });
+
+        connect(btnRejeter, &QPushButton::clicked, [this, carte, packData]() {
             rejeterPack(carte);
+            delete packData;
+        });
+
+        connect(spinBoxRemise, QOverload<int>::of(&QSpinBox::valueChanged), [labelPrixPack, prixPlusVendu, prixMoinsVendu](int value) {
+            double nouveauPrix = (prixPlusVendu + prixMoinsVendu) * (1 - value/100.0);
+            labelPrixPack->setText(
+                QString("<span style='color:#000080; font-family:\"Georgio\",\"Times New Roman\",serif; font-style:italic;'>"
+                        "🔥 Prix total du pack : </span>"
+                        "<span style='color:black;'>%1 TND</span>"
+                        " - "
+                        "(<span style='color:#d00d27;'>%2%</span> de remise)</span>")
+                    .arg(QString::number(nouveauPrix, 'f', 2))
+                    .arg(value)
+                );
         });
 
         btnLayout->addWidget(btnValider);
         btnLayout->addWidget(btnRejeter);
+        btnLayout->addWidget(btnModifier);
         layout->addLayout(btnLayout);
     }
 
-    // Animation
+    // Ajouter la carte en bas de la liste existante
     m_scrollLayout->addWidget(carte);
-    carte->show();
-    qApp->processEvents();
 
+    // Animation pour les nouveaux packs non validés
     if (!estValide) {
-        QPropertyAnimation *anim = new QPropertyAnimation(carte, "geometry");
-        anim->setDuration(350);
-        anim->setEasingCurve(QEasingCurve::OutBack);
-        QRect startPos = carte->geometry();
-        startPos.moveTop(-carte->height());
-        anim->setStartValue(startPos);
-        anim->setEndValue(carte->geometry());
+        QGraphicsOpacityEffect *effect = new QGraphicsOpacityEffect(carte);
+        carte->setGraphicsEffect(effect);
+
+        QPropertyAnimation *anim = new QPropertyAnimation(effect, "opacity");
+        anim->setDuration(300);
+        anim->setStartValue(0);
+        anim->setEndValue(1);
         anim->start(QAbstractAnimation::DeleteWhenStopped);
 
-        QTimer::singleShot(400, [this]() {
+        // Défilement vers le bas
+        QTimer::singleShot(300, [this]() {
             m_scrollArea->verticalScrollBar()->setValue(m_scrollArea->verticalScrollBar()->maximum());
         });
     }
@@ -492,58 +598,76 @@ void pack::creerCartePack(const QString &nomPack,
 
 void pack::validerPack(int idPlusVendu, int idMoinsVendu, QGroupBox* carte, const QJsonObject &packData)
 {
-    // 1. Mise à jour de la base de données
     QSqlQuery query;
     query.prepare("UPDATE PRODUITS SET EST_PACK = 'oui' WHERE IDPRODUIT = :id");
 
-    // Produit le plus vendu
     query.bindValue(":id", idPlusVendu);
     if (!query.exec()) {
         QMessageBox::critical(this, "Erreur", "Erreur DB (plus vendu): " + query.lastError().text());
         return;
     }
 
-    // Produit le moins vendu
     query.bindValue(":id", idMoinsVendu);
     if (!query.exec()) {
         QMessageBox::critical(this, "Erreur", "Erreur DB (moins vendu): " + query.lastError().text());
         return;
     }
 
-    // 2. Préparation des données JSON
     QJsonObject packJson = packData;
     packJson["statut"] = "validé";
     packJson["dateCreation"] = QDate::currentDate().toString("dd/MM/yyyy");
 
-    // 3. Sauvegarde dans le fichier JSON
     sauvegarderPackValide(packJson);
 
-    // 4. Suppression de l'ancienne carte
     m_scrollLayout->removeWidget(carte);
     carte->deleteLater();
 
-    // 5. Recréation de la carte avec le nouveau statut
     afficherPackDepuisJson(packJson);
 
-    // 6. Message de confirmation
     QMessageBox::information(this, "Succès", "Pack validé et sauvegardé !");
 }
 
 void pack::rejeterPack(QGroupBox* carte)
 {
     if (carte) {
-        // Animation de disparition
         QPropertyAnimation *anim = new QPropertyAnimation(carte, "geometry");
         anim->setDuration(300);
         anim->setEasingCurve(QEasingCurve::InBack);
         anim->setEndValue(QRect(carte->x(), -carte->height(), carte->width(), carte->height()));
         anim->start(QAbstractAnimation::DeleteWhenStopped);
 
-        // Suppression après l'animation
         connect(anim, &QPropertyAnimation::finished, [this, carte]() {
             m_scrollLayout->removeWidget(carte);
             carte->deleteLater();
             QMessageBox::information(this, "Info", "Pack rejeté et non sauvegardé.");
         });
     }
+}
+
+void pack::on_pushButton_acceuil_2_clicked()
+{
+    MainWindow *mainWindow = new MainWindow();
+    configureTransition(mainWindow, "Accueil Principal");
+    this->close();
+}
+
+void pack::on_pushButton_statistique_clicked()
+{
+    Dialog *statsDialog = new Dialog();
+    configureTransition(statsDialog, "Statistiques");
+    this->close();
+}
+
+void pack::configureTransition(QWidget *window, const QString &title)
+{
+    window->setWindowTitle(title);
+    window->setAttribute(Qt::WA_DeleteOnClose);
+
+    QPropertyAnimation *animation = new QPropertyAnimation(window, "windowOpacity");
+    animation->setDuration(250);
+    animation->setStartValue(0);
+    animation->setEndValue(1);
+    animation->start(QPropertyAnimation::DeleteWhenStopped);
+
+    window->show();
 }

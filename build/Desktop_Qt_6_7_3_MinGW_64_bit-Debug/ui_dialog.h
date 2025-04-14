@@ -391,7 +391,7 @@ public:
         label_19->setText(QString());
         ACCEUIL->setText(QCoreApplication::translate("Dialog", "ACCEUIL", nullptr));
         label_25->setText(QString());
-        pushButton_fonctionalite_4->setText(QCoreApplication::translate("Dialog", "FONCTIONALITES", nullptr));
+        pushButton_fonctionalite_4->setText(QCoreApplication::translate("Dialog", "STATISTIQUES", nullptr));
         pushButton_5->setText(QCoreApplication::translate("Dialog", "EMPLOYES", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Dialog", "CLIENTS", nullptr));
         pushButton_3->setText(QCoreApplication::translate("Dialog", "PRODUITS", nullptr));
@@ -407,7 +407,7 @@ public:
         label_16->setText(QString());
         label_10->setText(QString());
         label_43->setText(QCoreApplication::translate("Dialog", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:700; color:#ffffff;\">Admin</span></p></body></html>", nullptr));
-        pushButton_pack_2->setText(QCoreApplication::translate("Dialog", "PACK DU MOIS ", nullptr));
+        pushButton_pack_2->setText(QCoreApplication::translate("Dialog", "OFFRES PACK", nullptr));
         label_4->setText(QString());
     } // retranslateUi
 

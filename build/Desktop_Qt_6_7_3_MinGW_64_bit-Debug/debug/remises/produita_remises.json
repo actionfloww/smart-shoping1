@@ -1,0 +1,32 @@
+[
+    {
+        "categorie": "Mode & Accessoires",
+        "etat": "Critique",
+        "jours_restants": 6,
+        "nature_remise": "Saisonnière",
+        "nom": "Veste cuir",
+        "pourcentage": 50,
+        "prix_original": 156,
+        "prix_remise": 78
+    },
+    {
+        "categorie": "Alimentation",
+        "etat": "Faible",
+        "jours_restants": 29,
+        "nature_remise": "Expiration",
+        "nom": "jus",
+        "pourcentage": 25,
+        "prix_original": 17,
+        "prix_remise": 12.75
+    },
+    {
+        "categorie": "Mode & Accessoires",
+        "etat": "Faible",
+        "jours_restants": 15,
+        "nature_remise": "Saisonnière",
+        "nom": "robe",
+        "pourcentage": 25,
+        "prix_original": 155,
+        "prix_remise": 116.25
+    }
+]

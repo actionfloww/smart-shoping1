@@ -7,6 +7,10 @@
 #include <QTableWidget>
 #include <QMessageBox>
 #include <QTableView>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QFile>
 
 class Produit : public QWidget
 {
@@ -23,6 +27,7 @@ public:
                         const QString &est_pack);
 
     void afficherProduits(QTableView *tableView);
+    void afficherProduitsEnRemise(QTableView *tableView); // Nouvelle méthode pour afficher les remises
 
     bool modifierProduit(int id, const QString &nom, const QString &categorie, double prix,
                          const QString &description, const QString &gamme,
@@ -30,21 +35,33 @@ public:
                          const QString &est_pack);
 
     bool supprimerProduit(int id);
+    static double calculerPrixDynamique(double basePrix, const QString& categorie,
+                                        const QDate& date_limite, const QDate& saison_fin, QString* natureRemise = nullptr,
+                                        double* pourcentage = nullptr,
+                                        int* joursRestants = nullptr,
+                                        QString* etat = nullptr);
 
     void trierParCategorie(QTableView *tableView);
     void trierParPrixDescendant(QTableView *tableView);
     void trierParPack(QTableView *tableView);
-
     void rechercherProduits(const QString &motCle, QTableView *tableView);
-
-    // Nouvelle méthode pour la gestion dynamique des prix
     void mettreAJourPrixDynamiques(QTableView *tableView);
+    static double calculerMoyenneVentesCategorie(const QString &categorie);
 
 private:
-    double calculerPrixDynamique(double prixOriginal, const QString &categorie,
-                                 const QDate &dateLimite, const QDate &saisonFin);
+    void sauvegarderRemiseJSON(const QString &nom, const QString &categorie,
+                               double prixOriginal, double prixRemise,
+                               const QString &natureRemise,
+                               double pourcentage,
+                               int joursRestants,
+                               const QString &etat);
+    QString m_derniereNatureRemise;
+    double m_dernierPourcentage;
+    int m_derniersJoursRestants;
+    QString m_dernierEtat;    // Nouvelle méthode privée
     QSqlQuery query;
     QSqlDatabase db;
+    const QString remisesJsonPath = "produits_remise.json"; // Chemin du fichier JSON
 };
 
 #endif // PRODUIT_H

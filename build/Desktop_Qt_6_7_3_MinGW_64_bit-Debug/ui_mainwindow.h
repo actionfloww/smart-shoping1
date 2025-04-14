@@ -68,6 +68,7 @@ public:
     QRadioButton *radioOui;
     QRadioButton *radioNon;
     QLabel *label_21;
+    QLabel *label_38;
     QGroupBox *groupBox;
     QLabel *label_11;
     QTableView *tableView_2;
@@ -79,6 +80,10 @@ public:
     QComboBox *comboBox_tri;
     QLabel *label_17;
     QLabel *label_31;
+    QLabel *label_33;
+    QLabel *label_37;
+    QLabel *label_41;
+    QLabel *label_40;
     QLabel *label_8;
     QLabel *label_12;
     QLabel *label_13;
@@ -90,15 +95,14 @@ public:
     QLabel *label;
     QLabel *label_19;
     QLabel *label_25;
-    QPushButton *pushButton_rechercher;
-    QPushButton *pushButton_renitialiser;
-    QLabel *label_35;
     QLabel *label_36;
-    QLabel *label_39;
-    QLabel *label_32;
     QPushButton *pushButton_pack;
     QLabel *label_18;
-    QLabel *notification;
+    QGroupBox *groupBox_3;
+    QLabel *label_32;
+    QTableView *tableViewRemise;
+    QLabel *label_35;
+    QLabel *label_39;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -171,7 +175,7 @@ public:
         pushButton_7->setFlat(false);
         LineEdit_rechercher = new QLineEdit(centralwidget);
         LineEdit_rechercher->setObjectName("LineEdit_rechercher");
-        LineEdit_rechercher->setGeometry(QRect(160, 70, 191, 41));
+        LineEdit_rechercher->setGeometry(QRect(170, 60, 281, 41));
         LineEdit_rechercher->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    font-size: 14px;\n"
 "    padding: 5px 10px;\n"
@@ -277,7 +281,7 @@ public:
         pushButton_5->setFlat(false);
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(160, 140, 391, 591));
+        groupBox_2->setGeometry(QRect(160, 120, 391, 581));
         groupBox_2->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
 "	\n"
 "    border: 2px solid  #0a0a55; /* Couleur turquoise pour la bordure */\n"
@@ -287,7 +291,7 @@ public:
 "}"));
         label_20 = new QLabel(groupBox_2);
         label_20->setObjectName("label_20");
-        label_20->setGeometry(QRect(80, 10, 221, 31));
+        label_20->setGeometry(QRect(80, 10, 221, 41));
         QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(5);
         sizePolicy.setVerticalStretch(0);
@@ -302,7 +306,7 @@ public:
         label_20->setStyleSheet(QString::fromUtf8(" font-family: \"Georgia\", \"Times New Roman\", serif;"));
         label_22 = new QLabel(groupBox_2);
         label_22->setObjectName("label_22");
-        label_22->setGeometry(QRect(20, 330, 111, 21));
+        label_22->setGeometry(QRect(20, 370, 111, 21));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Georgia")});
         font1.setBold(true);
@@ -310,12 +314,12 @@ public:
         label_22->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         label_23 = new QLabel(groupBox_2);
         label_23->setObjectName("label_23");
-        label_23->setGeometry(QRect(20, 270, 111, 31));
+        label_23->setGeometry(QRect(20, 310, 111, 31));
         label_23->setFont(font1);
         label_23->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         lineEdit_prix_2 = new QLineEdit(groupBox_2);
         lineEdit_prix_2->setObjectName("lineEdit_prix_2");
-        lineEdit_prix_2->setGeometry(QRect(130, 270, 113, 26));
+        lineEdit_prix_2->setGeometry(QRect(140, 310, 113, 31));
         lineEdit_prix_2->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #f0f0f0; /* Couleur de fond */\n"
 "    border: 2px solid #ccc; /* Bordure */\n"
@@ -331,17 +335,17 @@ public:
 "}"));
         label_24 = new QLabel(groupBox_2);
         label_24->setObjectName("label_24");
-        label_24->setGeometry(QRect(20, 80, 111, 31));
+        label_24->setGeometry(QRect(20, 90, 111, 31));
         label_24->setFont(font1);
         label_24->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         label_26 = new QLabel(groupBox_2);
         label_26->setObjectName("label_26");
-        label_26->setGeometry(QRect(20, 420, 81, 21));
+        label_26->setGeometry(QRect(20, 460, 81, 21));
         label_26->setFont(font1);
         label_26->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         lineEdit_nom = new QLineEdit(groupBox_2);
         lineEdit_nom->setObjectName("lineEdit_nom");
-        lineEdit_nom->setGeometry(QRect(130, 80, 113, 31));
+        lineEdit_nom->setGeometry(QRect(130, 80, 113, 41));
         lineEdit_nom->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #f0f0f0; /* Couleur de fond */\n"
 "    border: 2px solid #ccc; /* Bordure */\n"
@@ -358,7 +362,7 @@ public:
         lineEdit_nom->setInputMask(QString::fromUtf8(""));
         lineEdit_gamme_2 = new QLineEdit(groupBox_2);
         lineEdit_gamme_2->setObjectName("lineEdit_gamme_2");
-        lineEdit_gamme_2->setGeometry(QRect(130, 150, 131, 41));
+        lineEdit_gamme_2->setGeometry(QRect(140, 180, 131, 41));
         lineEdit_gamme_2->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #f0f0f0; /* Couleur de fond */\n"
 "    border: 2px solid #ccc; /* Bordure */\n"
@@ -374,33 +378,33 @@ public:
 "}"));
         dateEdit_saison_fin = new QDateEdit(groupBox_2);
         dateEdit_saison_fin->setObjectName("dateEdit_saison_fin");
-        dateEdit_saison_fin->setGeometry(QRect(140, 320, 110, 26));
+        dateEdit_saison_fin->setGeometry(QRect(140, 410, 110, 26));
         QFont font2;
         font2.setPointSize(8);
         dateEdit_saison_fin->setFont(font2);
         label_27 = new QLabel(groupBox_2);
         label_27->setObjectName("label_27");
-        label_27->setGeometry(QRect(20, 120, 111, 31));
+        label_27->setGeometry(QRect(20, 140, 111, 31));
         label_27->setFont(font1);
         label_27->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         label_28 = new QLabel(groupBox_2);
         label_28->setObjectName("label_28");
-        label_28->setGeometry(QRect(20, 160, 111, 31));
+        label_28->setGeometry(QRect(20, 190, 111, 31));
         label_28->setFont(font1);
         label_28->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         label_29 = new QLabel(groupBox_2);
         label_29->setObjectName("label_29");
-        label_29->setGeometry(QRect(20, 200, 111, 31));
+        label_29->setGeometry(QRect(20, 240, 111, 31));
         label_29->setFont(font1);
         label_29->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         label_30 = new QLabel(groupBox_2);
         label_30->setObjectName("label_30");
-        label_30->setGeometry(QRect(20, 370, 111, 21));
+        label_30->setGeometry(QRect(20, 410, 111, 21));
         label_30->setFont(font1);
         label_30->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         lineEdit_description = new QLineEdit(groupBox_2);
         lineEdit_description->setObjectName("lineEdit_description");
-        lineEdit_description->setGeometry(QRect(130, 200, 171, 61));
+        lineEdit_description->setGeometry(QRect(140, 230, 171, 61));
         lineEdit_description->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #f0f0f0; /* Couleur de fond */\n"
 "    border: 2px solid #ccc; /* Bordure */\n"
@@ -417,7 +421,7 @@ public:
 ""));
         pushButton_Ajouter = new QPushButton(groupBox_2);
         pushButton_Ajouter->setObjectName("pushButton_Ajouter");
-        pushButton_Ajouter->setGeometry(QRect(260, 500, 101, 31));
+        pushButton_Ajouter->setGeometry(QRect(270, 500, 101, 31));
         pushButton_Ajouter->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border: 2px solid #0a0a55;   /* Grey border */\n"
 "    border-radius: 10px;         /* Round the corners */\n"
@@ -436,7 +440,7 @@ public:
         dateEdit_date_limite->setGeometry(QRect(140, 370, 110, 22));
         comboBox_categorie = new QComboBox(groupBox_2);
         comboBox_categorie->setObjectName("comboBox_categorie");
-        comboBox_categorie->setGeometry(QRect(130, 120, 184, 21));
+        comboBox_categorie->setGeometry(QRect(140, 140, 184, 31));
         comboBox_categorie->setStyleSheet(QString::fromUtf8("QComboBox::down-arrow {\n"
 "    image: url(:/icons/down_arrow.svg); /* Optionnel - pour une fl\303\250che personnalis\303\251e */\n"
 "    width: 12px;\n"
@@ -452,18 +456,23 @@ public:
 ""));
         radioOui = new QRadioButton(groupBox_2);
         radioOui->setObjectName("radioOui");
-        radioOui->setGeometry(QRect(140, 420, 89, 20));
+        radioOui->setGeometry(QRect(130, 460, 89, 20));
         radioOui->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         radioNon = new QRadioButton(groupBox_2);
         radioNon->setObjectName("radioNon");
-        radioNon->setGeometry(QRect(210, 420, 89, 21));
+        radioNon->setGeometry(QRect(210, 460, 89, 21));
         radioNon->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         label_21 = new QLabel(groupBox_2);
         label_21->setObjectName("label_21");
-        label_21->setGeometry(QRect(300, 120, 49, 21));
+        label_21->setGeometry(QRect(310, 140, 49, 21));
+        label_38 = new QLabel(groupBox_2);
+        label_38->setObjectName("label_38");
+        label_38->setGeometry(QRect(20, 10, 49, 41));
+        label_38->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-11_at_21.59.58-removebg-preview.png")));
+        label_38->setScaledContents(true);
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(560, 280, 781, 451));
+        groupBox->setGeometry(QRect(560, 60, 781, 451));
         groupBox->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
 "    border: 2px solid #0a0a55; /* Couleur turquoise pour la bordure */\n"
 "    border-radius: 10px;  /* Coins arrondis */\n"
@@ -473,12 +482,12 @@ public:
 "}"));
         label_11 = new QLabel(groupBox);
         label_11->setObjectName("label_11");
-        label_11->setGeometry(QRect(330, 20, 181, 20));
+        label_11->setGeometry(QRect(300, 20, 281, 20));
         label_11->setFont(font);
         label_11->setStyleSheet(QString::fromUtf8(" font-family: \"Georgia\", \"Times New Roman\", serif;"));
         tableView_2 = new QTableView(groupBox);
         tableView_2->setObjectName("tableView_2");
-        tableView_2->setGeometry(QRect(50, 50, 691, 331));
+        tableView_2->setGeometry(QRect(20, 50, 741, 331));
         tableView_2->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "    border-radius: 15px;  /* Coins arrondis */\n"
 "    background-color: #f4f4f4;  /* Couleur de fond */\n"
@@ -492,7 +501,7 @@ public:
 ""));
         pushButton_Supprimer = new QPushButton(groupBox);
         pushButton_Supprimer->setObjectName("pushButton_Supprimer");
-        pushButton_Supprimer->setGeometry(QRect(620, 390, 111, 29));
+        pushButton_Supprimer->setGeometry(QRect(630, 390, 111, 29));
         pushButton_Supprimer->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border: 2px solid #0a0a55;   /* Grey border */\n"
 "    border-radius: 10px;         /* Round the corners */\n"
@@ -509,7 +518,7 @@ public:
 ""));
         pushButton_Modifier = new QPushButton(groupBox);
         pushButton_Modifier->setObjectName("pushButton_Modifier");
-        pushButton_Modifier->setGeometry(QRect(340, 390, 121, 31));
+        pushButton_Modifier->setGeometry(QRect(350, 390, 121, 31));
         pushButton_Modifier->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border: 2px solid #0a0a55;   /* Grey border */\n"
 "    border-radius: 10px;         /* Round the corners */\n"
@@ -525,7 +534,7 @@ public:
 ""));
         pushButton_exporter = new QPushButton(groupBox);
         pushButton_exporter->setObjectName("pushButton_exporter");
-        pushButton_exporter->setGeometry(QRect(80, 390, 111, 31));
+        pushButton_exporter->setGeometry(QRect(90, 390, 111, 31));
         pushButton_exporter->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border: 2px solid #0a0a55;   /* Grey border */\n"
 "    border-radius: 10px;         /* Round the corners */\n"
@@ -550,7 +559,7 @@ public:
         label_34->setScaledContents(true);
         comboBox_tri = new QComboBox(groupBox);
         comboBox_tri->setObjectName("comboBox_tri");
-        comboBox_tri->setGeometry(QRect(110, 10, 151, 22));
+        comboBox_tri->setGeometry(QRect(110, 10, 151, 31));
         comboBox_tri->setStyleSheet(QString::fromUtf8("QComboBox::down-arrow {\n"
 "    image: url(:/icons/down_arrow.svg); /* Optionnel - pour une fl\303\250che personnalis\303\251e */\n"
 "    width: 12px;\n"
@@ -565,11 +574,31 @@ public:
 "}"));
         label_17 = new QLabel(groupBox);
         label_17->setObjectName("label_17");
-        label_17->setGeometry(QRect(20, 10, 91, 21));
+        label_17->setGeometry(QRect(20, 10, 91, 31));
         label_17->setStyleSheet(QString::fromUtf8(" font-family: \"Georgia\", \"Times New Roman\", serif;"));
         label_31 = new QLabel(groupBox);
         label_31->setObjectName("label_31");
-        label_31->setGeometry(QRect(250, 10, 51, 21));
+        label_31->setGeometry(QRect(250, 11, 51, 31));
+        label_33 = new QLabel(groupBox);
+        label_33->setObjectName("label_33");
+        label_33->setGeometry(QRect(60, 390, 21, 21));
+        label_33->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-11_at_21.28.47-removebg-preview.png")));
+        label_33->setScaledContents(true);
+        label_37 = new QLabel(groupBox);
+        label_37->setObjectName("label_37");
+        label_37->setGeometry(QRect(320, 390, 21, 21));
+        label_37->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-11_at_21.36.49-removebg-preview.png")));
+        label_37->setScaledContents(true);
+        label_41 = new QLabel(groupBox);
+        label_41->setObjectName("label_41");
+        label_41->setGeometry(QRect(600, 390, 21, 21));
+        label_41->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-11_at_22.10.38-removebg-preview.png")));
+        label_41->setScaledContents(true);
+        label_40 = new QLabel(groupBox);
+        label_40->setObjectName("label_40");
+        label_40->setGeometry(QRect(570, 20, 21, 21));
+        label_40->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-13_at_19.45.15-removebg-preview (1).png")));
+        label_40->setScaledContents(true);
         label_8 = new QLabel(centralwidget);
         label_8->setObjectName("label_8");
         label_8->setGeometry(QRect(10, 160, 41, 41));
@@ -629,56 +658,11 @@ public:
         label_25->setGeometry(QRect(360, -20, 91, 81));
         label_25->setPixmap(QPixmap(QString::fromUtf8(":/images/Ressources/d9d2a47f-034e-4b44-bafe-3ffb7a4f9ccf-removebg-preview.png")));
         label_25->setScaledContents(true);
-        pushButton_rechercher = new QPushButton(centralwidget);
-        pushButton_rechercher->setObjectName("pushButton_rechercher");
-        pushButton_rechercher->setGeometry(QRect(400, 60, 111, 31));
-        pushButton_rechercher->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: 2px solid #0a0a55;   /* Grey border */\n"
-"    border-radius: 10px;         /* Round the corners */\n"
-"    padding: 0 8px;              /* Padding inside the button */\n"
-"    background: #c6c6c6;         /* Grey background */\n"
-"    color: #0a0a55;                /* White text color */\n"
-"font-family: \"Georgia\", \"Times New Roman\", serif;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;   /* Darker grey on hover */\n"
-"}"));
-        pushButton_renitialiser = new QPushButton(centralwidget);
-        pushButton_renitialiser->setObjectName("pushButton_renitialiser");
-        pushButton_renitialiser->setGeometry(QRect(400, 100, 111, 31));
-        pushButton_renitialiser->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: 2px solid #0a0a55;   /* Grey border */\n"
-"    border-radius: 10px;         /* Round the corners */\n"
-"    padding: 0 8px;              /* Padding inside the button */\n"
-"    background: #c6c6c6;         /* Grey background */\n"
-"    color: #0a0a55;                /* White text color */\n"
-"font-family: \"Georgia\", \"Times New Roman\", serif;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;   /* Darker grey on hover */\n"
-"}"));
-        label_35 = new QLabel(centralwidget);
-        label_35->setObjectName("label_35");
-        label_35->setGeometry(QRect(830, 70, 49, 61));
-        label_35->setPixmap(QPixmap(QString::fromUtf8(":/Downloads/Capture_d_\303\251cran_2025-03-30_120840-removebg-preview.png")));
-        label_35->setScaledContents(true);
         label_36 = new QLabel(centralwidget);
         label_36->setObjectName("label_36");
         label_36->setGeometry(QRect(640, 30, 49, 16));
         label_36->setPixmap(QPixmap(QString::fromUtf8("../../Bureau/Capture_d_\303\251cran_2025-03-30_120840-removebg-preview.png")));
         label_36->setScaledContents(true);
-        label_39 = new QLabel(centralwidget);
-        label_39->setObjectName("label_39");
-        label_39->setGeometry(QRect(360, 60, 41, 41));
-        label_39->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-02_at_10.25.19__1_-removebg-preview.png")));
-        label_39->setScaledContents(true);
-        label_32 = new QLabel(centralwidget);
-        label_32->setObjectName("label_32");
-        label_32->setGeometry(QRect(360, 100, 31, 31));
-        label_32->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-02_at_10.25.19__2_-removebg-preview.png")));
-        label_32->setScaledContents(true);
         pushButton_pack = new QPushButton(centralwidget);
         pushButton_pack->setObjectName("pushButton_pack");
         pushButton_pack->setGeometry(QRect(610, 10, 131, 31));
@@ -699,11 +683,45 @@ public:
         label_18->setGeometry(QRect(560, -10, 61, 61));
         label_18->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-04_at_19.44.19-removebg-preview.png")));
         label_18->setScaledContents(true);
-        notification = new QLabel(centralwidget);
-        notification->setObjectName("notification");
-        notification->setGeometry(QRect(558, 60, 781, 211));
-        notification->setPixmap(QPixmap(QString::fromUtf8(":/images/Ressources/a3bf4b75-0b5f-43a0-8f10-0fe17c8627c5.jfif")));
-        notification->setScaledContents(true);
+        groupBox_3 = new QGroupBox(centralwidget);
+        groupBox_3->setObjectName("groupBox_3");
+        groupBox_3->setGeometry(QRect(560, 499, 781, 201));
+        groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
+"	\n"
+"    border: 2px solid #8B0000; /* Couleur turquoise pour la bordure */\n"
+"    border-radius: 10px;  /* Coins arrondis */\n"
+"    padding: 10px;  /* Espacement interne */\n"
+"    margin-bottom: 20px;  /* Espacement en bas */\n"
+"}"));
+        label_32 = new QLabel(groupBox_3);
+        label_32->setObjectName("label_32");
+        label_32->setGeometry(QRect(240, 0, 411, 31));
+        label_32->setFont(font);
+        label_32->setStyleSheet(QString::fromUtf8(" font-family: \"Georgia\", \"Times New Roman\", serif;"));
+        tableViewRemise = new QTableView(groupBox_3);
+        tableViewRemise->setObjectName("tableViewRemise");
+        tableViewRemise->setGeometry(QRect(15, 30, 751, 141));
+        tableViewRemise->setStyleSheet(QString::fromUtf8("QWidget {\n"
+"    border-radius: 15px;  /* Coins arrondis */\n"
+"    background-color: #f4f4f4;  /* Couleur de fond */\n"
+"    transition: all 0.3s ease;  /* Animation douce pour les changements */\n"
+"}\n"
+"\n"
+"QWidget:hover {\n"
+"    background-color: #e0e0e0;  /* Changement de fond lors du survol */\n"
+"    cursor: pointer;  /* Changement du curseur */\n"
+"}\n"
+""));
+        label_35 = new QLabel(groupBox_3);
+        label_35->setObjectName("label_35");
+        label_35->setGeometry(QRect(188, 6, 41, 16));
+        label_35->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-11_at_21.54.30-removebg-preview.png")));
+        label_35->setScaledContents(true);
+        label_39 = new QLabel(centralwidget);
+        label_39->setObjectName("label_39");
+        label_39->setGeometry(QRect(418, 70, 21, 20));
+        label_39->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-11_at_22.14.42-removebg-preview.png")));
+        label_39->setScaledContents(true);
         MainWindow->setCentralWidget(centralwidget);
         label_2->raise();
         label_6->raise();
@@ -734,15 +752,11 @@ public:
         label->raise();
         label_19->raise();
         label_25->raise();
-        pushButton_rechercher->raise();
-        pushButton_renitialiser->raise();
-        label_35->raise();
         label_36->raise();
-        label_39->raise();
-        label_32->raise();
         pushButton_pack->raise();
         label_18->raise();
-        notification->raise();
+        groupBox_3->raise();
+        label_39->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1764, 22));
@@ -791,7 +805,7 @@ public:
         groupBox_2->setTitle(QString());
         label_20->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; color:#0a0a55;\">Ajout d'un produit</span></p></body></html>", nullptr));
         label_22->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; font-style:italic; color:#0a0a55;\">Date limite :</span></p></body></html>", nullptr));
-        label_23->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; font-style:italic; color:#0a0a55;\">Prix :</span></p></body></html>", nullptr));
+        label_23->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; font-style:italic; color:#0a0a55;\">Prix (TND) :</span></p></body></html>", nullptr));
         lineEdit_prix_2->setPlaceholderText(QCoreApplication::translate("MainWindow", "0.00 TND", nullptr));
         label_24->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; font-style:italic; color:#0a0a55;\">Nom :</span></p></body></html>", nullptr));
         label_26->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; font-style:italic; color:#0a0a55;\">Est pack :</span></p></body></html>", nullptr));
@@ -807,15 +821,20 @@ public:
         radioOui->setText(QCoreApplication::translate("MainWindow", "Oui", nullptr));
         radioNon->setText(QCoreApplication::translate("MainWindow", "Non", nullptr));
         label_21->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#0a0a55;\">\342\226\274</span></p></body></html>", nullptr));
+        label_38->setText(QString());
         groupBox->setTitle(QString());
-        label_11->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#0a0a55;\">Liste des produits</span></p></body></html>", nullptr));
+        label_11->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#0a0a55;\">Liste des tous les produits</span></p></body></html>", nullptr));
         pushButton_Supprimer->setText(QCoreApplication::translate("MainWindow", "SUPPRIMER", nullptr));
         pushButton_Modifier->setText(QCoreApplication::translate("MainWindow", "MODIFIER", nullptr));
         pushButton_exporter->setText(QCoreApplication::translate("MainWindow", "EXPORTER", nullptr));
         label_4->setText(QString());
         label_34->setText(QString());
         label_17->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; font-weight:700; font-style:italic; color:#0a0a55;\">Trier par :</span></p></body></html>", nullptr));
-        label_31->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:8pt; color:#0a0a55;\">\342\226\274</span></p></body></html>", nullptr));
+        label_31->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:7pt; color:#0a0a55;\">\342\226\274</span></p></body></html>", nullptr));
+        label_33->setText(QString());
+        label_37->setText(QString());
+        label_41->setText(QString());
+        label_40->setText(QString());
         label_8->setText(QString());
         label_12->setText(QString());
         label_13->setText(QString());
@@ -827,15 +846,13 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700; font-style:italic; color:#bdbdbd;\">Monova Mall</span></p><p><span style=\" font-style:italic;\"><br/></span></p></body></html>", nullptr));
         label_19->setText(QString());
         label_25->setText(QString());
-        pushButton_rechercher->setText(QCoreApplication::translate("MainWindow", "RECHERCHER", nullptr));
-        pushButton_renitialiser->setText(QCoreApplication::translate("MainWindow", "RENITIALISER", nullptr));
-        label_35->setText(QString());
         label_36->setText(QString());
-        label_39->setText(QString());
-        label_32->setText(QString());
-        pushButton_pack->setText(QCoreApplication::translate("MainWindow", "PACKS  DU MOIS", nullptr));
+        pushButton_pack->setText(QCoreApplication::translate("MainWindow", "OFFRES  PACK", nullptr));
         label_18->setText(QString());
-        notification->setText(QString());
+        groupBox_3->setTitle(QString());
+        label_32->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#8b0000;\">Liste des produits en remise</span></p></body></html>", nullptr));
+        label_35->setText(QString());
+        label_39->setText(QString());
     } // retranslateUi
 
 };

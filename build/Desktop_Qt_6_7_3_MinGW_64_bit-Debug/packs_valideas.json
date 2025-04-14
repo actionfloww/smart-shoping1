@@ -1,0 +1,54 @@
+[
+    {
+        "dateCreation": "13/04/2025",
+        "idMoinsVendu": 187,
+        "idPlusVendu": 196,
+        "nomPack": "Pack innovation inspiré de la gamme samsung",
+        "pourcentageRemise": 20,
+        "prixMoinsVendu": 120,
+        "prixPack": 133.6,
+        "prixPlusVendu": 47,
+        "produitMoinsVendu": "Smartphone",
+        "produitPlusVendu": "Ecouteur",
+        "statut": "validé"
+    },
+    {
+        "dateCreation": "13/04/2025",
+        "idMoinsVendu": 189,
+        "idPlusVendu": 193,
+        "nomPack": "Pack innovation inspiré de la gamme zara",
+        "pourcentageRemise": 6,
+        "prixMoinsVendu": 78,
+        "prixPack": 182.595,
+        "prixPlusVendu": 116.25,
+        "produitMoinsVendu": "Veste cuir",
+        "produitPlusVendu": "robe",
+        "statut": "validé"
+    },
+    {
+        "dateCreation": "13/04/2025",
+        "idMoinsVendu": 197,
+        "idPlusVendu": 199,
+        "nomPack": "Pack innovation inspiré de la gamme ELLE",
+        "pourcentageRemise": 50,
+        "prixMoinsVendu": 76,
+        "prixPack": 81,
+        "prixPlusVendu": 86,
+        "produitMoinsVendu": "vase",
+        "produitPlusVendu": "biblots",
+        "statut": "validé"
+    },
+    {
+        "dateCreation": "13/04/2025",
+        "idMoinsVendu": 194,
+        "idPlusVendu": 194,
+        "nomPack": "Pack innovation inspiré de la gamme saida",
+        "pourcentageRemise": 50,
+        "prixMoinsVendu": 6500,
+        "prixPack": 6500,
+        "prixPlusVendu": 6500,
+        "produitMoinsVendu": "chocolat",
+        "produitPlusVendu": "chocolat",
+        "statut": "validé"
+    }
+]

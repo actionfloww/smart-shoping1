@@ -1,0 +1,42 @@
+[
+    {
+        "categorie": "Alimentation",
+        "id": 0,
+        "nom": "ss",
+        "prix_original": 50,
+        "prix_remise": 25
+    },
+    {
+        "categorie": "Alimentation",
+        "id": 0,
+        "nom": "ddd",
+        "prix_original": 50,
+        "prix_remise": 25
+    },
+    {
+        "categorie": "Mode & Accessoires",
+        "nom": "rtt",
+        "prix_original": 120,
+        "prix_remise": 90
+    },
+    {
+        "categorie": "Alimentation",
+        "etat": "Critique",
+        "jours_restants": 4,
+        "nature_remise": "Expiration",
+        "nom": "ff",
+        "pourcentage": 50,
+        "prix_original": 70,
+        "prix_remise": 35
+    },
+    {
+        "categorie": "Alimentation",
+        "etat": "Critique",
+        "jours_restants": 4,
+        "nature_remise": "Expiration",
+        "nom": "hh",
+        "pourcentage": 50,
+        "prix_original": 70,
+        "prix_remise": 35
+    }
+]

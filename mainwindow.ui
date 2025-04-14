@@ -172,9 +172,9 @@ QPushButton {
    <widget class="QLineEdit" name="LineEdit_rechercher">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>70</y>
-      <width>191</width>
+      <x>170</x>
+      <y>60</y>
+      <width>281</width>
       <height>41</height>
      </rect>
     </property>
@@ -452,9 +452,9 @@ QPushButton {
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>140</y>
+      <y>120</y>
       <width>391</width>
-      <height>591</height>
+      <height>581</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -475,7 +475,7 @@ QPushButton {
        <x>80</x>
        <y>10</y>
        <width>221</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -508,7 +508,7 @@ QPushButton {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>330</y>
+       <y>370</y>
        <width>111</width>
        <height>21</height>
       </rect>
@@ -530,7 +530,7 @@ QPushButton {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>270</y>
+       <y>310</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -545,16 +545,16 @@ QPushButton {
       <string notr="true">font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;</string>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-style:italic; color:#0a0a55;&quot;&gt;Prix :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-style:italic; color:#0a0a55;&quot;&gt;Prix (TND) :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_prix_2">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>270</y>
+       <x>140</x>
+       <y>310</y>
        <width>113</width>
-       <height>26</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -580,7 +580,7 @@ QLineEdit:focus {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>80</y>
+       <y>90</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -602,7 +602,7 @@ QLineEdit:focus {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>420</y>
+       <y>460</y>
        <width>81</width>
        <height>21</height>
       </rect>
@@ -626,7 +626,7 @@ QLineEdit:focus {
        <x>130</x>
        <y>80</y>
        <width>113</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -657,8 +657,8 @@ QLineEdit:focus {
     <widget class="QLineEdit" name="lineEdit_gamme_2">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>150</y>
+       <x>140</x>
+       <y>180</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -686,7 +686,7 @@ QLineEdit:focus {
      <property name="geometry">
       <rect>
        <x>140</x>
-       <y>320</y>
+       <y>410</y>
        <width>110</width>
        <height>26</height>
       </rect>
@@ -701,7 +701,7 @@ QLineEdit:focus {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>120</y>
+       <y>140</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -723,7 +723,7 @@ QLineEdit:focus {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>160</y>
+       <y>190</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -745,7 +745,7 @@ QLineEdit:focus {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>200</y>
+       <y>240</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -767,7 +767,7 @@ QLineEdit:focus {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>370</y>
+       <y>410</y>
        <width>111</width>
        <height>21</height>
       </rect>
@@ -788,8 +788,8 @@ QLineEdit:focus {
     <widget class="QLineEdit" name="lineEdit_description">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>200</y>
+       <x>140</x>
+       <y>230</y>
        <width>171</width>
        <height>61</height>
       </rect>
@@ -817,7 +817,7 @@ QLineEdit:focus {
     <widget class="QPushButton" name="pushButton_Ajouter">
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>270</x>
        <y>500</y>
        <width>101</width>
        <height>31</height>
@@ -855,10 +855,10 @@ QPushButton:hover {
     <widget class="QComboBox" name="comboBox_categorie">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>120</y>
+       <x>140</x>
+       <y>140</y>
        <width>184</width>
-       <height>21</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -880,8 +880,8 @@ QComboBox QAbstractItemView {
     <widget class="QRadioButton" name="radioOui">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>420</y>
+       <x>130</x>
+       <y>460</y>
        <width>89</width>
        <height>20</height>
       </rect>
@@ -897,7 +897,7 @@ QComboBox QAbstractItemView {
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>420</y>
+       <y>460</y>
        <width>89</width>
        <height>21</height>
       </rect>
@@ -912,8 +912,8 @@ QComboBox QAbstractItemView {
     <widget class="QLabel" name="label_21">
      <property name="geometry">
       <rect>
-       <x>300</x>
-       <y>120</y>
+       <x>310</x>
+       <y>140</y>
        <width>49</width>
        <height>21</height>
       </rect>
@@ -922,12 +922,31 @@ QComboBox QAbstractItemView {
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#0a0a55;&quot;&gt;▼&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_38">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>49</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/Downloads/WhatsApp_Image_2025-04-11_at_21.59.58-removebg-preview.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>280</y>
+      <y>60</y>
       <width>781</width>
       <height>451</height>
      </rect>
@@ -947,9 +966,9 @@ QComboBox QAbstractItemView {
     <widget class="QLabel" name="label_11">
      <property name="geometry">
       <rect>
-       <x>330</x>
+       <x>300</x>
        <y>20</y>
-       <width>181</width>
+       <width>281</width>
        <height>20</height>
       </rect>
      </property>
@@ -964,15 +983,15 @@ QComboBox QAbstractItemView {
       <string notr="true"> font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;</string>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#0a0a55;&quot;&gt;Liste des produits&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#0a0a55;&quot;&gt;Liste des tous les produits&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QTableView" name="tableView_2">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>20</x>
        <y>50</y>
-       <width>691</width>
+       <width>741</width>
        <height>331</height>
       </rect>
      </property>
@@ -993,7 +1012,7 @@ QWidget:hover {
     <widget class="QPushButton" name="pushButton_Supprimer">
      <property name="geometry">
       <rect>
-       <x>620</x>
+       <x>630</x>
        <y>390</y>
        <width>111</width>
        <height>29</height>
@@ -1022,7 +1041,7 @@ QPushButton:hover {
     <widget class="QPushButton" name="pushButton_Modifier">
      <property name="geometry">
       <rect>
-       <x>340</x>
+       <x>350</x>
        <y>390</y>
        <width>121</width>
        <height>31</height>
@@ -1050,7 +1069,7 @@ QPushButton:hover {
     <widget class="QPushButton" name="pushButton_exporter">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>90</x>
        <y>390</y>
        <width>111</width>
        <height>31</height>
@@ -1118,7 +1137,7 @@ QPushButton:hover {
        <x>110</x>
        <y>10</y>
        <width>151</width>
-       <height>22</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -1142,7 +1161,7 @@ QComboBox QAbstractItemView {
        <x>20</x>
        <y>10</y>
        <width>91</width>
-       <height>21</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -1156,13 +1175,89 @@ QComboBox QAbstractItemView {
      <property name="geometry">
       <rect>
        <x>250</x>
-       <y>10</y>
+       <y>11</y>
        <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; color:#0a0a55;&quot;&gt;▼&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_33">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>390</y>
+       <width>21</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#0a0a55;&quot;&gt;▼&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/Downloads/WhatsApp_Image_2025-04-11_at_21.28.47-removebg-preview.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_37">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>390</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/Downloads/WhatsApp_Image_2025-04-11_at_21.36.49-removebg-preview.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_41">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>390</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/Downloads/WhatsApp_Image_2025-04-11_at_22.10.38-removebg-preview.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_40">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>20</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/Downloads/WhatsApp_Image_2025-04-13_at_19.45.15-removebg-preview (1).png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -1373,79 +1468,6 @@ QComboBox QAbstractItemView {
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_rechercher">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>60</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    border: 2px solid #0a0a55;   /* Grey border */
-    border-radius: 10px;         /* Round the corners */
-    padding: 0 8px;              /* Padding inside the button */
-    background: #c6c6c6;         /* Grey background */
-    color: #0a0a55;                /* White text color */
-font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-
-QPushButton:hover {
-    background-color: white;   /* Darker grey on hover */
-}</string>
-    </property>
-    <property name="text">
-     <string>RECHERCHER</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_renitialiser">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>100</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    border: 2px solid #0a0a55;   /* Grey border */
-    border-radius: 10px;         /* Round the corners */
-    padding: 0 8px;              /* Padding inside the button */
-    background: #c6c6c6;         /* Grey background */
-    color: #0a0a55;                /* White text color */
-font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-
-QPushButton:hover {
-    background-color: white;   /* Darker grey on hover */
-}</string>
-    </property>
-    <property name="text">
-     <string>RENITIALISER</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_35">
-    <property name="geometry">
-     <rect>
-      <x>830</x>
-      <y>70</y>
-      <width>49</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>:/Downloads/Capture_d_écran_2025-03-30_120840-removebg-preview.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_36">
     <property name="geometry">
      <rect>
@@ -1460,44 +1482,6 @@ QPushButton:hover {
     </property>
     <property name="pixmap">
      <pixmap>../../Bureau/Capture_d_écran_2025-03-30_120840-removebg-preview.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_39">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>60</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="ressources.qrc">:/images/Downloads/WhatsApp_Image_2025-04-02_at_10.25.19__1_-removebg-preview.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_32">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>100</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="ressources.qrc">:/images/Downloads/WhatsApp_Image_2025-04-02_at_10.25.19__2_-removebg-preview.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1525,7 +1509,7 @@ QPushButton:hover {
 </string>
     </property>
     <property name="text">
-     <string>PACKS  DU MOIS</string>
+     <string>OFFRES  PACK</string>
     </property>
     <property name="autoDefault">
      <bool>false</bool>
@@ -1556,20 +1540,107 @@ QPushButton:hover {
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="notification">
+   <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>558</x>
-      <y>60</y>
+      <x>560</x>
+      <y>499</y>
       <width>781</width>
-      <height>211</height>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+	
+    border: 2px solid #8B0000; /* Couleur turquoise pour la bordure */
+    border-radius: 10px;  /* Coins arrondis */
+    padding: 10px;  /* Espacement interne */
+    margin-bottom: 20px;  /* Espacement en bas */
+}</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="label_32">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>0</y>
+       <width>411</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Georgia</family>
+       <bold>true</bold>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#8b0000;&quot;&gt;Liste des produits en remise&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tableViewRemise">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>30</y>
+       <width>751</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget {
+    border-radius: 15px;  /* Coins arrondis */
+    background-color: #f4f4f4;  /* Couleur de fond */
+    transition: all 0.3s ease;  /* Animation douce pour les changements */
+}
+
+QWidget:hover {
+    background-color: #e0e0e0;  /* Changement de fond lors du survol */
+    cursor: pointer;  /* Changement du curseur */
+}
+</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_35">
+     <property name="geometry">
+      <rect>
+       <x>188</x>
+       <y>6</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressources.qrc">:/images/Downloads/WhatsApp_Image_2025-04-11_at_21.54.30-removebg-preview.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_39">
+    <property name="geometry">
+     <rect>
+      <x>418</x>
+      <y>70</y>
+      <width>21</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="ressources.qrc">:/images/Ressources/a3bf4b75-0b5f-43a0-8f10-0fe17c8627c5.jfif</pixmap>
+     <pixmap resource="ressources.qrc">:/images/Downloads/WhatsApp_Image_2025-04-11_at_22.14.42-removebg-preview.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1604,15 +1675,11 @@ QPushButton:hover {
    <zorder>label</zorder>
    <zorder>label_19</zorder>
    <zorder>label_25</zorder>
-   <zorder>pushButton_rechercher</zorder>
-   <zorder>pushButton_renitialiser</zorder>
-   <zorder>label_35</zorder>
    <zorder>label_36</zorder>
-   <zorder>label_39</zorder>
-   <zorder>label_32</zorder>
    <zorder>pushButton_pack</zorder>
    <zorder>label_18</zorder>
-   <zorder>notification</zorder>
+   <zorder>groupBox_3</zorder>
+   <zorder>label_39</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

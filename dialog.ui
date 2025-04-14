@@ -224,7 +224,7 @@ QPushButton:hover {
 </string>
    </property>
    <property name="text">
-    <string>FONCTIONALITES</string>
+    <string>STATISTIQUES</string>
    </property>
    <property name="autoDefault">
     <bool>false</bool>
@@ -714,7 +714,7 @@ QPushButton:hover {
 </string>
    </property>
    <property name="text">
-    <string>PACK DU MOIS </string>
+    <string>OFFRES PACK</string>
    </property>
    <property name="autoDefault">
     <bool>false</bool>

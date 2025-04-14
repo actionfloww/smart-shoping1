@@ -22,6 +22,10 @@ public:
     ~Dialog();
 
 private slots:
+
+
+
+
     void on_ACCEUIL_clicked();
 
     void on_pushButton_pack_2_clicked();
@@ -42,6 +46,7 @@ private:
     void creerCourbeCA();
     void creerTop3Produits();
     QColor getCouleur(int index);
+     void configureTransition(QWidget *window, const QString &title);
 };
 
 #endif // DIALOG_H

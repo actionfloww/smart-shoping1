@@ -1,0 +1,22 @@
+[
+    {
+        "categorie": "Alimentation",
+        "etat": "Critique",
+        "jours_restants": 8,
+        "nature_remise": "Expiration",
+        "nom": "maryem",
+        "pourcentage": 50,
+        "prix_original": 200,
+        "prix_remise": 100
+    },
+    {
+        "categorie": "Mode & Accessoires",
+        "etat": "Critique",
+        "jours_restants": 8,
+        "nature_remise": "Saisonnière",
+        "nom": "hamadi",
+        "pourcentage": 50,
+        "prix_original": 120,
+        "prix_remise": 60
+    }
+]

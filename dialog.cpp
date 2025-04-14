@@ -271,21 +271,21 @@ void Dialog::creerCourbeCA() {
     // Axe X
     QBarCategoryAxis *axisX = new QBarCategoryAxis();
     axisX->append(categories);
-    axisX->setTitleText("Mois");
+    axisX->setTitleText("MOIS");
     axisX->setLabelsAngle(-45); // Inclinaison pour meilleure lisibilité
     lineChart->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 
     // Axe Y
     QValueAxis *axisY = new QValueAxis();
-    axisY->setTitleText("Montant (TND)");
+    axisY->setTitleText("MONTANT (TND)");
     axisY->setLabelFormat("%.2f");
     lineChart->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
 
     // Style
     series->setColor(QColor(65, 105, 225)); // Bleu royal
-    lineChart->setTitle("Chiffre d'affaire mensuel");
+    lineChart->setTitle("CHIFFRE D'AFFAIRE MENSUEL DE 2025");
     lineChart->legend()->setVisible(true);
     lineChart->legend()->setAlignment(Qt::AlignBottom);
     QFont titleFont;
@@ -477,26 +477,38 @@ Dialog::~Dialog()
     delete ui;
 }
 
+
+
+
+
 void Dialog::on_ACCEUIL_clicked()
 {
-
-    // Masquer la fenêtre actuelle (Dialog)
-    this->hide();
-
-    // Créer et afficher la MainWindow
+    // Retour à MainWindow
     MainWindow *mainWindow = new MainWindow();
-    mainWindow->show();
+    configureTransition(mainWindow, "Accueil Principal");
+    this->close();  // Ferme la fenêtre actuelle
 }
 
 
 void Dialog::on_pushButton_pack_2_clicked()
 {
-    pack *fenetrePack = new pack(this);  // 'this' pour parenté à MainWindow
-
-    // 2. Afficher la fenêtre (mode modal pour bloquer l'interface principale)
-    fenetrePack->exec();  // Ou fenetrePack->show() pour une fenêtre non-modale
-
-    // 3. Nettoyer la mémoire (si vous utilisez 'exec()', faites-le après la fermeture)
-    delete fenetrePack;
+    pack *packDialog = new pack();
+    configureTransition(packDialog, "Gestion des Packs");
+    this->close();
 }
 
+// Fonction mirrorée de MainWindow::configureDialog()
+void Dialog::configureTransition(QWidget *window, const QString &title)
+{
+    window->setWindowTitle(title);
+    window->setAttribute(Qt::WA_DeleteOnClose);
+
+    // Animation identique (250ms comme dans MainWindow)
+    QPropertyAnimation *animation = new QPropertyAnimation(window, "windowOpacity");
+    animation->setDuration(250); // Même durée que configureDialog
+    animation->setStartValue(0);
+    animation->setEndValue(1);
+    animation->start(QPropertyAnimation::DeleteWhenStopped);
+
+    window->show();
+}

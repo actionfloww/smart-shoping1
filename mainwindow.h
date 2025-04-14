@@ -25,15 +25,17 @@ private slots:
     void remplirFormulaireDepuisSelection(const QModelIndex &index);
     void on_pushButton_exporter_clicked();
     void on_comboBox_tri_currentIndexChanged(int index);
-    void on_pushButton_rechercher_clicked();
-    void on_pushButton_renitialiser_clicked();
+    void rechercherDynamiquement(const QString &text);
     void on_pushButton_fonctionalite_clicked();
     void on_pushButton_pack_clicked();
-    void afficherNotificationPrix(int nbProduitsModifies);
+    void on_comboBox_categorie_currentTextChanged(const QString &text);
+    void checkModifications();
 
 private:
     void afficherProduits();
     void viderFormulaire();
+    void configureDialog(QWidget *dialog, const QString &title);
+    void applyTableViewStyle();
 
     Ui::MainWindow *ui;
     Produit *produit;

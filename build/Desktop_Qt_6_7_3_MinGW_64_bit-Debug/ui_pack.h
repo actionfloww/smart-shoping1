@@ -51,9 +51,13 @@ public:
     QLabel *label_43;
     QLineEdit *LineEdit_rechercher_2;
     QComboBox *comboBox_pack;
-    QLabel *label_21;
     QLabel *label_4;
     QPushButton *pushButton_gererpack;
+    QLabel *label_9;
+    QLabel *label_11;
+    QLabel *label_17;
+    QLabel *label_20;
+    QLabel *label_31;
 
     void setupUi(QDialog *pack)
     {
@@ -280,7 +284,7 @@ public:
         label_43->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         LineEdit_rechercher_2 = new QLineEdit(pack);
         LineEdit_rechercher_2->setObjectName("LineEdit_rechercher_2");
-        LineEdit_rechercher_2->setGeometry(QRect(170, 80, 221, 51));
+        LineEdit_rechercher_2->setGeometry(QRect(170, 90, 251, 41));
         LineEdit_rechercher_2->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    font-size: 14px;\n"
 "    padding: 5px 10px;\n"
@@ -304,7 +308,7 @@ public:
 ""));
         comboBox_pack = new QComboBox(pack);
         comboBox_pack->setObjectName("comboBox_pack");
-        comboBox_pack->setGeometry(QRect(400, 90, 162, 31));
+        comboBox_pack->setGeometry(QRect(430, 100, 141, 31));
         comboBox_pack->setStyleSheet(QString::fromUtf8("QComboBox::down-arrow {\n"
 "    image: url(:/icons/down_arrow.svg); /* Optionnel - pour une fl\303\250che personnalis\303\251e */\n"
 "    width: 12px;\n"
@@ -318,12 +322,9 @@ public:
 "    selection-color: white;\n"
 "}\n"
 ""));
-        label_21 = new QLabel(pack);
-        label_21->setObjectName("label_21");
-        label_21->setGeometry(QRect(546, 90, 20, 31));
         label_4 = new QLabel(pack);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(160, 60, 841, 31));
+        label_4->setGeometry(QRect(190, 60, 951, 31));
         label_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "    font-size: 16px;\n"
@@ -334,7 +335,7 @@ public:
 "}"));
         pushButton_gererpack = new QPushButton(pack);
         pushButton_gererpack->setObjectName("pushButton_gererpack");
-        pushButton_gererpack->setGeometry(QRect(590, 90, 141, 31));
+        pushButton_gererpack->setGeometry(QRect(930, 100, 121, 31));
         pushButton_gererpack->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border: 2px solid #0a0a55;   /* Grey border */\n"
 "    border-radius: 10px;         /* Round the corners */\n"
@@ -347,6 +348,36 @@ public:
 "QPushButton:hover {\n"
 "    background-color: white;   /* Darker grey on hover */\n"
 "}"));
+        label_9 = new QLabel(pack);
+        label_9->setObjectName("label_9");
+        label_9->setGeometry(QRect(158, 55, 31, 21));
+        label_9->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-13_at_14.24.37-removebg-preview.png")));
+        label_9->setScaledContents(true);
+        label_11 = new QLabel(pack);
+        label_11->setObjectName("label_11");
+        label_11->setGeometry(QRect(390, 100, 21, 21));
+        label_11->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-13_at_14.36.06-removebg-preview (1).png")));
+        label_11->setScaledContents(true);
+        label_17 = new QLabel(pack);
+        label_17->setObjectName("label_17");
+        label_17->setGeometry(QRect(590, 100, 281, 31));
+        label_17->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"    font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"    font-size: 16px;\n"
+"    font-weight: normal;\n"
+"    font-style: italic;\n"
+"    color:  #0a0a55;\n"
+"    letter-spacing: 0.5px;\n"
+"}\n"
+""));
+        label_20 = new QLabel(pack);
+        label_20->setObjectName("label_20");
+        label_20->setGeometry(QRect(890, 100, 31, 31));
+        label_20->setPixmap(QPixmap(QString::fromUtf8(":/images/Downloads/WhatsApp_Image_2025-04-13_at_17.38.59-removebg-preview.png")));
+        label_20->setScaledContents(true);
+        label_31 = new QLabel(pack);
+        label_31->setObjectName("label_31");
+        label_31->setGeometry(QRect(560, 100, 16, 31));
         label_2->raise();
         label_6->raise();
         label_3->raise();
@@ -376,9 +407,13 @@ public:
         label_43->raise();
         LineEdit_rechercher_2->raise();
         comboBox_pack->raise();
-        label_21->raise();
         label_4->raise();
         pushButton_gererpack->raise();
+        label_9->raise();
+        label_11->raise();
+        label_17->raise();
+        label_20->raise();
+        label_31->raise();
 
         retranslateUi(pack);
 
@@ -429,9 +464,13 @@ public:
         label_43->setText(QCoreApplication::translate("pack", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:700; color:#ffffff;\">Admin</span></p></body></html>", nullptr));
         LineEdit_rechercher_2->setText(QString());
         LineEdit_rechercher_2->setPlaceholderText(QCoreApplication::translate("pack", "Tapez le nom de la gamme...", nullptr));
-        label_21->setText(QCoreApplication::translate("pack", "<html><head/><body><p><span style=\" color:#0a0a55;\">\342\226\274</span></p></body></html>", nullptr));
         label_4->setText(QCoreApplication::translate("pack", "<html><head/><body><p><span style=\" font-weight:700; color:#c50003;\">\342\200\234Utilisez les filtres ci-dessous pour trouver plus rapidement les produits adapt\303\251s au pack cible.\342\200\235</span></p><p><span style=\" font-weight:700;\"><br/></span></p></body></html>", nullptr));
         pushButton_gererpack->setText(QCoreApplication::translate("pack", "GERER LE PACK ", nullptr));
+        label_9->setText(QString());
+        label_11->setText(QString());
+        label_17->setText(QCoreApplication::translate("pack", "<html><head/><body><p><span style=\" font-weight:700;\">Cliquez ici pour g\303\251rer vos packs</span></p></body></html>", nullptr));
+        label_20->setText(QString());
+        label_31->setText(QCoreApplication::translate("pack", "<html><head/><body><p><span style=\" font-size:7pt; color:#0a0a55;\">\342\226\274</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };
