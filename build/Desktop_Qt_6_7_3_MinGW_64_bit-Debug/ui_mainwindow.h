@@ -87,6 +87,7 @@ public:
     QPushButton *pushButton_13;
     QComboBox *comboBox_2;
     QLineEdit *lineEdit;
+    QPushButton *P_3;
     QWidget *tab_2;
     QPushButton *pushButton_4;
     QWidget *tab_3;
@@ -325,7 +326,7 @@ public:
         tab->setObjectName("tab");
         frame_2 = new QFrame(tab);
         frame_2->setObjectName("frame_2");
-        frame_2->setGeometry(QRect(0, 0, 1381, 631));
+        frame_2->setGeometry(QRect(-10, 0, 1381, 631));
         frame_2->setStyleSheet(QString::fromUtf8(""));
         frame_2->setFrameShape(QFrame::Shape::StyledPanel);
         frame_2->setFrameShadow(QFrame::Shadow::Raised);
@@ -551,6 +552,22 @@ public:
         lineEdit = new QLineEdit(frame_2);
         lineEdit->setObjectName("lineEdit");
         lineEdit->setGeometry(QRect(582, 25, 291, 41));
+        P_3 = new QPushButton(frame_2);
+        P_3->setObjectName("P_3");
+        P_3->setGeometry(QRect(920, 80, 91, 31));
+        P_3->setFont(font);
+        P_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #4CAF50; /* Couleur et largeur de la bordure */\n"
+"    border-radius: 15px; /* Rayon de l'arrondi */\n"
+"  background-color:   #8c8c8c;\n"
+"    color: white; /* Couleur du texte */\n"
+"    padding: 10px 20px; /* Espacement interne */\n"
+"    font-size: 14px; /* Taille du texte */\n"
+"    font-weight: bold; /* Style du texte */\n"
+"}"));
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8("../../Downloads/newspaper.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        P_3->setIcon(icon8);
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName("tab_2");
@@ -568,7 +585,7 @@ public:
         tab_4->setObjectName("tab_4");
         labelAffiche = new QLabel(tab_4);
         labelAffiche->setObjectName("labelAffiche");
-        labelAffiche->setGeometry(QRect(22, 19, 1321, 621));
+        labelAffiche->setGeometry(QRect(12, 9, 1351, 611));
         tabWidget->addTab(tab_4, QString());
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -581,7 +598,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -639,6 +656,7 @@ public:
         comboBox_2->setItemText(1, QCoreApplication::translate("MainWindow", "r\303\251duction", nullptr));
         comboBox_2->setItemText(2, QCoreApplication::translate("MainWindow", "promotion", nullptr));
 
+        P_3->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Tab 2", nullptr));

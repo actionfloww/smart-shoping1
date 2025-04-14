@@ -52,6 +52,8 @@ private slots:
     void afficherDetailsEvenement(const QDate &date) ;
     void afficherAfficheEvenement();
     void masquerAfficheEvenement();
+    QAbstractItemModel* obtenirModeleInitial();
+    void switchToNews();
 
 
 

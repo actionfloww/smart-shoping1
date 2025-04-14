@@ -476,7 +476,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -485,7 +485,7 @@
      <widget class="QFrame" name="frame_2">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>-10</x>
         <y>0</y>
         <width>1381</width>
         <height>631</height>
@@ -1141,6 +1141,40 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </rect>
        </property>
       </widget>
+      <widget class="QPushButton" name="P_3">
+       <property name="geometry">
+        <rect>
+         <x>920</x>
+         <y>80</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border: 2px solid #4CAF50; /* Couleur et largeur de la bordure */
+    border-radius: 15px; /* Rayon de l'arrondi */
+  background-color:   #8c8c8c;
+    color: white; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne */
+    font-size: 14px; /* Taille du texte */
+    font-weight: bold; /* Style du texte */
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/newspaper.png</normaloff>../../Downloads/newspaper.png</iconset>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -1183,10 +1217,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLabel" name="labelAffiche">
       <property name="geometry">
        <rect>
-        <x>22</x>
-        <y>19</y>
-        <width>1321</width>
-        <height>621</height>
+        <x>12</x>
+        <y>9</y>
+        <width>1351</width>
+        <height>611</height>
        </rect>
       </property>
       <property name="text">

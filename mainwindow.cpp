@@ -18,7 +18,10 @@
 #include <QtCharts/QChart>
 #include <QTextCharFormat>
 #include <QByteArray>
-#include "qrcodegenerator.h"
+#include <QStandardItemModel>
+#include <QStandardItem>
+#include <QGraphicsDropShadowEffect>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), event(new Event()), proxyModel(new QSortFilterProxyModel(this))
@@ -33,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->analytics_3->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\analytics.png"));
     ui->pushButton_13->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\tournant.png"));
     ui->P_2->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\pdf.png"));
+    ui->P_3->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\newspaper.png"));
     ui->sup_2->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\update.png"));
     ui->filter->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\filter.png"));
     ui->search_3->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\search.png"));
@@ -63,10 +67,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->analytics_3, &QPushButton::clicked, this, &MainWindow::goToStatisticsPage);
     connect(ui->analytics_3, &QPushButton::clicked, this, &MainWindow::afficherStatistiques);
    // connect(ui->calendarWidget, &QCalendarWidget::clicked, this, &MainWindow::afficherDetailsEvenement);
-   connect(ui->calendar_4, &QPushButton::clicked, this, &MainWindow::switchTocalender);
+    connect(ui->calendar_4, &QPushButton::clicked, this, &MainWindow::switchTocalender);
+    connect(ui->P_3, &QPushButton::clicked, this, &MainWindow::switchToNews);
     connect(ui->calendarWidget, &QCalendarWidget::clicked, this, &MainWindow::afficherDetailsEvenement);
-
-
+    connect(ui->lineEdit, &QLineEdit::textChanged, this, &MainWindow::rechercherEvent);
+    connect(ui->comboBox_2, &QComboBox::currentTextChanged, this, &MainWindow::trierParType);
 
 
 
@@ -99,19 +104,12 @@ MainWindow::MainWindow(QWidget *parent)
         connect(timerMasquage, &QTimer::timeout, this, &MainWindow::masquerAfficheEvenement);
 
         // Démarrer l'affichage toutes les 30 secondes
-        timerAffichage->start(60000); // 30 secondes
+        timerAffichage->start(10000); // 30 secondes
 
 
         QWidget *tab4 = ui->tabWidget->widget(3);
 
-
-
-
 }
-
-
-
-
 
 MainWindow::~MainWindow()
 {
@@ -132,9 +130,10 @@ void MainWindow::switchTocalender() {
     ui->tabWidget->setCurrentIndex(2);
 }
 
-
-
-
+void MainWindow::switchToNews() {
+    // Supposons que la deuxième page du QTabWidget est à l'index 1
+    ui->tabWidget->setCurrentIndex(3);
+}
 
 /*void MainWindow::actualiserTableau()
 {
@@ -480,8 +479,11 @@ void MainWindow::generatePDF() {
 void MainWindow::rechercherEvent() {
     // Récupérer le texte saisi dans le QLineEdit
     QString nomRecherche = ui->lineEdit->text().trimmed();
+
+    // Si le champ est vide, réinitialiser le tableau avec le modèle d'origine
     if (nomRecherche.isEmpty()) {
-        QMessageBox::warning(this, "Erreur", "Veuillez entrer un nom pour effectuer la recherche.");
+        QAbstractItemModel *originalModel = obtenirModeleInitial(); // Remplace par la fonction qui retourne ton modèle initial
+        ui->tableView->setModel(originalModel);
         return;
     }
 
@@ -499,15 +501,14 @@ void MainWindow::rechercherEvent() {
     proxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive); // Ignorer la casse
     proxyModel->setFilterFixedString(nomRecherche);
 
-    // Vérifier si des résultats existent
-    if (proxyModel->rowCount() == 0) {
-        QMessageBox::information(this, "Résultat", "Aucun événement trouvé pour ce nom.");
-        return;
-    }
-
     // Appliquer le modèle filtré au QTableView
     ui->tableView->setModel(proxyModel);
 }
+QAbstractItemModel* MainWindow::obtenirModeleInitial() {
+    // Retourne le modèle initial de ton tableau
+    return event->afficher(); // Remplace par la fonction qui retourne ton modèle original
+}
+
 
 void MainWindow::refreshPage() {
     // Réinitialiser le modèle proxy pour afficher tous les événements
@@ -522,64 +523,181 @@ void MainWindow::refreshPage() {
 
 }
 
-void MainWindow::trierParType() {
-    // Récupérer le type sélectionné dans le QComboBox
+/*void MainWindow::trierParType() {
     QString typeSelectionne = ui->comboBox_2->currentText();
 
-    if (proxyModel) {
-        // Appliquer le filtre basé sur le type sélectionné
-        proxyModel->setFilterKeyColumn(2); // Supposons que la colonne "Type" soit la colonne 2
+    if (!proxyModel) {
+        proxyModel = new QSortFilterProxyModel(this);
+        proxyModel->setSourceModel(event->afficher());
+        ui->tableView->setModel(proxyModel);
+    }
+
+    proxyModel->setDynamicSortFilter(true);
+
+    if (!typeSelectionne.isEmpty()) {
+        // Filtrer par type si un type est sélectionné
+        proxyModel->setFilterKeyColumn(2); // Colonne "Type"
         proxyModel->setFilterFixedString(typeSelectionne);
     }
 
-    // Mettre à jour la vue
-    ui->tableView->reset();
+    // Toujours trier les résultats par la colonne "Type"
+    proxyModel->sort(2, Qt::AscendingOrder);
+}*/
+void MainWindow::trierParType() {
+    // Récupérer le type sélectionné
+    QString typeSelectionne = ui->comboBox_2->currentText();
 
+    // Accéder au modèle source
+    QAbstractItemModel *sourceModel = event->afficher(); // Remplacez par votre fonction qui retourne le modèle
+
+    // Vérifier si le modèle existe
+    if (!sourceModel) {
+        qDebug() << "Erreur : Modèle source non trouvé.";
+        return;
+    }
+
+    // Créer une liste des lignes triées
+    QList<QList<QVariant>> rows;
+    for (int row = 0; row < sourceModel->rowCount(); ++row) {
+        QList<QVariant> rowData;
+        for (int col = 0; col < sourceModel->columnCount(); ++col) {
+            rowData.append(sourceModel->index(row, col).data());
+        }
+        rows.append(rowData);
+    }
+
+    // Trier les lignes : événements du type sélectionné en premier
+    std::sort(rows.begin(), rows.end(), [typeSelectionne](const QList<QVariant> &a, const QList<QVariant> &b) {
+        bool aIsPriority = (a[2].toString() == typeSelectionne); // Colonne 2 : Type
+        bool bIsPriority = (b[2].toString() == typeSelectionne);
+
+        if (aIsPriority != bIsPriority) {
+            return aIsPriority; // Prioriser les types sélectionnés
+        }
+
+        // Sinon, trier alphabétiquement par le nom (colonne 0 par exemple)
+        return a[0].toString() < b[0].toString();
+    });
+
+    // Appliquer les lignes triées au modèle
+    QStandardItemModel *sortedModel = new QStandardItemModel(this);
+    sortedModel->setColumnCount(sourceModel->columnCount());
+    for (const auto &row : rows) {
+        QList<QStandardItem *> items;
+        for (const auto &value : row) {
+            items.append(new QStandardItem(value.toString()));
+        }
+        sortedModel->appendRow(items);
+    }
+
+    // Appliquer le modèle trié à la vue
+    ui->tableView->setModel(sortedModel);
 }
-
 
 void MainWindow::afficherStatistiques() {
     // Créer une série pour le graphique
     QPieSeries *series = new QPieSeries();
+    series->setPieSize(0.7); // Taille relative du camembert
 
     // Récupérer les données depuis la base
     QSqlQuery query("SELECT TYPE, COUNT(*) as count FROM EVENEMENTS GROUP BY TYPE");
+    int total = 0;
+
+    // Calcul du total
+    while (query.next()) {
+        total += query.value(1).toInt();
+    }
+
+    // Palette de couleurs personnalisée (bleu foncé, bleu clair, gris)
+    QList<QColor> colors = {
+        QColor("#1E3A8A"),  // Bleu très foncé
+        QColor("#3B82F6"),  // Bleu vif
+        QColor("#93C5FD"),  // Bleu clair
+        QColor("#64748B"),  // Gris bleuté
+        QColor("#1E40AF"),  // Bleu foncé
+        QColor("#60A5FA"),  // Bleu moyen
+        QColor("#9CA3AF")   // Gris clair
+    };
+
+    // Ajout des données avec style
+    query.exec("SELECT TYPE, COUNT(*) as count FROM EVENEMENTS GROUP BY TYPE");
+    int colorIndex = 0;
     while (query.next()) {
         QString type = query.value(0).toString();
         int count = query.value(1).toInt();
-        series->append(type, count);
+        double percentage = (total > 0) ? (count * 100.0 / total) : 0;
+        QPieSlice *slice = series->append(type, count);
+
+        // Style des tranches
+        slice->setColor(colors[colorIndex % colors.size()]);
+        slice->setBorderColor(Qt::white);
+        slice->setBorderWidth(2);
+
+        // Style des étiquettes
+        slice->setLabel(QString("<div style='text-align: center;'><span style='font-weight: bold; color: %1;'>%2</span><br>"
+                               "%3 événements<br>"
+                               "<span style='color: #4B5563;'>%4%</span></div>")
+                       .arg(colors[colorIndex % colors.size()].darker(120).name())
+                       .arg(type.toUpper())
+                       .arg(count)
+                       .arg(QString::number(percentage, 'f', 1)));
+
+        slice->setLabelVisible(true);
+        slice->setLabelFont(QFont("Segoe UI", 9));
+        slice->setLabelArmLengthFactor(0.1);
+        slice->setExplodeDistanceFactor(0.03);
+
+        // Effet de survol
+        slice->setLabelBrush(QBrush(Qt::white));
+        QObject::connect(slice, &QPieSlice::hovered, [slice](bool hovered) {
+            slice->setExploded(hovered);
+            slice->setLabelVisible(hovered || slice->isExploded());
+        });
+
+        colorIndex++;
     }
 
-    // Configurer les options du graphique
-    for (auto slice : series->slices()) {
-        slice->setLabel(QString("%1 (%2)").arg(slice->label()).arg(slice->value()));
-    }
-
-    // Créer le graphique
+    // Configuration du graphique
     QChart *chart = new QChart();
     chart->addSeries(series);
-    chart->setTitle("Statistiques des événements par type");
+    chart->setTitle("<div style='color: #1E3A8A; font-weight: bold;'>STATISTIQUES PAR TYPE D'ÉVÉNEMENT</div>");
+    chart->setTitleFont(QFont("Segoe UI", 12, QFont::Bold));
+    chart->setBackgroundBrush(QBrush(QColor("#F8FAFC"))); // Fond très clair
+    chart->setAnimationOptions(QChart::SeriesAnimations);
     chart->legend()->setVisible(true);
-    chart->legend()->setAlignment(Qt::AlignBottom);
+    chart->legend()->setAlignment(Qt::AlignRight);
+    chart->legend()->setFont(QFont("Segoe UI", 8));
+    chart->legend()->setLabelColor(QColor("#334155"));
 
-    // Créer une vue pour afficher le graphique
+    // Style de la vue
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->setBackgroundBrush(QBrush(Qt::transparent));
+    chartView->setStyleSheet("border: 1px solid #E2E8F0; border-radius: 8px;");
 
-    // Ajouter le graphique à l'interface
-    QWidget *tab2 = ui->tabWidget->widget(1); // Onglet des statistiques
-    QVBoxLayout *layout = dynamic_cast<QVBoxLayout *>(tab2->layout());
-    if (layout) {
-        // Nettoyer les widgets existants pour éviter les doublons
+    // Intégration dans l'interface
+    QWidget *tab2 = ui->tabWidget->widget(1);
+    if (QVBoxLayout *layout = dynamic_cast<QVBoxLayout *>(tab2->layout())) {
+        // Nettoyage des anciens widgets
         QLayoutItem *item;
-        while ((item = layout->takeAt(0)) != nullptr) {
+        while ((item = layout->takeAt(0))) {
             delete item->widget();
             delete item;
         }
-        layout->addWidget(chartView);
+
+        // Style du conteneur
+        tab2->setStyleSheet("background-color: #F1F5F9; padding: 15px;");
+
+        // Ajout d'un frame pour mieux structurer
+        QFrame *chartFrame = new QFrame();
+        chartFrame->setStyleSheet("background-color: white; border-radius: 10px;");
+        QVBoxLayout *frameLayout = new QVBoxLayout(chartFrame);
+        frameLayout->addWidget(chartView);
+        frameLayout->setContentsMargins(10, 10, 10, 10);
+
+        layout->addWidget(chartFrame);
     }
 }
-
 
 void MainWindow::afficherEvenementsSurCalendrier() {
     // Réinitialiser le format de toutes les dates
@@ -699,6 +817,42 @@ void MainWindow::afficherAfficheEvenement() {
     // Lancer le timer pour masquer l'affiche après 8 secondes
     timerMasquage->start(8000); // 8 secondes
 }
+
+/*void MainWindow::afficherAfficheEvenement() {
+    if (!ui->labelAffiche) {
+        qDebug() << "Erreur: labelAffiche non trouvé dans l'interface.";
+        return;
+    }
+
+    // Définir le chemin de l'affiche
+    ui->labelAffiche->setScaledContents(true);
+
+    QString imagePath = "C:/Users/MSI/Documents/projet/affiche.png";
+    QPixmap affiche(imagePath);
+
+    if (affiche.isNull()) {
+        qDebug() << "Erreur: Image non trouvée à l'emplacement" << imagePath;
+        ui->labelAffiche->setText("Affiche non trouvée.");
+        ui->labelAffiche->hide();
+    } else {
+        // Obtenez la taille réelle du QLabel
+        QSize labelSize = ui->labelAffiche->size();
+
+        // Redimensionner l'image pour remplir le QLabel tout en gardant le ratio
+        QPixmap scaledAffiche = affiche.scaled(labelSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+
+        // Afficher l'image redimensionnée
+        ui->labelAffiche->setPixmap(scaledAffiche);
+
+        // Assurez-vous que l'image s'affiche correctement
+        ui->labelAffiche->setScaledContents(true);
+        ui->labelAffiche->show();
+        timerMasquage->start(8000);
+    }
+}*/
+
+
+
 
 void MainWindow::masquerAfficheEvenement() {
     if (ui->labelAffiche) {
