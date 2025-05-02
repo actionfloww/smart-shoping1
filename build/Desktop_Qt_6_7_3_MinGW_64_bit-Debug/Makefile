@@ -415,8 +415,10 @@ Makefile: ../../interface1.pro C:/qt/6.7.3/mingw_64/mkspecs/win32-g++/qmake.conf
 		C:/qt/6.7.3/mingw_64/lib/Qt6Gui.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6Sql.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6Network.prl \
+		C:/qt/6.7.3/mingw_64/lib/Qt6SerialPort.prl \
 		C:/qt/6.7.3/mingw_64/lib/Qt6Core.prl \
-		C:/qt/6.7.3/mingw_64/mkspecs/features/build_pass.prf
+		C:/qt/6.7.3/mingw_64/mkspecs/features/build_pass.prf \
+		../../img.qrc
 	$(QMAKE) -o Makefile ..\..\interface1.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/qt/6.7.3/mingw_64/mkspecs/features/spec_pre.prf:
 C:/qt/6.7.3/mingw_64/mkspecs/features/device_config.prf:
@@ -763,8 +765,10 @@ C:/qt/6.7.3/mingw_64/lib/Qt6OpenGL.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6Gui.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6Sql.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6Network.prl:
+C:/qt/6.7.3/mingw_64/lib/Qt6SerialPort.prl:
 C:/qt/6.7.3/mingw_64/lib/Qt6Core.prl:
 C:/qt/6.7.3/mingw_64/mkspecs/features/build_pass.prf:
+../../img.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\..\interface1.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 

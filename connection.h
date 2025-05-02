@@ -6,10 +6,10 @@
 #include <QSqlQuery>
 #include <QDebug>
 
-class Connection
+class connection
 {
 public:
-    Connection();
+    connection();
     bool createconnect();
     void closeconnect();
 };

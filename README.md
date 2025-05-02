@@ -1,1 +1,0 @@
-# smart-shoping1

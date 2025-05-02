@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/photo">
+        <file>ress/grr.jpeg</file>
+        <file>ress/bll.jpeg</file>
+        <file>ress/11.jpeg</file>
+        <file>ress/22.jpeg</file>
+        <file>ress/33.jpeg</file>
+        <file>ress/44.jpeg</file>
+        <file>ress/55.jpeg</file>
+        <file>ress/66.jpeg</file>
+        <file>ress/77.jpeg</file>
+        <file>ress/88.jpeg</file>
+        <file>ress/99.jpeg</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>ress/473830347_920693130176137_1801494331999240370_n-removebg-preview.png</file>
+    </qresource>
+</RCC>

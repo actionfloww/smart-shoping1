@@ -12,8 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCalendarWidget>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QDateEdit>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -21,6 +25,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
@@ -31,56 +36,72 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QFrame *frame;
-    QTextEdit *textEditDashboard;
-    QTextEdit *textEdit_2;
-    QTextEdit *textEditEmploye;
-    QTextEdit *textEdit_4;
-    QTextEdit *textEdit_5;
-    QTextEdit *textEdit_7;
-    QPushButton *pushButton;
+    QWidget *widget_2;
     QPushButton *pushButton_2;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_7;
+    QPushButton *analytics_3;
+    QPushButton *calendar_4;
+    QPushButton *P_3;
+    QLabel *label_24;
+    QWidget *widget;
+    QPushButton *pushButton_14;
     QPushButton *pushButton_8;
-    QPushButton *pushButton_10;
-    QTextEdit *textEdit_8;
-    QTableView *tableView;
-    QPushButton *btnEnvoyerSMS;
-    QLineEdit *lineEditRecherche;
-    QFrame *frame_2;
-    QFrame *frame_3;
-    QTextEdit *textEdit_13;
-    QTextEdit *textEdit_15;
-    QTextEdit *textEdit_16;
-    QTextEdit *textEdit_17;
-    QTextEdit *textEdit_24;
-    QWidget *widget_30;
-    QLineEdit *lineEditEmail;
-    QWidget *widget_31;
-    QLineEdit *lineEditPrenom;
-    QWidget *widget_32;
-    QLineEdit *lineEditID;
-    QWidget *widget_33;
-    QLineEdit *lineEditNom;
-    QWidget *widget_34;
-    QLineEdit *lineEditTelephone;
-    QWidget *widget_35;
-    QLineEdit *lineEditPointFidelite;
-    QPushButton *btnAjouter;
-    QPushButton *btnModifier;
-    QTextEdit *textEdit_27;
-    QPushButton *btnSupprimer;
-    QLabel *label_10;
-    QPushButton *btnPDF;
-    QComboBox *comboBoxTri;
-    QTableView *tableViewAchats;
-    QPushButton *buttonAchat;
-    QPushButton *buttonStats;
     QLabel *label;
     QLabel *label_2;
-    QPushButton *btnAfficher;
+    QLabel *label_3;
+    QLabel *label_4;
+    QLabel *label_9;
+    QLabel *label_10;
+    QLabel *label_22;
+    QLabel *label_20;
+    QLabel *label_21;
+    QPushButton *pdf;
+    QPushButton *calendar;
+    QPushButton *search;
+    QPushButton *analytics;
+    QPushButton *pushButton_3;
+    QPushButton *calendar_2;
+    QPushButton *pushButton_11;
+    QTabWidget *tabWidget;
+    QWidget *tab;
+    QFrame *frame_2;
+    QLabel *label_11;
+    QGroupBox *groupBox_3;
+    QLabel *label_12;
+    QLineEdit *lineEdit_8;
+    QLabel *label_13;
+    QLabel *label_14;
+    QDateEdit *dateEdit_5;
+    QLabel *label_15;
+    QDateEdit *dateEdit_6;
+    QLabel *label_16;
+    QLineEdit *lineEdit_9;
+    QLabel *label_17;
+    QTextEdit *textEdit_3;
+    QLabel *label_18;
+    QLineEdit *lineEdit_5;
+    QPushButton *update;
+    QPushButton *pushButton;
+    QGroupBox *groupBox_4;
+    QLabel *label_19;
+    QTableView *tableView;
+    QPushButton *P_2;
+    QPushButton *pushButton_exporter_2;
+    QPushButton *sup;
+    QPushButton *sup_2;
+    QCheckBox *checkBox;
+    QCheckBox *checkBox_2;
+    QComboBox *comboBox_2;
+    QLabel *statuslabel;
+    QPushButton *pushButton_13;
+    QLineEdit *lineEdit;
+    QPushButton *search_3;
+    QPushButton *filter;
+    QWidget *tab_2;
+    QPushButton *pushButton_4;
+    QWidget *tab_3;
+    QCalendarWidget *calendarWidget;
+    QWidget *tab_4;
+    QLabel *labelAffiche;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -88,560 +109,756 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(857, 600);
+        MainWindow->resize(1595, 687);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        frame = new QFrame(centralwidget);
-        frame->setObjectName("frame");
-        frame->setGeometry(QRect(0, 0, 191, 481));
-        frame->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 167, 173);\n"
-"border: 1px solid lightgray; /* Optional: Change the border color */\n"
-"border-radius: 19px; /* Change the value for more or less rounding */\n"
-""));
-        frame->setFrameShape(QFrame::Shape::StyledPanel);
-        frame->setFrameShadow(QFrame::Shadow::Raised);
-        textEditDashboard = new QTextEdit(frame);
-        textEditDashboard->setObjectName("textEditDashboard");
-        textEditDashboard->setGeometry(QRect(40, 60, 121, 21));
-        textEditDashboard->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-" qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
+        widget_2 = new QWidget(centralwidget);
+        widget_2->setObjectName("widget_2");
+        widget_2->setGeometry(QRect(0, 0, 1461, 71));
+        widget_2->setStyleSheet(QString::fromUtf8("QWidget {\n"
+"	background-color: rgb(45, 51, 71);\n"
+"    background-color: #2D334;/* Couleur de fond issue de l'image */\n"
+"    border-right: 2px solid #b0c4c0; /* Une teinte l\303\251g\303\250rement plus fonc\303\251e */\n"
+"    width: 250px;\n"
+"    padding: 10px;\n"
 "}"));
-        textEdit_2 = new QTextEdit(frame);
-        textEdit_2->setObjectName("textEdit_2");
-        textEdit_2->setGeometry(QRect(40, 110, 101, 21));
-        textEdit_2->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-" qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
-"}"));
-        textEditEmploye = new QTextEdit(frame);
-        textEditEmploye->setObjectName("textEditEmploye");
-        textEditEmploye->setGeometry(QRect(40, 150, 101, 21));
-        textEditEmploye->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-" qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
-"}"));
-        textEdit_4 = new QTextEdit(frame);
-        textEdit_4->setObjectName("textEdit_4");
-        textEdit_4->setGeometry(QRect(40, 200, 101, 21));
-        textEdit_4->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-" qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
-"}"));
-        textEdit_5 = new QTextEdit(frame);
-        textEdit_5->setObjectName("textEdit_5");
-        textEdit_5->setGeometry(QRect(40, 240, 101, 21));
-        textEdit_5->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-" qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
-"}"));
-        textEdit_7 = new QTextEdit(frame);
-        textEdit_7->setObjectName("textEdit_7");
-        textEdit_7->setGeometry(QRect(40, 290, 121, 21));
-        textEdit_7->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-" qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
-"}"));
-        pushButton = new QPushButton(frame);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(20, 150, 41, 21));
-        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-"}"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8("../../../../Downloads/home.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        pushButton->setIcon(icon);
-        pushButton_2 = new QPushButton(frame);
+        pushButton_2 = new QPushButton(widget_2);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(20, 200, 41, 21));
-        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-"}"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8("../../../../Downloads/user.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        pushButton_2->setIcon(icon1);
-        pushButton_5 = new QPushButton(frame);
-        pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(20, 450, 41, 21));
-        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-"}"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8("../../../../Downloads/employees.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        pushButton_5->setIcon(icon2);
-        pushButton_6 = new QPushButton(frame);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(20, 400, 41, 21));
-        pushButton_6->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-"}"));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8("../../../../Downloads/file-invoice-dollar.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        pushButton_6->setIcon(icon3);
-        pushButton_7 = new QPushButton(frame);
-        pushButton_7->setObjectName("pushButton_7");
-        pushButton_7->setGeometry(QRect(20, 350, 41, 21));
-        pushButton_7->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-"}"));
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8("../../../../Downloads/inboxes.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        pushButton_7->setIcon(icon4);
-        pushButton_8 = new QPushButton(frame);
-        pushButton_8->setObjectName("pushButton_8");
-        pushButton_8->setGeometry(QRect(20, 300, 41, 21));
-        pushButton_8->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-"}"));
-        pushButton_8->setIcon(icon1);
-        pushButton_10 = new QPushButton(frame);
-        pushButton_10->setObjectName("pushButton_10");
-        pushButton_10->setGeometry(QRect(20, 250, 41, 21));
-        pushButton_10->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-"}"));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8("../../../../Downloads/customer-care.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        pushButton_10->setIcon(icon5);
-        textEdit_8 = new QTextEdit(frame);
-        textEdit_8->setObjectName("textEdit_8");
-        textEdit_8->setGeometry(QRect(40, 330, 111, 21));
-        textEdit_8->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: black;                    /* Black text color */\n"
-"    font-weight: bold;               /* Bold text */\n"
-"    font-size: 10px;                 /* Font size set to 20 */\n"
-" qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
-"}"));
-        tableView = new QTableView(centralwidget);
-        tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(490, 200, 361, 181));
-        tableView->setStyleSheet(QString::fromUtf8("background-color: #7eb6bf;"));
-        btnEnvoyerSMS = new QPushButton(centralwidget);
-        btnEnvoyerSMS->setObjectName("btnEnvoyerSMS");
-        btnEnvoyerSMS->setGeometry(QRect(530, 350, 81, 21));
+        pushButton_2->setGeometry(QRect(90, 20, 121, 31));
+        pushButton_2->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton {\n"
+"    border-radius: 15px;        /* Coins arrondis */\n"
+"    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
+" font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}\n"
+""));
+        QIcon icon(QIcon::fromTheme(QIcon::ThemeIcon::GoHome));
+        pushButton_2->setIcon(icon);
+        pushButton_2->setAutoDefault(false);
+        pushButton_2->setFlat(false);
+        analytics_3 = new QPushButton(widget_2);
+        analytics_3->setObjectName("analytics_3");
+        analytics_3->setGeometry(QRect(230, 20, 141, 31));
+        analytics_3->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton {\n"
+"    border-radius: 15px;        /* Coins arrondis */\n"
+"    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
+" font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}\n"
+"\n"
+""));
+        analytics_3->setAutoDefault(false);
+        analytics_3->setFlat(false);
+        calendar_4 = new QPushButton(widget_2);
+        calendar_4->setObjectName("calendar_4");
+        calendar_4->setGeometry(QRect(390, 20, 141, 31));
         QFont font;
-        font.setBold(true);
-        btnEnvoyerSMS->setFont(font);
-        btnEnvoyerSMS->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255)"));
-        lineEditRecherche = new QLineEdit(centralwidget);
-        lineEditRecherche->setObjectName("lineEditRecherche");
-        lineEditRecherche->setGeometry(QRect(610, 50, 171, 21));
-        frame_2 = new QFrame(centralwidget);
-        frame_2->setObjectName("frame_2");
-        frame_2->setGeometry(QRect(9, -10, 943, 611));
+        font.setFamilies({QString::fromUtf8("Georgia")});
+        font.setPointSize(9);
+        calendar_4->setFont(font);
+        calendar_4->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton {\n"
+"    border-radius: 15px;        /* Coins arrondis */\n"
+"    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
+"  font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}\n"
+"\n"
+""));
+        calendar_4->setAutoDefault(false);
+        calendar_4->setFlat(false);
+        P_3 = new QPushButton(widget_2);
+        P_3->setObjectName("P_3");
+        P_3->setGeometry(QRect(550, 20, 141, 31));
+        P_3->setFont(font);
+        P_3->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton {\n"
+"    border-radius: 15px;        /* Coins arrondis */\n"
+"    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
+"  font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}\n"
+"\n"
+""));
+        P_3->setAutoDefault(false);
+        P_3->setFlat(false);
+        label_24 = new QLabel(widget_2);
+        label_24->setObjectName("label_24");
+        label_24->setGeometry(QRect(1260, 20, 121, 41));
         QFont font1;
+        font1.setFamilies({QString::fromUtf8("Georgia")});
         font1.setPointSize(12);
-        frame_2->setFont(font1);
-        frame_2->setStyleSheet(QString::fromUtf8("background-color: rgb(75, 113, 113)"));
-        frame_2->setFrameShape(QFrame::Shape::StyledPanel);
-        frame_2->setFrameShadow(QFrame::Shadow::Raised);
-        frame_3 = new QFrame(frame_2);
-        frame_3->setObjectName("frame_3");
-        frame_3->setGeometry(QRect(180, 10, 241, 501));
-        frame_3->setStyleSheet(QString::fromUtf8("background-color: #7eb6bf; /* Change to your desired color */\n"
-"border: 1px solid lightgray; /* Optional: Change the border color */\n"
-"border-radius: 19px; /* Change the value for more or less rounding */\n"
-"\n"
-"\n"
-""));
-        frame_3->setFrameShape(QFrame::Shape::StyledPanel);
-        frame_3->setFrameShadow(QFrame::Shadow::Raised);
-        textEdit_13 = new QTextEdit(frame_3);
-        textEdit_13->setObjectName("textEdit_13");
-        textEdit_13->setGeometry(QRect(10, 10, 161, 31));
-        textEdit_13->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: white;                    /* Text color */\n"
-"    font-weight: white;               /* Bold text */\n"
-"    font-size: 20px;                 /* Font size 20 */\n"
-"    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
+        label_24->setFont(font1);
+        label_24->setStyleSheet(QString::fromUtf8("color: rgb(197, 197, 197);"));
+        analytics_3->raise();
+        calendar_4->raise();
+        P_3->raise();
+        pushButton_2->raise();
+        label_24->raise();
+        widget = new QWidget(centralwidget);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(-50, 410, 81, 321));
+        widget->setStyleSheet(QString::fromUtf8("QWidget {\n"
+"	background-color: rgb(45, 51, 71);\n"
+"    background-color: #2D334;/* Couleur de fond issue de l'image */\n"
+"    border-right: 2px solid #b0c4c0; /* Une teinte l\303\251g\303\250rement plus fonc\303\251e */\n"
+"    width: 250px;\n"
+"    padding: 10px;\n"
+"}"));
+        pushButton_14 = new QPushButton(widget);
+        pushButton_14->setObjectName("pushButton_14");
+        pushButton_14->setGeometry(QRect(50, 230, 101, 41));
+        pushButton_14->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton {\n"
+"    border-radius: 15px;        /* Coins arrondis */\n"
+"    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
+" font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "}\n"
 ""));
-        textEdit_15 = new QTextEdit(frame_3);
-        textEdit_15->setObjectName("textEdit_15");
-        textEdit_15->setGeometry(QRect(10, 130, 161, 31));
-        textEdit_15->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: white;                    /* Text color */\n"
-"    font-weight: white;               /* Bold text */\n"
-"    font-size: 20px;                 /* Font size 20 */\n"
-"    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
+        pushButton_14->setAutoDefault(false);
+        pushButton_14->setFlat(false);
+        pushButton_8 = new QPushButton(widget);
+        pushButton_8->setObjectName("pushButton_8");
+        pushButton_8->setGeometry(QRect(50, 580, 101, 41));
+        pushButton_8->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton {\n"
+"    border-radius: 15px;        /* Coins arrondis */\n"
+"    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
+" font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "}\n"
 ""));
-        textEdit_16 = new QTextEdit(frame_3);
-        textEdit_16->setObjectName("textEdit_16");
-        textEdit_16->setGeometry(QRect(10, 70, 161, 31));
-        textEdit_16->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: white;                    /* Text color */\n"
-"    font-weight: white;               /* Bold text */\n"
-"    font-size: 20px;                 /* Font size 20 */\n"
-"    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
-"}\n"
-""));
-        textEdit_17 = new QTextEdit(frame_3);
-        textEdit_17->setObjectName("textEdit_17");
-        textEdit_17->setGeometry(QRect(10, 190, 161, 31));
-        textEdit_17->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: white;                    /* Text color */\n"
-"    font-weight: white;               /* Bold text */\n"
-"    font-size: 20px;                 /* Font size 20 */\n"
-"    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
-"}\n"
-""));
-        textEdit_24 = new QTextEdit(frame_3);
-        textEdit_24->setObjectName("textEdit_24");
-        textEdit_24->setGeometry(QRect(10, 250, 161, 31));
-        textEdit_24->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: white;                    /* Text color */\n"
-"    font-weight: white;               /* Bold text */\n"
-"    font-size: 20px;                 /* Font size 20 */\n"
-"    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
-"}\n"
-""));
-        widget_30 = new QWidget(frame_3);
-        widget_30->setObjectName("widget_30");
-        widget_30->setGeometry(QRect(10, 220, 201, 31));
-        widget_30->setStyleSheet(QString::fromUtf8("background-color: white; /* Change to your desired color */\n"
-"border: 1px solid lightgray; /* Optional: Change the border color */\n"
-"border-radius: 10px; /* Change the value for more or less rounding */\n"
-"\n"
-""));
-        lineEditEmail = new QLineEdit(widget_30);
-        lineEditEmail->setObjectName("lineEditEmail");
-        lineEditEmail->setGeometry(QRect(0, 0, 201, 31));
-        widget_31 = new QWidget(frame_3);
-        widget_31->setObjectName("widget_31");
-        widget_31->setGeometry(QRect(10, 160, 201, 31));
-        widget_31->setStyleSheet(QString::fromUtf8("background-color: white; /* Change to your desired color */\n"
-"border: 1px solid lightgray; /* Optional: Change the border color */\n"
-"border-radius: 10px; /* Change the value for more or less rounding */\n"
-"\n"
-""));
-        lineEditPrenom = new QLineEdit(widget_31);
-        lineEditPrenom->setObjectName("lineEditPrenom");
-        lineEditPrenom->setGeometry(QRect(0, 0, 201, 31));
-        widget_32 = new QWidget(frame_3);
-        widget_32->setObjectName("widget_32");
-        widget_32->setGeometry(QRect(10, 40, 201, 31));
-        widget_32->setStyleSheet(QString::fromUtf8("background-color: white; /* Change to your desired color */\n"
-"border: 1px solid lightgray; /* Optional: Change the border color */\n"
-"border-radius: 10px; /* Change the value for more or less rounding */\n"
-"\n"
-""));
-        lineEditID = new QLineEdit(widget_32);
-        lineEditID->setObjectName("lineEditID");
-        lineEditID->setGeometry(QRect(0, 0, 201, 31));
-        widget_33 = new QWidget(frame_3);
-        widget_33->setObjectName("widget_33");
-        widget_33->setGeometry(QRect(10, 100, 201, 31));
-        widget_33->setStyleSheet(QString::fromUtf8("background-color: white; /* Change to your desired color */\n"
-"border: 1px solid lightgray; /* Optional: Change the border color */\n"
-"border-radius: 10px; /* Change the value for more or less rounding */\n"
-"\n"
-""));
-        lineEditNom = new QLineEdit(widget_33);
-        lineEditNom->setObjectName("lineEditNom");
-        lineEditNom->setGeometry(QRect(0, 0, 201, 31));
-        widget_34 = new QWidget(frame_3);
-        widget_34->setObjectName("widget_34");
-        widget_34->setGeometry(QRect(10, 280, 201, 31));
-        widget_34->setStyleSheet(QString::fromUtf8("background-color: white; /* Change to your desired color */\n"
-"border: 1px solid lightgray; /* Optional: Change the border color */\n"
-"border-radius: 10px; /* Change the value for more or less rounding */\n"
-"\n"
-""));
-        lineEditTelephone = new QLineEdit(widget_34);
-        lineEditTelephone->setObjectName("lineEditTelephone");
-        lineEditTelephone->setGeometry(QRect(0, 0, 201, 31));
-        widget_35 = new QWidget(frame_3);
-        widget_35->setObjectName("widget_35");
-        widget_35->setGeometry(QRect(10, 350, 201, 31));
-        widget_35->setStyleSheet(QString::fromUtf8("background-color: white; /* Change to your desired color */\n"
-"border: 1px solid lightgray; /* Optional: Change the border color */\n"
-"border-radius: 10px; /* Change the value for more or less rounding */\n"
-"\n"
-""));
-        lineEditPointFidelite = new QLineEdit(widget_35);
-        lineEditPointFidelite->setObjectName("lineEditPointFidelite");
-        lineEditPointFidelite->setGeometry(QRect(0, 0, 201, 31));
-        btnAjouter = new QPushButton(frame_3);
-        btnAjouter->setObjectName("btnAjouter");
-        btnAjouter->setGeometry(QRect(10, 410, 81, 31));
-        btnAjouter->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: 2px solid #5C6BC0; /* Bordure bleue */\n"
-"    background-color: white; /* Couleur de fond blanche */\n"
-"    color: #5C6BC0; /* Couleur du texte bleue */\n"
-"    border-radius: 15px; /* Rend le bouton rond, ajust\303\251 pour petite taille */\n"
-"    padding: 5px; /* Espace int\303\251rieur r\303\251duit */\n"
-"    min-width: 15px; /* Largeur minimum */\n"
-"    min-height: 15px; /* Hauteur minimum */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #F0F0F0; /* Couleur de fond plus claire au survol */\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #E0E0E0; /* Couleur de fond plus fonc\303\251e lorsque press\303\251 */\n"
-"}\n"
-""));
-        btnModifier = new QPushButton(frame_3);
-        btnModifier->setObjectName("btnModifier");
-        btnModifier->setGeometry(QRect(120, 410, 81, 31));
-        btnModifier->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: 2px solid #5C6BC0; /* Bordure bleue */\n"
-"    background-color: white; /* Couleur de fond blanche */\n"
-"    color: #5C6BC0; /* Couleur du texte bleue */\n"
-"    border-radius: 15px; /* Rend le bouton rond, ajust\303\251 pour petite taille */\n"
-"    padding: 5px; /* Espace int\303\251rieur r\303\251duit */\n"
-"    min-width: 15px; /* Largeur minimum */\n"
-"    min-height: 15px; /* Hauteur minimum */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #F0F0F0; /* Couleur de fond plus claire au survol */\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #E0E0E0; /* Couleur de fond plus fonc\303\251e lorsque press\303\251 */\n"
-"}\n"
-""));
-        textEdit_27 = new QTextEdit(frame_3);
-        textEdit_27->setObjectName("textEdit_27");
-        textEdit_27->setGeometry(QRect(10, 320, 191, 31));
-        textEdit_27->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
-"    border: none;                    /* Remove border */\n"
-"    background: transparent;         /* Make background transparent */\n"
-"    padding: 0;                      /* No padding */\n"
-"    margin: 0;                       /* No margin */\n"
-"    color: white;                    /* Text color */\n"
-"    font-weight: white;               /* Bold text */\n"
-"    font-size: 20px;                 /* Font size 20 */\n"
-"    qproperty-verticalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide vertical scrollbar */\n"
-"    qproperty-horizontalScrollBarPolicy: ScrollBarAlwaysOff; /* Hide horizontal scrollbar */\n"
-"}\n"
-""));
-        btnSupprimer = new QPushButton(frame_3);
-        btnSupprimer->setObjectName("btnSupprimer");
-        btnSupprimer->setGeometry(QRect(70, 460, 81, 31));
-        btnSupprimer->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: 2px solid #5C6BC0; /* Bordure bleue */\n"
-"    background-color: white; /* Couleur de fond blanche */\n"
-"    color: #5C6BC0; /* Couleur du texte bleue */\n"
-"    border-radius: 15px; /* Rend le bouton rond, ajust\303\251 pour petite taille */\n"
-"    padding: 5px; /* Espace int\303\251rieur r\303\251duit */\n"
-"    min-width: 15px; /* Largeur minimum */\n"
-"    min-height: 15px; /* Hauteur minimum */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #F0F0F0; /* Couleur de fond plus claire au survol */\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #E0E0E0; /* Couleur de fond plus fonc\303\251e lorsque press\303\251 */\n"
-"}\n"
-""));
-        label_10 = new QLabel(frame_2);
+        pushButton_8->setAutoDefault(false);
+        pushButton_8->setFlat(false);
+        label = new QLabel(widget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(-10, -10, 161, 131));
+        label->setPixmap(QPixmap(QString::fromUtf8("newlogo.png")));
+        label_2 = new QLabel(widget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(-10, 170, 161, 71));
+        label_2->setPixmap(QPixmap(QString::fromUtf8("../../Downloads/WhatsApp Image 2025-04-30 at 9.50.17 PM (1).jpeg")));
+        label_3 = new QLabel(widget);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(-10, 220, 161, 71));
+        label_3->setPixmap(QPixmap(QString::fromUtf8("../../Pictures/iloveimg-resized (1)/WhatsApp Image 2025-04-30 at 9.51.02 PM.jpeg")));
+        label_4 = new QLabel(widget);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(-10, 280, 161, 61));
+        label_4->setPixmap(QPixmap(QString::fromUtf8("../../Pictures/iloveimg-resized (1)/WhatsApp Image 2025-04-30 at 9.51.53 PM.jpeg")));
+        label_9 = new QLabel(widget);
+        label_9->setObjectName("label_9");
+        label_9->setGeometry(QRect(-10, 340, 161, 91));
+        label_9->setPixmap(QPixmap(QString::fromUtf8("../../Pictures/iloveimg-resized (1)/WhatsApp Image 2025-04-30 at 9.53.16 PM.jpeg")));
+        label_10 = new QLabel(widget);
         label_10->setObjectName("label_10");
-        label_10->setGeometry(QRect(490, 190, 141, 16));
+        label_10->setGeometry(QRect(-10, 420, 161, 71));
+        label_10->setPixmap(QPixmap(QString::fromUtf8("../../Pictures/iloveimg-resized (1)/WhatsApp Image 2025-04-30 at 9.58.21 PM.jpeg")));
+        label_22 = new QLabel(widget);
+        label_22->setObjectName("label_22");
+        label_22->setGeometry(QRect(-10, 110, 161, 51));
         QFont font2;
-        font2.setBold(true);
-        font2.setItalic(true);
-        font2.setUnderline(true);
-        label_10->setFont(font2);
-        btnPDF = new QPushButton(frame_2);
-        btnPDF->setObjectName("btnPDF");
-        btnPDF->setGeometry(QRect(650, 120, 56, 18));
-        btnPDF->setFont(font);
-        btnPDF->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255)"));
-        comboBoxTri = new QComboBox(frame_2);
-        comboBoxTri->addItem(QString());
-        comboBoxTri->addItem(QString());
-        comboBoxTri->setObjectName("comboBoxTri");
-        comboBoxTri->setGeometry(QRect(720, 160, 71, 22));
-        comboBoxTri->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255)"));
-        tableViewAchats = new QTableView(frame_2);
-        tableViewAchats->setObjectName("tableViewAchats");
-        tableViewAchats->setGeometry(QRect(540, 400, 301, 171));
-        tableViewAchats->setStyleSheet(QString::fromUtf8("background-color: #7eb6bf;"));
-        buttonAchat = new QPushButton(frame_2);
-        buttonAchat->setObjectName("buttonAchat");
-        buttonAchat->setGeometry(QRect(450, 410, 81, 20));
+        font2.setFamilies({QString::fromUtf8("Georgia")});
+        font2.setPointSize(11);
+        label_22->setFont(font2);
+        label_22->setStyleSheet(QString::fromUtf8("color: rgb(199, 199, 199);"));
+        label_20 = new QLabel(widget);
+        label_20->setObjectName("label_20");
+        label_20->setGeometry(QRect(-10, 490, 161, 81));
+        label_20->setStyleSheet(QString::fromUtf8("background-color: rgb(45, 51, 71);"));
+        label_20->setPixmap(QPixmap(QString::fromUtf8("../../Downloads/FFFFFFG.png")));
+        label_21 = new QLabel(widget);
+        label_21->setObjectName("label_21");
+        label_21->setGeometry(QRect(-10, 560, 161, 101));
+        label_21->setPixmap(QPixmap(QString::fromUtf8("../../Downloads/B-removebg-preview.png")));
+        label_21->raise();
+        label_20->raise();
+        label_10->raise();
+        label->raise();
+        pushButton_8->raise();
+        label_2->raise();
+        label_3->raise();
+        pushButton_14->raise();
+        label_4->raise();
+        label_9->raise();
+        label_22->raise();
+        pdf = new QPushButton(centralwidget);
+        pdf->setObjectName("pdf");
+        pdf->setGeometry(QRect(2070, 550, 93, 29));
         QFont font3;
         font3.setBold(true);
-        font3.setItalic(true);
-        buttonAchat->setFont(font3);
-        buttonAchat->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255)"));
-        buttonStats = new QPushButton(frame_2);
-        buttonStats->setObjectName("buttonStats");
-        buttonStats->setGeometry(QRect(510, 130, 56, 18));
+        pdf->setFont(font3);
+        pdf->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #4CAF50; /* Couleur et largeur de la bordure */\n"
+"    border-radius: 15px; /* Rayon de l'arrondi */\n"
+"  background-color:   #8c8c8c;\n"
+"    color: white; /* Couleur du texte */\n"
+"    padding: 10px 20px; /* Espacement interne */\n"
+"    font-size: 14px; /* Taille du texte */\n"
+"    font-weight: bold; /* Style du texte */\n"
+"}"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8("../../Downloads/pdf.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        pdf->setIcon(icon1);
+        calendar = new QPushButton(centralwidget);
+        calendar->setObjectName("calendar");
+        calendar->setGeometry(QRect(2180, 550, 93, 31));
+        calendar->setFont(font3);
+        calendar->setContextMenuPolicy(Qt::ContextMenuPolicy::NoContextMenu);
+        calendar->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #4CAF50; /* Couleur et largeur de la bordure */\n"
+"    border-radius: 15px; /* Rayon de l'arrondi */\n"
+"  background-color:   #8c8c8c;\n"
+"    color: white; /* Couleur du texte */\n"
+"    padding: 10px 20px; /* Espacement interne */\n"
+"    font-size: 14px; /* Taille du texte */\n"
+"    font-weight: bold; /* Style du texte */\n"
+"}"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8("../../Downloads/calendar.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        calendar->setIcon(icon2);
+        search = new QPushButton(centralwidget);
+        search->setObjectName("search");
+        search->setGeometry(QRect(1870, 490, 51, 31));
+        search->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #4CAF50; /* Couleur et largeur de la bordure */\n"
+"    border-radius: 15px; /* Rayon de l'arrondi */\n"
+"  background-color:   #8c8c8c;\n"
+"    color: white; /* Couleur du texte */\n"
+"    padding: 10px 20px; /* Espacement interne */\n"
+"    font-size: 14px; /* Taille du texte */\n"
+"    font-weight: bold; /* Style du texte */\n"
+"}"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8("../../Downloads/search.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        search->setIcon(icon3);
+        analytics = new QPushButton(centralwidget);
+        analytics->setObjectName("analytics");
+        analytics->setGeometry(QRect(1950, 550, 93, 31));
+        analytics->setFont(font3);
+        analytics->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #4CAF50; /* Couleur et largeur de la bordure */\n"
+"    border-radius: 15px; /* Rayon de l'arrondi */\n"
+"  background-color:   #8c8c8c;\n"
+"    color: white; /* Couleur du texte */\n"
+"    padding: 10px 20px; /* Espacement interne */\n"
+"    font-size: 14px; /* Taille du texte */\n"
+"    font-weight: bold; /* Style du texte */\n"
+"}"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8("../../Downloads/analytics.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        analytics->setIcon(icon4);
+        pushButton_3 = new QPushButton(centralwidget);
+        pushButton_3->setObjectName("pushButton_3");
+        pushButton_3->setGeometry(QRect(2240, 480, 71, 41));
+        pushButton_3->setFont(font3);
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #4CAF50; /* Couleur et largeur de la bordure */\n"
+"    border-radius: 15px; /* Rayon de l'arrondi */\n"
+"  background-color:   #8c8c8c;\n"
+"    color: white; /* Couleur du texte */\n"
+"    padding: 10px 20px; /* Espacement interne */\n"
+"    font-size: 14px; /* Taille du texte */\n"
+"    font-weight: bold; /* Style du texte */\n"
+"}"));
+        calendar_2 = new QPushButton(centralwidget);
+        calendar_2->setObjectName("calendar_2");
+        calendar_2->setGeometry(QRect(1610, 300, 93, 31));
+        calendar_2->setFont(font3);
+        calendar_2->setContextMenuPolicy(Qt::ContextMenuPolicy::NoContextMenu);
+        calendar_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #4CAF50; /* Couleur et largeur de la bordure */\n"
+"    border-radius: 15px; /* Rayon de l'arrondi */\n"
+"  background-color:   #8c8c8c;\n"
+"    color: white; /* Couleur du texte */\n"
+"    padding: 10px 20px; /* Espacement interne */\n"
+"    font-size: 14px; /* Taille du texte */\n"
+"    font-weight: bold; /* Style du texte */\n"
+"}"));
+        calendar_2->setIcon(icon2);
+        pushButton_11 = new QPushButton(centralwidget);
+        pushButton_11->setObjectName("pushButton_11");
+        pushButton_11->setGeometry(QRect(1670, 230, 71, 41));
+        pushButton_11->setFont(font3);
+        pushButton_11->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #4CAF50; /* Couleur et largeur de la bordure */\n"
+"    border-radius: 15px; /* Rayon de l'arrondi */\n"
+"  background-color:   #8c8c8c;\n"
+"    color: white; /* Couleur du texte */\n"
+"    padding: 10px 20px; /* Espacement interne */\n"
+"    font-size: 14px; /* Taille du texte */\n"
+"    font-weight: bold; /* Style du texte */\n"
+"}"));
+        tabWidget = new QTabWidget(centralwidget);
+        tabWidget->setObjectName("tabWidget");
+        tabWidget->setGeometry(QRect(0, 70, 941, 721));
+        tab = new QWidget();
+        tab->setObjectName("tab");
+        frame_2 = new QFrame(tab);
+        frame_2->setObjectName("frame_2");
+        frame_2->setGeometry(QRect(-70, 0, 1051, 711));
+        frame_2->setStyleSheet(QString::fromUtf8("background-color: rgb(199, 199, 199);"));
+        frame_2->setFrameShape(QFrame::Shape::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Shadow::Raised);
+        label_11 = new QLabel(frame_2);
+        label_11->setObjectName("label_11");
+        label_11->setGeometry(QRect(470, 40, 111, 20));
         QFont font4;
-        font4.setPointSize(10);
-        font4.setBold(true);
-        buttonStats->setFont(font4);
-        buttonStats->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255)"));
-        label = new QLabel(frame_2);
-        label->setObjectName("label");
-        label->setGeometry(QRect(500, 60, 101, 20));
+        font4.setFamilies({QString::fromUtf8("Georgia")});
+        label_11->setFont(font4);
+        label_11->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        groupBox_3 = new QGroupBox(frame_2);
+        groupBox_3->setObjectName("groupBox_3");
+        groupBox_3->setGeometry(QRect(70, 0, 361, 561));
+        groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
+"    border: 2px solid #0a0a55; /* Couleur turquoise pour la bordure */\n"
+"    border-radius: 10px;  /* Coins arrondis */\n"
+"    padding: 10px;  /* Espacement interne */\n"
+"    margin-bottom: 20px;  /* Espacement en bas */\n"
+" font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}"));
+        label_12 = new QLabel(groupBox_3);
+        label_12->setObjectName("label_12");
+        label_12->setGeometry(QRect(30, 50, 221, 31));
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
+        sizePolicy.setHorizontalStretch(5);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_12->sizePolicy().hasHeightForWidth());
+        label_12->setSizePolicy(sizePolicy);
+        label_12->setMaximumSize(QSize(16777215, 16777215));
         QFont font5;
-        font5.setPointSize(15);
-        font5.setBold(true);
-        font5.setItalic(true);
-        font5.setStrikeOut(false);
-        label->setFont(font5);
-        label_2 = new QLabel(frame_2);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(690, 160, 16, 16));
+        font5.setFamilies({QString::fromUtf8("Georgia")});
+        font5.setBold(false);
+        font5.setUnderline(true);
+        label_12->setFont(font5);
+        label_12->setStyleSheet(QString::fromUtf8("color: #0a0a55;"));
+        lineEdit_8 = new QLineEdit(groupBox_3);
+        lineEdit_8->setObjectName("lineEdit_8");
+        lineEdit_8->setGeometry(QRect(140, 390, 113, 26));
+        label_13 = new QLabel(groupBox_3);
+        label_13->setObjectName("label_13");
+        label_13->setGeometry(QRect(20, 390, 81, 21));
         QFont font6;
-        font6.setPointSize(10);
-        font6.setBold(true);
-        font6.setItalic(true);
-        font6.setUnderline(true);
-        label_2->setFont(font6);
-        btnAfficher = new QPushButton(centralwidget);
-        btnAfficher->setObjectName("btnAfficher");
-        btnAfficher->setGeometry(QRect(660, 340, 81, 31));
-        btnAfficher->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    border: 2px solid #5C6BC0; /* Bordure bleue */\n"
-"    background-color: white; /* Couleur de fond blanche */\n"
-"    color: #5C6BC0; /* Couleur du texte bleue */\n"
-"    border-radius: 15px; /* Rend le bouton rond, ajust\303\251 pour petite taille */\n"
-"    padding: 5px; /* Espace int\303\251rieur r\303\251duit */\n"
-"    min-width: 15px; /* Largeur minimum */\n"
-"    min-height: 15px; /* Hauteur minimum */\n"
+        font6.setFamilies({QString::fromUtf8("Georgia")});
+        font6.setBold(false);
+        label_13->setFont(font6);
+        label_13->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        label_14 = new QLabel(groupBox_3);
+        label_14->setObjectName("label_14");
+        label_14->setGeometry(QRect(20, 350, 81, 21));
+        label_14->setFont(font6);
+        label_14->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        dateEdit_5 = new QDateEdit(groupBox_3);
+        dateEdit_5->setObjectName("dateEdit_5");
+        dateEdit_5->setGeometry(QRect(140, 350, 110, 26));
+        QFont font7;
+        font7.setPointSize(9);
+        dateEdit_5->setFont(font7);
+        dateEdit_5->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        label_15 = new QLabel(groupBox_3);
+        label_15->setObjectName("label_15");
+        label_15->setGeometry(QRect(20, 310, 111, 21));
+        label_15->setFont(font6);
+        label_15->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        dateEdit_6 = new QDateEdit(groupBox_3);
+        dateEdit_6->setObjectName("dateEdit_6");
+        dateEdit_6->setGeometry(QRect(140, 310, 110, 26));
+        QFont font8;
+        font8.setPointSize(8);
+        dateEdit_6->setFont(font8);
+        dateEdit_6->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        label_16 = new QLabel(groupBox_3);
+        label_16->setObjectName("label_16");
+        label_16->setGeometry(QRect(20, 260, 63, 31));
+        label_16->setFont(font6);
+        label_16->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        lineEdit_9 = new QLineEdit(groupBox_3);
+        lineEdit_9->setObjectName("lineEdit_9");
+        lineEdit_9->setGeometry(QRect(140, 260, 113, 26));
+        label_17 = new QLabel(groupBox_3);
+        label_17->setObjectName("label_17");
+        label_17->setGeometry(QRect(20, 190, 111, 31));
+        label_17->setFont(font6);
+        label_17->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        textEdit_3 = new QTextEdit(groupBox_3);
+        textEdit_3->setObjectName("textEdit_3");
+        textEdit_3->setGeometry(QRect(140, 180, 221, 61));
+        label_18 = new QLabel(groupBox_3);
+        label_18->setObjectName("label_18");
+        label_18->setGeometry(QRect(20, 130, 63, 20));
+        label_18->setFont(font6);
+        label_18->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        lineEdit_5 = new QLineEdit(groupBox_3);
+        lineEdit_5->setObjectName("lineEdit_5");
+        lineEdit_5->setGeometry(QRect(140, 130, 113, 26));
+        update = new QPushButton(groupBox_3);
+        update->setObjectName("update");
+        update->setGeometry(QRect(230, 470, 121, 31));
+        update->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #0a0a55;   /* Grey border */\n"
+"    border-radius: 10px;         /* Round the corners */\n"
+"    padding: 0 8px;              /* Padding inside the button */\n"
+"    background: #c6c6c6;         /* Grey background */\n"
+"    color: #0a0a55;                /* White text color */\n"
+"font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #F0F0F0; /* Couleur de fond plus claire au survol */\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #E0E0E0; /* Couleur de fond plus fonc\303\251e lorsque press\303\251 */\n"
+"    background-color: white;   /* Darker grey on hover */\n"
 "}\n"
 ""));
+        pushButton = new QPushButton(groupBox_3);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(50, 470, 101, 31));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #0a0a55;   /* Grey border */\n"
+"    border-radius: 10px;         /* Round the corners */\n"
+"    padding: 0 8px;              /* Padding inside the button */\n"
+"    background: #c6c6c6;         /* Grey background */\n"
+"    color: #0a0a55;                /* White text color */\n"
+" font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: white;   /* Darker grey on hover */\n"
+"}\n"
+""));
+        groupBox_4 = new QGroupBox(frame_2);
+        groupBox_4->setObjectName("groupBox_4");
+        groupBox_4->setGeometry(QRect(430, 70, 541, 471));
+        groupBox_4->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
+"    border: 2px solid #0a0a55; /* Couleur turquoise pour la bordure */\n"
+"    border-radius: 10px;  /* Coins arrondis */\n"
+"    padding: 10px;  /* Espacement interne */\n"
+"    margin-bottom: 20px;  /* Espacement en bas */\n"
+" font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}"));
+        label_19 = new QLabel(groupBox_4);
+        label_19->setObjectName("label_19");
+        label_19->setGeometry(QRect(20, 50, 211, 20));
+        QFont font9;
+        font9.setFamilies({QString::fromUtf8("Georgia")});
+        font9.setPointSize(10);
+        font9.setBold(false);
+        font9.setUnderline(true);
+        label_19->setFont(font9);
+        label_19->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        tableView = new QTableView(groupBox_4);
+        tableView->setObjectName("tableView");
+        tableView->setGeometry(QRect(20, 80, 501, 281));
+        QFont font10;
+        font10.setFamilies({QString::fromUtf8("Georgia")});
+        font10.setPointSize(14);
+        tableView->setFont(font10);
+        tableView->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);\n"
+" QTableView {\n"
+"            background-color: #f8f9fa;\n"
+"            border: 1px solid #dee2e6;\n"
+"            border-radius: 10px;\n"
+"            gridline-color: #1B2A49;\n"
+"            padding: 2px;\n"
+"            alternate-background-color: #E6F0FA;\n"
+"            font-family: Georgia, \"Times New Roman\", serif;\n"
+"        }\n"
+"        QTableView QTableCornerButton::section {\n"
+"            background-color: #A8B8A8;\n"
+"            border: none;\n"
+"            border-top-left-radius: 10px;\n"
+"        }\n"
+"        QHeaderView::section {\n"
+"            background-color: #2B2F48;\n"
+"            color: #F0F0F0;\n"
+"            padding: 8px;\n"
+"            border: none;\n"
+"            border-right: 1px solid #F0F0F0;\n"
+"            font-family: Georgia, \"Times New Roman\", serif;\n"
+"            font-style: italic;\n"
+"            font-size: 12px;\n"
+"            font-weight: bold;\n"
+"        }\n"
+"        QHeaderView::section:last {\n"
+"            border-right: "
+                        "none;\n"
+"        }\n"
+"        QTableView::item {\n"
+"            padding: 6px;\n"
+"            border-bottom: 1px  #2B2F48;\n"
+"            border-right: 1px  #2B2F48;\n"
+"        }\n"
+"        QTableView::item:last {\n"
+"            border-right: none;\n"
+"        }\n"
+"        QTableView::item:selected {\n"
+"            background-color: #grey;\n"
+"            color: #2B2F48;\n"
+"        }\n"
+"        QTableView::item:hover {\n"
+"            background-color: #e0e0ff;\n"
+"        }"));
+        P_2 = new QPushButton(groupBox_4);
+        P_2->setObjectName("P_2");
+        P_2->setGeometry(QRect(80, 380, 111, 31));
+        P_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #0a0a55;   /* Grey border */\n"
+"    border-radius: 10px;         /* Round the corners */\n"
+"    padding: 0 8px;              /* Padding inside the button */\n"
+"    background: #c6c6c6;         /* Grey background */\n"
+"    color: #0a0a55;                /* White text color */\n"
+"font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: white;   /* Darker grey on hover */\n"
+"}"));
+        pushButton_exporter_2 = new QPushButton(groupBox_4);
+        pushButton_exporter_2->setObjectName("pushButton_exporter_2");
+        pushButton_exporter_2->setGeometry(QRect(-180, 240, 111, 31));
+        pushButton_exporter_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #0a0a55;   /* Grey border */\n"
+"    border-radius: 10px;         /* Round the corners */\n"
+"    padding: 0 8px;              /* Padding inside the button */\n"
+"    background: #c6c6c6;         /* Grey background */\n"
+"    color: #0a0a55;                /* White text color */\n"
+"font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: white;   /* Darker grey on hover */\n"
+"}"));
+        sup = new QPushButton(groupBox_4);
+        sup->setObjectName("sup");
+        sup->setGeometry(QRect(370, 380, 111, 29));
+        sup->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #0a0a55;   /* Grey border */\n"
+"    border-radius: 10px;         /* Round the corners */\n"
+"    padding: 0 8px;              /* Padding inside the button */\n"
+"    background: #c6c6c6;         /* Grey background */\n"
+"    color: #0a0a55;                /* White text color */\n"
+"font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: white;   /* Darker grey on hover */\n"
+"}\n"
+"\n"
+""));
+        sup_2 = new QPushButton(groupBox_4);
+        sup_2->setObjectName("sup_2");
+        sup_2->setGeometry(QRect(210, 380, 121, 31));
+        sup_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border: 2px solid #0a0a55;   /* Grey border */\n"
+"    border-radius: 10px;         /* Round the corners */\n"
+"    padding: 0 8px;              /* Padding inside the button */\n"
+"    background: #c6c6c6;         /* Grey background */\n"
+"    color: #0a0a55;                /* White text color */\n"
+"font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: white;   /* Darker grey on hover */\n"
+"}\n"
+""));
+        checkBox = new QCheckBox(groupBox_4);
+        checkBox->setObjectName("checkBox");
+        checkBox->setGeometry(QRect(260, 20, 91, 24));
+        checkBox->setFont(font4);
+        checkBox->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        checkBox_2 = new QCheckBox(groupBox_4);
+        checkBox_2->setObjectName("checkBox_2");
+        checkBox_2->setGeometry(QRect(310, 20, 91, 24));
+        checkBox_2->setFont(font4);
+        checkBox_2->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        comboBox_2 = new QComboBox(groupBox_4);
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->setObjectName("comboBox_2");
+        comboBox_2->setGeometry(QRect(380, 20, 121, 21));
+        QFont font11;
+        font11.setPointSize(11);
+        comboBox_2->setFont(font11);
+        comboBox_2->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);\n"
+"background-color: rgb(255, 255, 255);"));
+        statuslabel = new QLabel(groupBox_4);
+        statuslabel->setObjectName("statuslabel");
+        statuslabel->setGeometry(QRect(20, 0, 211, 51));
+        pushButton_13 = new QPushButton(frame_2);
+        pushButton_13->setObjectName("pushButton_13");
+        pushButton_13->setGeometry(QRect(800, 40, 31, 21));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8("tournant.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        pushButton_13->setIcon(icon5);
+        lineEdit = new QLineEdit(frame_2);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setGeometry(QRect(530, 10, 241, 41));
+        lineEdit->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"    font-size: 14px;\n"
+"    padding: 5px 10px;\n"
+"    border: 2px solid #ccc;\n"
+"    border-radius: 5px;\n"
+"    background-color: #f9f9f9;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #4A90E2; /* Couleur de la bordure quand le champ est s\303\251lectionn\303\251 */\n"
+"    background-color: #fff;\n"
+"}\n"
+"\n"
+"QLineEdit::placeholder {\n"
+"    color: #aaa; /* Couleur du texte placeholder */\n"
+"    font-style: italic;\n"
+"}\n"
+"\n"
+"\n"
+""));
+        search_3 = new QPushButton(frame_2);
+        search_3->setObjectName("search_3");
+        search_3->setGeometry(QRect(840, 40, 81, 31));
+        search_3->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton {\n"
+"    border: 2px solid #0a0a55;   /* Grey border */\n"
+"    border-radius: 10px;         /* Round the corners */\n"
+"    padding: 0 8px;              /* Padding inside the button */\n"
+"    background: #c6c6c6;         /* Grey background */\n"
+"    color: #0a0a55;                /* White text color */\n"
+"font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8("search.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        search_3->setIcon(icon6);
+        search_3->setAutoDefault(false);
+        search_3->setFlat(false);
+        filter = new QPushButton(frame_2);
+        filter->setObjectName("filter");
+        filter->setGeometry(QRect(820, 0, 81, 31));
+        filter->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton {\n"
+"    border: 2px solid #0a0a55;   /* Grey border */\n"
+"    border-radius: 10px;         /* Round the corners */\n"
+"    padding: 0 8px;              /* Padding inside the button */\n"
+"    background: #c6c6c6;         /* Grey background */\n"
+"    color: #0a0a55;                /* White text color */\n"
+"font-family: \"Georgia\", \"Times New Roman\", serif;\n"
+"}"));
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8("filter.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        filter->setIcon(icon7);
+        filter->setAutoDefault(false);
+        filter->setFlat(false);
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName("tab_2");
+        pushButton_4 = new QPushButton(tab_2);
+        pushButton_4->setObjectName("pushButton_4");
+        pushButton_4->setGeometry(QRect(10, 10, 93, 29));
+        tabWidget->addTab(tab_2, QString());
+        tab_3 = new QWidget();
+        tab_3->setObjectName("tab_3");
+        calendarWidget = new QCalendarWidget(tab_3);
+        calendarWidget->setObjectName("calendarWidget");
+        calendarWidget->setGeometry(QRect(19, 15, 1351, 611));
+        QPalette palette;
+        QBrush brush(QColor(0, 0, 0, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        QBrush brush1(QColor(57, 115, 172, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush1);
+        QBrush brush2(QColor(88, 172, 255, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Light, brush2);
+        QBrush brush3(QColor(72, 143, 213, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Midlight, brush3);
+        QBrush brush4(QColor(29, 57, 86, 255));
+        brush4.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Dark, brush4);
+        QBrush brush5(QColor(38, 77, 115, 255));
+        brush5.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Mid, brush5);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush);
+        QBrush brush6(QColor(255, 255, 255, 255));
+        brush6.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::BrightText, brush6);
+        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush6);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Shadow, brush);
+        QBrush brush7(QColor(156, 185, 213, 255));
+        brush7.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush7);
+        QBrush brush8(QColor(255, 255, 220, 255));
+        brush8.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipBase, brush8);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush);
+        QBrush brush9(QColor(0, 0, 0, 127));
+        brush9.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush9);
+#endif
+        palette.setBrush(QPalette::Active, QPalette::Accent, brush6);
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Light, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::Midlight, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::Dark, brush4);
+        palette.setBrush(QPalette::Inactive, QPalette::Mid, brush5);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush6);
+        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush6);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush7);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush8);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush9);
+#endif
+        palette.setBrush(QPalette::Inactive, QPalette::Accent, brush6);
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Light, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::Midlight, brush3);
+        palette.setBrush(QPalette::Disabled, QPalette::Dark, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::Mid, brush5);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush6);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush8);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush);
+        QBrush brush10(QColor(29, 57, 86, 127));
+        brush10.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush10);
+#endif
+        QBrush brush11(QColor(74, 149, 224, 255));
+        brush11.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Disabled, QPalette::Accent, brush11);
+        calendarWidget->setPalette(palette);
+        tabWidget->addTab(tab_3, QString());
+        tab_4 = new QWidget();
+        tab_4->setObjectName("tab_4");
+        labelAffiche = new QLabel(tab_4);
+        labelAffiche->setObjectName("labelAffiche");
+        labelAffiche->setGeometry(QRect(12, 9, 1351, 611));
+        tabWidget->addTab(tab_4, QString());
         MainWindow->setCentralWidget(centralwidget);
-        frame_2->raise();
-        frame->raise();
-        tableView->raise();
-        btnEnvoyerSMS->raise();
-        lineEditRecherche->raise();
-        btnAfficher->raise();
+        widget->raise();
+        widget_2->raise();
+        pdf->raise();
+        calendar->raise();
+        search->raise();
+        analytics->raise();
+        pushButton_3->raise();
+        calendar_2->raise();
+        pushButton_11->raise();
+        tabWidget->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 857, 18));
+        menubar->setGeometry(QRect(0, 0, 1595, 18));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -649,149 +866,87 @@ public:
 
         retranslateUi(MainWindow);
 
+        pushButton_2->setDefault(false);
+        analytics_3->setDefault(false);
+        calendar_4->setDefault(false);
+        P_3->setDefault(false);
+        pushButton_14->setDefault(false);
+        pushButton_8->setDefault(false);
+        tabWidget->setCurrentIndex(0);
+        search_3->setDefault(false);
+        filter->setDefault(false);
+
+
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        textEditDashboard->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "ACCEUIL", nullptr));
+        analytics_3->setText(QCoreApplication::translate("MainWindow", "STATISTIQUES", nullptr));
+        calendar_4->setText(QCoreApplication::translate("MainWindow", "CALENDRIER", nullptr));
+        P_3->setText(QCoreApplication::translate("MainWindow", "AFFICHE", nullptr));
+        label_24->setText(QCoreApplication::translate("MainWindow", "Admin", nullptr));
+        pushButton_14->setText(QCoreApplication::translate("MainWindow", "CLIENTS", nullptr));
+        pushButton_8->setText(QCoreApplication::translate("MainWindow", "QUITTER", nullptr));
+        label->setText(QString());
+        label_2->setText(QString());
+        label_3->setText(QString());
+        label_4->setText(QString());
+        label_9->setText(QString());
+        label_10->setText(QString());
+        label_22->setText(QCoreApplication::translate("MainWindow", "MONOVA MALL", nullptr));
+        label_20->setText(QString());
+        label_21->setText(QString());
+        pdf->setText(QString());
+        calendar->setText(QString());
+        search->setText(QString());
+        analytics->setText(QString());
+        pushButton_3->setText(QCoreApplication::translate("MainWindow", "OK", nullptr));
+        calendar_2->setText(QString());
+        pushButton_11->setText(QCoreApplication::translate("MainWindow", "OK", nullptr));
+        label_11->setText(QCoreApplication::translate("MainWindow", "RECHERCHER", nullptr));
+        groupBox_3->setTitle(QString());
+        label_12->setText(QCoreApplication::translate("MainWindow", "AJOUT EVENEMENT:", nullptr));
+        label_13->setText(QCoreApplication::translate("MainWindow", "PRODUIT:", nullptr));
+        label_14->setText(QCoreApplication::translate("MainWindow", "DATE FIN :", nullptr));
+        label_15->setText(QCoreApplication::translate("MainWindow", "DATE DEBUT:", nullptr));
+        label_16->setText(QCoreApplication::translate("MainWindow", "TYPE:", nullptr));
+        label_17->setText(QCoreApplication::translate("MainWindow", "DESCRIPTION:", nullptr));
+        textEdit_3->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; color:#404040;\">\360\237\217\240</span><span style=\" font-size:12pt; font-style:italic;\">Dashboard</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-le"
-                        "ft:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt; font-style:italic;\"><br /></p></body></html>", nullptr));
-        textEdit_2->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\221\244</span><span style=\" font-size:10pt;\">Client</span></p></body></html>", nullptr));
-        textEditEmploye->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:4px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\221\250\342\200\215\360\237\222\274</span><span style=\" font-size:10pt;\">Employee</span></p></body></html>", nullptr));
-        textEdit_4->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:4px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; color:#404040;\">\360\237\233\222</span><span style=\" font-size:10pt;\">Produit</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:4px; margin-bottom:0px; margin-left:0px; margin-right:"
-                        "0px; -qt-block-indent:0; text-indent:0px; font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
-        textEdit_5->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\223\246</span><span style=\" font-size:10pt;\">Stock </span></p></body></html>", nullptr));
-        textEdit_7->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; font-weight:400; color:#404040;\">\360\237\216\252</span><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Hel"
-                        "vetica Neue','Oxygen','Open Sans','sans-serif'; font-size:10pt; color:#404040;\">Evenement</span></p></body></html>", nullptr));
-        pushButton->setText(QString());
-        pushButton_2->setText(QString());
-        pushButton_5->setText(QString());
-        pushButton_6->setText(QString());
-        pushButton_7->setText(QString());
-        pushButton_8->setText(QString());
-        pushButton_10->setText(QString());
-        textEdit_8->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Inter','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Noto Sans','Ubuntu','Cantarell','Helvetica Neue','Oxygen','Open Sans','sans-serif'; font-size:16px; color:#404040;\">\360\237\217\254</span><span style=\" font-size:10pt;\">Magasines</span></p></body></html>", nullptr));
-        btnEnvoyerSMS->setText(QCoreApplication::translate("MainWindow", "Envoyer sms", nullptr));
-        textEdit_13->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:700;\">Id_client</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;\"><br /></p></body></html>", nullptr));
-        textEdit_15->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:700;\">Prenom_client</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; tex"
-                        "t-indent:0px; font-size:11pt; font-weight:700;\"><br /></p></body></html>", nullptr));
-        textEdit_16->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:700;\">Nom_client</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;\"><br /></p></body></html>", nullptr));
-        textEdit_17->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:700;\">Email_client</span></p></body></html>", nullptr));
-        textEdit_24->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Telephone</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:700;\"><br /></p></body></html>", nullptr));
-        btnAjouter->setText(QCoreApplication::translate("MainWindow", "Ajouter", nullptr));
-        btnModifier->setText(QCoreApplication::translate("MainWindow", "modifier", nullptr));
-        textEdit_27->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Point_fidelite</span></p></body></html>", nullptr));
-        btnSupprimer->setText(QCoreApplication::translate("MainWindow", "Supprimer", nullptr));
-        label_10->setText(QCoreApplication::translate("MainWindow", "Listes clients ", nullptr));
-        btnPDF->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
-        comboBoxTri->setItemText(0, QCoreApplication::translate("MainWindow", "prenom", nullptr));
-        comboBoxTri->setItemText(1, QCoreApplication::translate("MainWindow", "email", nullptr));
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
+        label_18->setText(QCoreApplication::translate("MainWindow", "NOM:", nullptr));
+        update->setText(QCoreApplication::translate("MainWindow", "MODIFIER", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "AJOUTER", nullptr));
+        groupBox_4->setTitle(QString());
+        label_19->setText(QCoreApplication::translate("MainWindow", "LISTE DES EVENEMENTS:", nullptr));
+        P_2->setText(QCoreApplication::translate("MainWindow", "EXPORTER", nullptr));
+        pushButton_exporter_2->setText(QCoreApplication::translate("MainWindow", "EXPORTER", nullptr));
+        sup->setText(QCoreApplication::translate("MainWindow", "SUPPRIMER", nullptr));
+        sup_2->setText(QCoreApplication::translate("MainWindow", "MODIFIER", nullptr));
+        checkBox->setText(QCoreApplication::translate("MainWindow", "ASC", nullptr));
+        checkBox_2->setText(QCoreApplication::translate("MainWindow", "DESC", nullptr));
+        comboBox_2->setItemText(0, QCoreApplication::translate("MainWindow", "type", nullptr));
+        comboBox_2->setItemText(1, QCoreApplication::translate("MainWindow", "nom", nullptr));
+        comboBox_2->setItemText(2, QCoreApplication::translate("MainWindow", "date d\303\251but", nullptr));
 
-        buttonAchat->setText(QCoreApplication::translate("MainWindow", "Achat", nullptr));
-        buttonStats->setText(QCoreApplication::translate("MainWindow", "Stat", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Recherche :", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Tri :", nullptr));
-        btnAfficher->setText(QCoreApplication::translate("MainWindow", "Afficher", nullptr));
+        statuslabel->setText(QString());
+        pushButton_13->setText(QString());
+        search_3->setText(QString());
+        filter->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Tab 2", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Page", nullptr));
+        labelAffiche->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Page", nullptr));
     } // retranslateUi
 
 };

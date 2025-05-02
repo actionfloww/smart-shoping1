@@ -1,0 +1,15 @@
+release/achat.o
+release/client.o
+release/connection.o
+release/main.o
+release/menu.o
+release/wins.o
+release/Event.o
+release/customcalendarwidget.o
+release/mainwindow.o
+release/arduino.o
+release/qrc_img.o
+release/moc_menu.o
+release/moc_wins.o
+release/moc_arduino.o
+release/moc_mainwindow.o

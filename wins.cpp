@@ -1,5 +1,7 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "wins.h"
+#include "ui_wins.h"
+#include "menu.h"
+#include "ui_menu.h"
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlError>
@@ -26,25 +28,36 @@
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
 #include <QtCharts/QChartView>
+#include <QGraphicsEffect>
+#include <QPropertyAnimation>
+#include <QtCharts>
+#include <QPieSeries>
+#include <QPieSlice>
 
 
-MainWindow::MainWindow(QWidget *parent)
+
+
+wins::wins(QWidget *parent)
     : QMainWindow(parent),
-    ui(new Ui::MainWindow),
+    ui(new Ui::wins),
     model(new QSqlQueryModel(this)),
     modelAchats(new QSqlTableModel(this)),
     smsManager(new QNetworkAccessManager(this))
+
+
+
 {
     ui->setupUi(this);
 
+    connect(ui->tableView, &QTableView::clicked, this, &wins::on_tableView_2_clicked);
 
     QAction *searchAction = new QAction(style()->standardIcon(QStyle::SP_FileDialogContentsView), "Rechercher");
 
 
 
+
     // 2. Ajouter l'action au QLineEdit (côté gauche)
     ui->lineEditRecherche->addAction(searchAction, QLineEdit::LeadingPosition);
-
     // 3. Optionnel : styliser le QLineEdit
     ui->lineEditRecherche->setPlaceholderText("Rechercher...");
     ui->lineEditRecherche->setStyleSheet(
@@ -87,34 +100,39 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
+void wins::on_acceuil_clicked(){
+
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
 // Fonction pour valider l'ID
-bool MainWindow::validateID(const QString &idStr) {
+bool wins::validateID(const QString &idStr) {
     bool ok;
     int id = idStr.toInt(&ok);
     return ok && id > 0; // L'ID doit être un nombre entier positif
 }
 
 // Fonction pour valider le nom ou prénom
-bool MainWindow::validateName(const QString &name) {
+bool wins::validateName(const QString &name) {
     QRegularExpression nameRegex("^[a-zA-ZÀ-ÿ\\s'-]+$"); // Autorise les lettres, espaces, apostrophes et traits d'union
     return nameRegex.match(name).hasMatch() && !name.isEmpty();
 }
 
 // Fonction pour valider l'email
-bool MainWindow::validateEmail(const QString &email) {
+bool wins::validateEmail(const QString &email) {
     QRegularExpression emailRegex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
     return emailRegex.match(email).hasMatch();
 }
 
 // Fonction pour valider le téléphone (8 chiffres exactement)
-bool MainWindow::validatePhone(const QString &phoneStr) {
+bool wins::validatePhone(const QString &phoneStr) {
     bool ok;
     int phone = phoneStr.toInt(&ok);
     return ok && phone > 0 && phoneStr.length() == 8; // Le téléphone doit être un nombre de 8 chiffres
 
 }
 
-void MainWindow::on_btnAjouter_clicked()
+void wins::on_btnAjouter_clicked()
 {
     // Récupérer les valeurs des champs
     QString idStr = ui->lineEditID->text();
@@ -176,7 +194,7 @@ void MainWindow::on_btnAjouter_clicked()
     }
 }
 
-void MainWindow::on_btnModifier_clicked()
+void wins::on_btnModifier_clicked()
 {
     QString idStr = ui->lineEditID->text();
     QString nom = ui->lineEditNom->text();
@@ -247,7 +265,7 @@ void MainWindow::on_btnModifier_clicked()
     }
 }
 
-void MainWindow::on_btnSupprimer_clicked()
+void wins::on_btnSupprimer_clicked()
 {
     QString idStr = ui->lineEditID->text();
 
@@ -293,15 +311,15 @@ void MainWindow::on_btnSupprimer_clicked()
     }
 }
 
-void MainWindow::on_btnAfficher_clicked()
+void wins::on_btnAfficher_2_clicked()
 {
     QSqlQuery query("SELECT ID_CLIENT, NOM_CLIENT, PRENOM_CLIENT, TO_CHAR(TELEPHONE) AS TELEPHONE, POINT_FIDELITE, EMAIL_CLIENT FROM CLIENT");
     model->setQuery(query);
-    ui->tableView->setModel(model);
+    ui->tableView_2->setModel(model);
 }
 
 
-void MainWindow::on_lineEditRecherche_textChanged(const QString &arg1)
+void wins::on_lineEditRecherche_textChanged(const QString &arg1)
 {
     QString filter = arg1.trimmed();
     QSqlQuery query;
@@ -319,7 +337,7 @@ void MainWindow::on_lineEditRecherche_textChanged(const QString &arg1)
     }
 }
 
-void MainWindow::on_comboBoxTri_currentIndexChanged(int index)
+void wins::on_comboBoxTri_currentIndexChanged(int index)
 {
     QString ordre;
     if (index == 0) ordre = "PRENOM_CLIENT ASC";
@@ -332,7 +350,7 @@ void MainWindow::on_comboBoxTri_currentIndexChanged(int index)
     ui->tableView->setModel(model);
 }
 
-void MainWindow::on_btnPDF_clicked()
+void wins::on_btnPDF_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this, "Enregistrer en PDF", "", "Fichier PDF (*.pdf)");
     if (fileName.isEmpty()) return;
@@ -360,7 +378,7 @@ void MainWindow::on_btnPDF_clicked()
 
     QMessageBox::information(this, "Succès", "Le fichier PDF a été généré avec succès !");
 }
-void MainWindow::on_buttonAchat_clicked() {
+void wins::on_buttonAchat_clicked() {
     // 1. Validation de l'ID client
     if (!validateID(ui->lineEditID->text())) {
         QMessageBox::warning(this, "Erreur", "ID client invalide");
@@ -408,7 +426,7 @@ void MainWindow::on_buttonAchat_clicked() {
     QMessageBox::information(this, "Succès", "Achat enregistré et points mis à jour");
 }
 
-void MainWindow::actualiserInfosClient(int idClient) {
+void wins::actualiserInfosClient(int idClient) {
     QSqlQuery query;
     query.prepare("SELECT POINT_FIDELITE FROM CLIENT WHERE ID_CLIENT = ?");
     query.addBindValue(idClient);
@@ -418,10 +436,10 @@ void MainWindow::actualiserInfosClient(int idClient) {
     }
 
     // Actualiser aussi le tableau si nécessaire
-    on_btnAfficher_clicked();
+    on_btnAfficher_2_clicked();
 }
 
-void MainWindow::mettreAJourAffichagePoints(int idClient) {
+void wins::mettreAJourAffichagePoints(int idClient) {
     QSqlQuery query;
     query.prepare("SELECT pointFidelite FROM client WHERE ID_CLIENT = :idClient");
     query.bindValue(":idClient", idClient);
@@ -441,69 +459,129 @@ void MainWindow::mettreAJourAffichagePoints(int idClient) {
 }
 
 
-MainWindow::~MainWindow()
+wins::~wins()
 {
     // Suppression dans l'ordre inverse de déclaration
     delete modelAchats;  // D'abord le modèle achats
     delete model;        // Puis le modèle clients
     delete ui;           // Enfin l'interface
+    ui->labelEtoiles->setVisible(false);
+}
+
+void wins::goToPage2() {
+    ui->tabWidget->setCurrentIndex(1); // Switch to Tab 2 (index 1)
+}
+
+// Slot to switch to Page 1 (if needed)
+void wins::goToPage1() {
+    ui->tabWidget->setCurrentIndex(0); // Switch to Tab 1 (index 0)
 }
 
 
-void MainWindow::actualiserTableauAchats() {
+void wins::actualiserTableauAchats() {
     modelAchats->select();
     ui->tableViewAchats->resizeColumnsToContents();
 }
-void MainWindow::on_buttonStats_clicked()
+void wins::on_buttonStats_clicked()
 {
-    // Récupérer les données
+    // 1. Récupération des données
     QSqlQuery query;
-    query.prepare("SELECT NOM_CLIENT, POINT_FIDELITE FROM CLIENT WHERE POINT_FIDELITE > 0 ORDER BY POINT_FIDELITE DESC");
-
-    if (!query.exec()) {
-        QMessageBox::critical(this, "Erreur", "Impossible de récupérer les données: " + query.lastError().text());
+    if (!query.exec("SELECT NOM_CLIENT, POINT_FIDELITE FROM CLIENT ORDER BY POINT_FIDELITE DESC")) {
+        QMessageBox::critical(this, "Erreur", "Échec de la requête: " + query.lastError().text());
         return;
     }
 
-    // Créer une série pour le diagramme circulaire
-    QPieSeries *series = new QPieSeries();
+    // 2. Préparation des séries et compteurs
+    QPieSeries *seriesLow = new QPieSeries();    // ≤ 10 pts
+    QPieSeries *seriesMedium = new QPieSeries(); // 10-30 pts
+    QPieSeries *seriesHigh = new QPieSeries();   // > 30 pts
 
-    // Ajouter les données à la série
+    int totalClients = 0;
+    int totalPoints = 0;
+    QHash<QString, int> clientsByCategory = {
+        {"≤10 pts", 0}, {"10-30 pts", 0}, {">30 pts", 0}
+    };
+
+    // 3. Traitement des données
     while (query.next()) {
         QString nom = query.value(0).toString();
         int points = query.value(1).toInt();
 
-        QPieSlice *slice = series->append(nom, points);
-        slice->setLabelVisible(true); // Afficher les étiquettes
+        totalClients++;
+        totalPoints += points;
+
+        if (points <= 10) {
+            seriesLow->append(nom, points);
+            clientsByCategory["≤10 pts"]++;
+        } else if (points <= 30) {
+            seriesMedium->append(nom, points);
+            clientsByCategory["10-30 pts"]++;
+        } else {
+            seriesHigh->append(nom, points);
+            clientsByCategory[">30 pts"]++;
+        }
     }
 
-    // Créer le graphique
-    QChart *chart = new QChart();
-    chart->addSeries(series);
-    chart->setTitle("Répartition des Points de Fidélité");
-    chart->setAnimationOptions(QChart::SeriesAnimations);
-    chart->legend()->setVisible(true);
-    chart->legend()->setAlignment(Qt::AlignRight);
+    // 4. Création des graphiques
+    QChartView *viewLow = createChartView(seriesLow, "Clients ≤ 10 pts");
+    QChartView *viewMedium = createChartView(seriesMedium, "Clients 10-30 pts");
+    QChartView *viewHigh = createChartView(seriesHigh, "Clients > 30 pts");
 
-    // Personnaliser l'apparence des tranches
-    for (QPieSlice *slice : series->slices()) {
-        slice->setExploded(false); // Désactiver l'effet "explosé"
-        slice->setLabel(QString("%1 (%2%)").arg(slice->label()).arg(slice->percentage() * 100, 0, 'f', 1));
-    }
+    // 5. Création du tableau récapitulatif
+    QTableWidget *table = new QTableWidget();
+    table->setColumnCount(2);
+    table->setHorizontalHeaderLabels({"Catégorie", "Nombre de Clients"});
 
-    // Affichage
-    QChartView *chartView = new QChartView(chart);
-    chartView->setRenderHint(QPainter::Antialiasing);
+    table->setRowCount(4);
+    table->setItem(0, 0, new QTableWidgetItem("Total Clients"));
+    table->setItem(0, 1, new QTableWidgetItem(QString::number(totalClients)));
+
+    table->setItem(1, 0, new QTableWidgetItem("≤10 pts"));
+    table->setItem(1, 1, new QTableWidgetItem(QString::number(clientsByCategory["≤10 pts"])));
+
+    table->setItem(2, 0, new QTableWidgetItem("10-30 pts"));
+    table->setItem(2, 1, new QTableWidgetItem(QString::number(clientsByCategory["10-30 pts"])));
+
+    table->setItem(3, 0, new QTableWidgetItem(">30 pts"));
+    table->setItem(3, 1, new QTableWidgetItem(QString::number(clientsByCategory[">30 pts"])));
+
+    // 6. Disposition dans la fenêtre
+    QWidget *chartsWidget = new QWidget();
+    QHBoxLayout *chartsLayout = new QHBoxLayout(chartsWidget);
+    chartsLayout->addWidget(viewLow);
+    chartsLayout->addWidget(viewMedium);
+    chartsLayout->addWidget(viewHigh);
 
     QDialog *dialog = new QDialog(this);
-    QVBoxLayout *layout = new QVBoxLayout(dialog);
-    layout->addWidget(chartView);
-    dialog->setLayout(layout);
-    dialog->resize(800, 600);
-    dialog->setWindowTitle("Statistiques des Points (Diagramme Circulaire)");
+    QVBoxLayout *mainLayout = new QVBoxLayout(dialog);
+    mainLayout->addWidget(table);
+    mainLayout->addWidget(chartsWidget);
+
+    dialog->setLayout(mainLayout);
+    dialog->resize(1400, 700);
+    dialog->setWindowTitle("Statistiques Complètes des Clients");
     dialog->exec();
 }
-void MainWindow::envoyerSMSClientsInactifs()
+
+QChartView* wins::createChartView(QPieSeries *series, const QString &title)
+{
+    QChart *chart = new QChart();
+    chart->addSeries(series);
+    chart->setTitle(title);
+    chart->legend()->setVisible(true);
+
+    for (QPieSlice *slice : series->slices()) {
+        slice->setLabel(QString("%1\n%2 pts").arg(slice->label()).arg(slice->value()));
+        slice->setLabelVisible(true);
+    }
+
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->setMinimumSize(400, 400);
+
+    return chartView;
+}
+void wins::envoyerSMSClientsInactifs()
 {
     // 1. Vérification connexion DB
     if (!QSqlDatabase::database().isOpen()) {
@@ -549,7 +627,7 @@ void MainWindow::envoyerSMSClientsInactifs()
                              QString("%1 SMS envoyés, %2 échecs").arg(succes).arg(echecs));
 }
 
-void MainWindow::on_btnEnvoyerSMS_clicked()
+void wins::on_btnEnvoyerSMS_2_clicked()
 {
     // Demander confirmation avant d'envoyer les SMS
     QMessageBox::StandardButton reply;
@@ -561,101 +639,208 @@ void MainWindow::on_btnEnvoyerSMS_clicked()
         envoyerSMSClientsInactifs();
     }
 }
-    enum CustomAttributes {
-        ClientIdAttribute = QNetworkRequest::User + 1,
-        TelephoneAttribute = QNetworkRequest::User + 2,
-        MessageAttribute = QNetworkRequest::User + 3
-    };
+enum CustomAttributes {
+    ClientIdAttribute = QNetworkRequest::User + 1,
+    TelephoneAttribute = QNetworkRequest::User + 2,
+    MessageAttribute = QNetworkRequest::User + 3
+};
 
 
-void MainWindow::envoyerSMSTwilio(int idClient, QString toNumber, const QString& message)
-{
-    // 1. Nettoyage et validation du numéro
-    toNumber = toNumber.trimmed().remove(QRegularExpression("[^0-9+]"));
-
-    if (!toNumber.startsWith("+216") || toNumber.length() != 12) {
-        qCritical() << "Numéro invalide:" << toNumber;
-        throw std::invalid_argument("Numéro de téléphone invalide");
-    }
-
-    // 2. Configuration Twilio
+void wins::envoyerSMSTwilio(int idClient, QString toNumber, const QString& message) {
+    // 1. Identifiants Twilio VALIDES (à obtenir depuis votre dashboard Twilio)
     const QString accountSID = "ACa5d0f611c346c8862ecf9586aaee3efe";
-    const QString authToken = "8b3a60816d8974f75f2599de26766cd3";
+    const QString authToken = "fb7d88ff0a3bd6cbbaf6b7bc8017745c";
     const QString fromNumber = "+17158041628";
+    // 2. Construction de la requête
+    QUrl url("https://api.twilio.com/2010-04-01/Accounts/" + accountSID + "/Messages.json");
+    QNetworkRequest request(url);
 
-    // 3. Construction de la requête
-    QUrl url(QString("https://api.twilio.com/2010-04-01/Accounts/%1/Messages.json").arg(accountSID));
+    // 3. Authentification CORRECTE (la partie cruciale)
+    QString credentials = accountSID + ":" + authToken;
+    QByteArray authHeader = "Basic " + credentials.toUtf8().toBase64();
+    request.setRawHeader("Authorization", authHeader);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+
+    // 4. Paramètres du SMS
     QUrlQuery params;
     params.addQueryItem("To", toNumber);
     params.addQueryItem("From", fromNumber);
-    params.addQueryItem("Body", message.left(1600));
+    params.addQueryItem("Body", message.left(1600));  // Limite à 1600 caractères
 
-    QNetworkRequest request(url);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-    request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(accountSID).arg(authToken).toLocal8Bit().toBase64()));
-
-    // 4. Envoi avec timeout
+    // 5. Envoi avec gestion d'erreur améliorée
     QNetworkReply* reply = smsManager->post(request, params.toString(QUrl::FullyEncoded).toUtf8());
 
-    QTimer::singleShot(15000, [reply]() {
-        if (reply && reply->isRunning()) {
-            reply->abort();
-            reply->deleteLater();
-        }
-    });
-
-    // 5. Gestion de la réponse
-    connect(reply, &QNetworkReply::finished, [this, reply, idClient, toNumber]() {
-        if (reply->error() != QNetworkReply::NoError) {
-            qCritical() << "Erreur Twilio:" << reply->errorString();
-            return;
-        }
-
-        QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
-        if (!json.isNull()) {
-            qDebug() << "SMS envoyé à" << toNumber << "- Statut:"
-                    << json.object().value("status").toString();
+    connect(reply, &QNetworkReply::finished, [=]() {
+        QByteArray response = reply->readAll();
+        if(reply->error() == QNetworkReply::NoError) {
+            qDebug() << "SMS envoyé! Réponse:" << response;
+        } else {
+            qDebug() << "ERREUR Twilio - Code:" << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt()
+            << "\nDétails:" << response;
         }
         reply->deleteLater();
     });
 }
 
-    void MainWindow::onSmsSent(QNetworkReply* reply)
-    {
-        // 1. Vérifier si la réponse existe
-        if (!reply) {
-            qCritical() << "Réponse réseau invalide";
-            return;
-        }
+void wins::onSmsSent(QNetworkReply* reply)
+{
+    // 1. Vérifier si la réponse existe
+    if (!reply) {
+        qCritical() << "Réponse réseau invalide";
+        return;
+    }
 
-        // 2. Gestion des erreurs
-        if (reply->error() != QNetworkReply::NoError) {
-            qCritical() << "Erreur réseau:" << reply->errorString();
-            reply->deleteLater();
-            return;
-        }
-
-        // 3. Traitement de la réponse
-        QByteArray responseData = reply->readAll();
-        QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
-
-        if (jsonResponse.isNull()) {
-            qWarning() << "Réponse JSON invalide";
-        } else {
-            qDebug() << "Réponse Twilio:" << jsonResponse.toJson();
-        }
-
-        // 4. Nettoyage
+    // 2. Gestion des erreurs
+    if (reply->error() != QNetworkReply::NoError) {
+        qCritical() << "Erreur réseau:" << reply->errorString();
         reply->deleteLater();
+        return;
     }
 
-    void MainWindow::on_btnTestSMS_clicked()
-    {
-        QString testNumber = "52735465"; // Numéro qui causait le crash
-        try {
-            envoyerSMSTwilio(999, testNumber, "Message test");
-            QMessageBox::information(this, "Test", "SMS envoyé avec succès");
-        } catch (...) {
-            QMessageBox::critical(this, "Erreur", "Échec d'envoi SMS");
-        }
+    // 3. Traitement de la réponse
+    QByteArray responseData = reply->readAll();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
+
+    if (jsonResponse.isNull()) {
+        qWarning() << "Réponse JSON invalide";
+    } else {
+        qDebug() << "Réponse Twilio:" << jsonResponse.toJson();
     }
+
+    // 4. Nettoyage
+    reply->deleteLater();
+}
+
+
+
+void wins::afficherInfosClient(int idClient) {
+    QSqlQuery query;
+    query.prepare("SELECT NOM_CLIENT, PRENOM_CLIENT, EMAIL_CLIENT, TELEPHONE, POINT_FIDELITE FROM CLIENT WHERE ID_CLIENT = :id");
+    query.bindValue(":id", idClient);
+
+    if (query.exec() && query.next()) {
+        ui->lineEditNom->setText(query.value("NOM_CLIENT").toString());
+        ui->lineEditPrenom->setText(query.value("PRENOM_CLIENT").toString());
+        ui->lineEditEmail->setText(query.value("EMAIL_CLIENT").toString());
+        ui->lineEditTelephone->setText(query.value("TELEPHONE").toString());
+        ui->lineEditPointFidelite->setText(query.value("POINT_FIDELITE").toString());
+    }
+}
+
+
+
+void wins::on_tableView_2_clicked(const QModelIndex &index) {
+    // Récupérer l'ID du client dans la première colonne
+    int idClient = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 0)).toInt();
+
+    // Mettre à jour l'interface
+    ui->lineEditID->setText(QString::number(idClient));
+    afficherInfosClient(idClient);
+
+    // Actualiser aussi les achats du client
+    QSqlQuery query;
+    query.prepare("SELECT * FROM ACHAT WHERE ID_CLIENT = :id");
+    query.bindValue(":id", idClient);
+    if (query.exec()) {
+        modelAchats->setQuery(query);
+        ui->tableViewAchats->setModel(modelAchats);
+    }
+}
+
+void wins::verifierNumero(QString numero) {
+    QUrl url("https://verify.twilio.com/v2/Services/VAxxx/Verifications");
+    QNetworkRequest request(url);
+
+    // ... [configuration similaire à l'envoi de SMS] ...
+
+    QUrlQuery params;
+    params.addQueryItem("To", numero);
+    params.addQueryItem("Channel", "sms");
+
+    // Envoi de la demande de vérification
+    QNetworkReply* reply = smsManager->post(request, params.toString(QUrl::FullyEncoded).toUtf8());
+}
+void wins::afficherEtoilesFidelite(int points) {
+    // 1 étoile pour chaque 10 points (arrondi à l'inférieur)
+    int nbEtoiles = points / 10;
+
+    // Limitez le nombre d'étoiles si nécessaire (par exemple 10 étoiles max)
+    nbEtoiles = qMin(nbEtoiles, 5);
+
+    QString etoiles;
+    for (int i = 0; i < nbEtoiles; ++i) {
+        etoiles += "★"; // Étoile pleine
+    }
+    for (int i = nbEtoiles; i < 5; ++i) {
+        etoiles += "☆"; // Étoile vide
+    }
+
+    ui->labelEtoiles->setText(etoiles);
+    animateStars(nbEtoiles);
+    ui->labelEtoiles->setVisible(true);
+    ui->labelEtoiles->setStyleSheet("font-size: 16px; color: gold;");
+}
+void wins::on_lineEditID_textChanged(const QString &arg1) {
+    bool ok;
+    int idClient = arg1.toInt(&ok);
+
+    if (ok && idClient > 0) {
+        // Afficher les infos de base du client
+        afficherInfosClient(idClient);
+
+        // Récupérer les points de fidélité
+        QSqlQuery query;
+        query.prepare("SELECT POINT_FIDELITE FROM CLIENT WHERE ID_CLIENT = :id");
+        query.bindValue(":id", idClient);
+
+        if (query.exec() && query.next()) {
+            int points = query.value(0).toInt();
+            afficherEtoilesFidelite(points);
+
+            // Optionnel: Afficher aussi le nombre exact de points
+            ui->lineEditPointFidelite->setText(QString::number(points));
+        } else {
+            ui->labelEtoiles->setVisible(false);
+            ui->lineEditPointFidelite->clear();
+        }
+    } else {
+        ui->labelEtoiles->setVisible(false);
+        ui->lineEditPointFidelite->clear();
+    }
+}
+// Pour un effet visuel plus engageant
+void wins::animateStars(int newStars) {
+    // Créez une animation de couleur
+    QGraphicsColorizeEffect *effect = new QGraphicsColorizeEffect(this);
+    ui->labelEtoiles->setGraphicsEffect(effect);
+
+    QPropertyAnimation *animation = new QPropertyAnimation(effect, "color");
+    animation->setDuration(1000);
+    animation->setStartValue(QColor("gold"));
+    animation->setEndValue(QColor("orange"));
+    animation->setEasingCurve(QEasingCurve::OutBounce);
+
+    // Connectez la suppression de l'animation une fois terminée
+    connect(animation, &QPropertyAnimation::finished, [=]() {
+        effect->deleteLater();
+        animation->deleteLater();
+    });
+
+    animation->start();
+}
+
+
+
+void wins::on_tabWidget_currentChanged(int index)
+{
+
+}
+
+
+
+
+
+
+// ...
+
+

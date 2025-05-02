@@ -1,7 +1,7 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
-
+#ifndef WINS_H
+#define WINS_H
 #include <QMainWindow>
+#include "qmainwindow.h"
 #include <QSqlQueryModel>
 #include <QSqlTableModel>
 #include <QChartView>
@@ -11,25 +11,43 @@
 #include <QBarCategoryAxis>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QTcpSocket>
+#include <QMessageAuthenticationCode>
+#include <QtCharts>
+#include <QPieSeries>
+#include <QPieSlice>
+#include <QTableWidgetItem>
+#include <QHash>
+#include <QSqlDatabase>
+
+#include <QPixmap>
+#include <QLabel>
+
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui { class wins; }
 QT_END_NAMESPACE
 
 
-class MainWindow : public QMainWindow
+class wins : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    explicit wins(QWidget *parent = nullptr);
+    ~wins();
 
+    // --- Badge / RFID ---
+    bool initializeDatabase();
+    bool initializeArduino();
+    void loadImages();
 
 private slots:
+    // --- Fonctions existantes ---
+    void on_acceuil_clicked();
     void on_btnAjouter_clicked();
     void on_btnModifier_clicked();
     void on_btnSupprimer_clicked();
-    void on_btnAfficher_clicked();
+    void on_btnAfficher_2_clicked();
     void on_lineEditRecherche_textChanged(const QString &arg1);
     void on_comboBoxTri_currentIndexChanged(int index);
     void on_btnPDF_clicked();
@@ -37,29 +55,62 @@ private slots:
     void mettreAJourAffichagePoints(int idClient);
     void actualiserTableauAchats();
     void on_buttonStats_clicked();
-    void on_btnEnvoyerSMS_clicked();
+    void goToPage1();
+    void goToPage2();
     void onSmsSent(QNetworkReply* reply);
+    void on_tableView_2_clicked(const QModelIndex &index);
+    void on_lineEditID_textChanged(const QString &arg1);
+    void verifierNumero(QString numero);
+    void on_btnEnvoyerSMS_2_clicked();
+    void animateStars(int newStars);
+    void on_tabWidget_currentChanged(int index);
 
-    void on_btnTestSMS_clicked();
+
+
+
+
+
+
+signals:
+    void accessGranted(QString employeeName);
+    void accessDenied();
+
 private:
-    Ui::MainWindow *ui;
+    Ui::wins *ui;
+    // --- Variables existantes ---
     QSqlQueryModel *model;
     QSqlTableModel *modelAchats;
     QNetworkAccessManager *smsManager;
-    // Fonctions de validation
+
+    // --- Variables ajoutées pour badge ---
+
+    QByteArray m_rfidData;
+    QSqlDatabase m_db;
+    QHash<QString, QString> m_uidCache; // Cache pour les UIDs enregistrés
+     QLabel *imageLabel;
+
+    // --- Fonctions utilitaires existantes ---
     bool validateID(const QString &idStr);
     bool validateName(const QString &name);
     bool validateEmail(const QString &email);
     bool validatePhone(const QString &phoneStr);
     void actualiserInfosClient(int idClient);
     int getPointsFidelite(int idClient);
-    void envoyerSMSClientsInactifs();
     void envoyerSMSTwilio(int idClient, QString toNumber, const QString& message);
-    void enregistrerSMSBDD(int idClient, const QString& telephone, const QString& message, bool succes);
+    void envoyerSMSClientsInactifs();
+    void afficherInfosClient(int idClient);
+    void afficherEtoilesFidelite(int points);
+    QChartView* createChartView(QPieSeries *series, const QString &title);
+
+    // --- Fonctions utilitaires ajoutées pour badge ---
+    void sendToLCD(const QString &message);
+    bool validateInputs(const QString& uid, const QString& cin);
+    bool isCinValid(int cin);
+    QString getEmployeeName(int cin);
+    void updateEmployeeCache();
+    void clearInputFields();
+    void showStatusMessage(const QString& message, bool isError = false);
+    QString normalizeUid(const QString& uid);
 };
 
-
-
-
-
-#endif // MAINWINDOW_H
+#endif // WINS_H

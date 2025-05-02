@@ -1,8 +1,8 @@
 #include "connection.h"
 
-Connection::Connection() {}
+connection::connection() {}
 
-bool Connection::createconnect()
+bool connection::createconnect()
 {
     bool test = false;
 
@@ -11,24 +11,27 @@ bool Connection::createconnect()
         QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
     }
 
+    // Configuration de la connexion ODBC
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
     db.setDatabaseName("projetA"); // Assurez-vous que cela correspond à votre DSN ODBC
-    db.setUserName("ahmed1");
-    db.setPassword("2003");
+    db.setUserName("ahmed1");      // Nom d'utilisateur de la base de données
+    db.setPassword("2003");        // Mot de passe de la base de données
 
     if (db.open()) {
         test = true;
-        qDebug() << "Connexion à la base de données réussie !";
+        qDebug() << "[INFO] Connexion à la base de données réussie.";
     } else {
-        qDebug() << "Échec de la connexion à la base de données !";
-        qDebug() << "Erreur: " << db.lastError().text();
+        qDebug() << "[ERREUR] Échec de la connexion à la base de données !";
+        qDebug() << "[ERREUR] Détails : " << db.lastError().text();
     }
 
     return test;
 }
 
-void Connection::closeconnect()
+void connection::closeconnect()
 {
-    QSqlDatabase db = QSqlDatabase::database();
-    db.close();
+    if (QSqlDatabase::contains("qt_sql_default_connection")) {
+        QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
+        qDebug() << "[INFO] Connexion à la base de données fermée.";
+    }
 }
