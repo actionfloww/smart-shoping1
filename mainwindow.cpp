@@ -32,9 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    ui->PDF->setIcon(QPixmap("/Users/ranim/Desktop/Projet qT/ranim/projet/pdf.png"));
-    ui->filter->setIcon(QPixmap("/Users/ranim/Desktop/Projet qT/ranim/projet/filter.png"));
-    ui->sup->setIcon(QPixmap("/Users/ranim/Desktop/Projet qT/ranim/projet/bin.png"));
+
     ui->tableView->setModel(magasin.afficher());
     ui->tableView->resizeColumnsToContents();
 
