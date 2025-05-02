@@ -13,9 +13,9 @@ bool connection::createconnect()
 
     // Configuration de la connexion ODBC
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-    db.setDatabaseName("projetA"); // Assurez-vous que cela correspond à votre DSN ODBC
-    db.setUserName("ahmed1");      // Nom d'utilisateur de la base de données
-    db.setPassword("2003");        // Mot de passe de la base de données
+    db.setDatabaseName("projetA"); //
+    db.setUserName("ahmed1");      //
+    db.setPassword("2003");        //
 
     if (db.open()) {
         test = true;
