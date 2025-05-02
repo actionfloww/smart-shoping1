@@ -29,13 +29,15 @@ bool Event::insertIntoDatabase(QSqlQuery& query) const {
 QSqlQueryModel * Event::afficher() {
     QSqlQueryModel * model = new QSqlQueryModel();
 
-    model->setQuery("SELECT NOM_EVENT, DESCRIPTION, TYPE, DATE_DEBUT, DATE_FIN, PRODUIT FROM EVENEMENTS");
+    model->setQuery("SELECT NOM_EVENT, DESCRIPTION, TYPE, DATE_DEBUT, DATE_FIN, PRODUIT, ID_EVENT  FROM EVENEMENTS");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("Nom Event"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Description"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Type"));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("Date Début"));
     model->setHeaderData(4, Qt::Horizontal, QObject::tr("Date Fin"));
     model->setHeaderData(5, Qt::Horizontal, QObject::tr("Produit"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("ID"));
+
 
     return model;
 }

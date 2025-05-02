@@ -3,10 +3,10 @@ QT       += core gui \
 QT+= sql
 QT += core gui widgets printsupport
 QT += charts
-SOURCES += qrcodegen.cpp \
-    qrcodegenerator.cpp
-HEADERS += qrcodegen.h \
-    qrcodegenerator.h
+SOURCES += \
+    arduino.cpp
+QT += core gui sql serialport
+
 
 
 
@@ -27,6 +27,7 @@ SOURCES += \
 
 HEADERS += \
     Event.h \
+    arduino.h \
     connection.h \
     customcalendarwidget.h \
     mainwindow.h

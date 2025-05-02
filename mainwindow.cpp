@@ -21,6 +21,8 @@
 #include <QStandardItemModel>
 #include <QStandardItem>
 #include <QGraphicsDropShadowEffect>
+#include <QSerialPortInfo>
+#include <QAbstractItemView>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -29,18 +31,25 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Configuration des icônes
-    ui->logo->setPixmap(QPixmap("C:\\Users\\MSI\\Documents\\projet\\logo.png"));
+    ui->label->setPixmap(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\newlogo.png"));
+    ui->label_21->setPixmap(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\B.jpeg"));
+    ui->label_2->setPixmap(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\employe.jpeg"));
+    ui->label_3->setPixmap(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\clientt.jpeg"));
+    ui->label_10->setPixmap(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\mag.jpeg"));
+    ui->label_4->setPixmap(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\produit.jpeg"));
+     ui->label_9->setPixmap(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\stock.jpeg"));
 
+     ui->label_20->setPixmap(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\FFFFFFG.png"));
 
-    ui->calendar_4->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\calendar.png"));
-    ui->analytics_3->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\analytics.png"));
-    ui->pushButton_13->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\tournant.png"));
-    ui->P_2->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\pdf.png"));
-    ui->P_3->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\newspaper.png"));
-    ui->sup_2->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\update.png"));
+    ui->calendar_4->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\calendar.png"));
+    ui->analytics_3->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\analytics.png"));
+    ui->pushButton_13->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\tournant.png"));
+    ui->P_2->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\pdf.png"));
+    ui->P_3->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\newspaper.png"));
+    ui->sup_2->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\update.png"));
     ui->filter->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\filter.png"));
-    ui->search_3->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\search.png"));
-    ui->sup->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\bin.png"));
+    ui->search_3->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\search.png"));
+    ui->sup->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet - Copie\\bin.png"));
 
     // Configuration du modèle proxy
     proxyModel->setSourceModel(event->afficher()); // Modèle de votre table
@@ -49,12 +58,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->tableView->setModel(proxyModel); // Attacher le modèle proxy à la vue
     ui->tableView->resizeColumnsToContents();
-    ui->tableView->setStyleSheet(
-        "QTableView::item:selected { "
-        "background-color: #e27396; "  // Couleur de fond pour l'élément sélectionné
-        "color: black; "
-        "}"
-        );
+
+
 
     // Connexions des boutons
     connect(ui->sup_2, &QPushButton::clicked, this, &MainWindow::on_sup_2_clicked);
@@ -109,12 +114,39 @@ MainWindow::MainWindow(QWidget *parent)
 
         QWidget *tab4 = ui->tabWidget->widget(3);
 
+        // Initialiser la connexion à Arduino
+        arduino = new QSerialPort(this);
+        int ret = connect_arduino();
+        switch (ret) {
+        case 0:
+            qDebug() << "Arduino est disponible et connecté au port :" << getarduino_port_name();
+            break;
+        case 1:
+            qDebug() << "Arduino est disponible mais pas connecté au port :" << getarduino_port_name();
+            break;
+        case -1:
+            qDebug() << "Arduino n'est pas disponible";
+            break;
+        }
+
+        // Connecter le signal de réception de données Arduino au slot update_label
+        QObject::connect(arduino, SIGNAL(readyRead()), this, SLOT(update_label()));
+
+        // Initialiser le timer pour les alertes automatiques
+        alertTimer = new QTimer(this);
+        connect(alertTimer, &QTimer::timeout, this, &MainWindow::send_automatic_alert);
+        alertTimer->start(5000); // Exemple : toutes les 5 secondes
+
+        // Initialiser le dernier statut
+        lastStatus = "";
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
     delete event;
+    db.close();
 }
 void MainWindow::goToStatisticsPage() {
     ui->tabWidget->setCurrentIndex(1); // Naviguer vers Tab2 (Statistiques)
@@ -158,6 +190,67 @@ void MainWindow::switchToNews() {
     ui->tableView->resizeColumnsToContents();
 }*/
 
+
+void MainWindow::applyTableViewStyle()
+{
+    // Appliquer le style CSS avec séparateurs de colonnes
+    QString style = R"(
+        QTableView {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            gridline-color: #1B2A49;
+            padding: 2px;
+            alternate-background-color: #E6F0FA;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+        QTableView QTableCornerButton::section {
+            background-color: #A8B8A8;
+            border: none;
+            border-top-left-radius: 10px;
+        }
+        QHeaderView::section {
+            background-color: #2B2F48;
+            color: #F0F0F0;
+            padding: 8px;
+            border: none;
+            border-right: 1px solid #F0F0F0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        QHeaderView::section:last {
+            border-right: none;
+        }
+        QTableView::item {
+            padding: 6px;
+            border-bottom: 1px  #2B2F48;
+            border-right: 1px  #2B2F48;
+        }
+        QTableView::item:last {
+            border-right: none;
+        }
+        QTableView::item:selected {
+            background-color: #grey;
+            color: #2B2F48;
+        }
+        QTableView::item:hover {
+            background-color: #e0e0ff;
+        }
+    )";
+
+    ui->tableView->setStyleSheet(style);
+
+    // Configurations supplémentaires
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->tableView->setAlternatingRowColors(true);
+    ui->tableView->verticalHeader()->setVisible(false);
+    ui->tableView->horizontalHeader()->setHighlightSections(false);
+    ui->tableView->horizontalHeader()->setDefaultAlignment(Qt::AlignCenter);
+    ui->tableView->setFont(QFont("Arial", 10));
+}
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -240,6 +333,7 @@ void MainWindow::on_tab_affichage_clicked(const QModelIndex &index)
     QString dateDebut = ui->tableView->model()->data(index.siblingAtColumn(3)).toString();
     QString dateFin = ui->tableView->model()->data(index.siblingAtColumn(4)).toString();
     QString produit = ui->tableView->model()->data(index.siblingAtColumn(5)).toString();
+    int idEvent= ui->tableView->model()->data(index.siblingAtColumn(6)).toInt();
 
 
     ui->lineEdit_5->setText(nomEvent);
@@ -310,45 +404,56 @@ void MainWindow::on_sup_clicked()
 
 void MainWindow::on_sup_2_clicked()
 {
-    QString nomEvent = ui->updatee_2->text().trimmed();
+    QItemSelectionModel *selection = ui->tableView->selectionModel();
 
-    if (nomEvent.isEmpty()) {
-        QMessageBox::warning(this, "Erreur", "Veuillez entrer le nom de l'événement.");
+    if (!selection->hasSelection()) {
+        QMessageBox::warning(this, "Erreur", "Veuillez sélectionner une ligne.");
         return;
     }
 
+    QModelIndex index = selection->currentIndex();
+
+    // Récupère l'ID_EVENT depuis la colonne 6 (indice base 0)
+    int idEvent = ui->tableView->model()->data(index.siblingAtColumn(6)).toInt();
+
+    if (idEvent <= 0) {
+        QMessageBox::warning(this, "Erreur", "ID d'événement invalide. Veuillez sélectionner une ligne valide.");
+        return;
+    }
+
+    // Requête pour récupérer les données de l'événement
     QSqlQuery query;
-    query.prepare("SELECT * FROM EVENEMENTS WHERE NOM_EVENT = :nomEvent");
-    query.bindValue(":nomEvent", nomEvent);
+    query.prepare("SELECT * FROM EVENEMENTS WHERE ID_EVENT = :idEvent");
+    query.bindValue(":idEvent", idEvent);
 
     if (!query.exec()) {
-        QMessageBox::critical(this, "Erreur", "Échec de la récupération des données.\n" );
+        QMessageBox::critical(this, "Erreur", "Échec de la récupération des données.\n" + query.lastError().text());
         return;
     }
 
     if (query.next()) {
-        // Récupérer les données de l'événement
-        int idEvent = query.value("ID_EVENT").toInt();
+        QString nomEvent = query.value("NOM_EVENT").toString();
         QString description = query.value("DESCRIPTION").toString();
         QString type = query.value("TYPE").toString();
         QDate dateDebut = query.value("DATE_DEBUT").toDate();
         QDate dateFin = query.value("DATE_FIN").toDate();
         QString produit = query.value("PRODUIT").toString();
 
-        // Remplir les champs du formulaire avec les données récupérées
+        // Remplit le formulaire avec les données
+        ui->lineEdit_5->setText(nomEvent);
         ui->textEdit_3->setPlainText(description);
         ui->lineEdit_9->setText(type);
         ui->dateEdit_6->setDate(dateDebut);
         ui->dateEdit_5->setDate(dateFin);
         ui->lineEdit_8->setText(produit);
-        ui->lineEdit_5->setText(nomEvent);
 
-        // Stocker l'ID de l'événement pour l'utiliser lors de la mise à jour
+        // Stocke l'ID pour d'éventuelles opérations ultérieures
         currentEventID = idEvent;
     } else {
-        QMessageBox::warning(this, "Erreur", "Aucun événement trouvé avec ce nom.");
+        QMessageBox::warning(this, "Erreur", "Aucun événement trouvé avec cet ID.");
     }
 }
+
 
 void MainWindow::on_update_clicked()
 {
@@ -543,7 +648,7 @@ void MainWindow::refreshPage() {
     // Toujours trier les résultats par la colonne "Type"
     proxyModel->sort(2, Qt::AscendingOrder);
 }*/
-void MainWindow::trierParType() {
+/*void MainWindow::trierParType() {
     // Récupérer le type sélectionné
     QString typeSelectionne = ui->comboBox_2->currentText();
 
@@ -592,6 +697,85 @@ void MainWindow::trierParType() {
 
     // Appliquer le modèle trié à la vue
     ui->tableView->setModel(sortedModel);
+}*/
+void MainWindow::trierParType() {
+    // Vérifier qu'un critère de tri est sélectionné
+    if (!ui->checkBox->isChecked() && !ui->checkBox_2->isChecked()) {
+        return;
+    }
+
+    // Récupérer les paramètres de tri
+    QString critere = ui->comboBox_2->currentText();
+    bool ascendant = ui->checkBox->isChecked();
+
+    // Récupérer le modèle source
+    QAbstractItemModel *sourceModel = event->afficher(); // Adaptez selon votre source
+    if (!sourceModel) {
+        qDebug() << "Erreur : Modèle source non trouvé.";
+        return;
+    }
+
+    // Créer une liste des lignes avec leurs données
+    QList<QList<QVariant>> rows;
+    for (int row = 0; row < sourceModel->rowCount(); ++row) {
+        QList<QVariant> rowData;
+        for (int col = 0; col < sourceModel->columnCount(); ++col) {
+            rowData.append(sourceModel->index(row, col).data());
+        }
+        rows.append(rowData);
+    }
+
+    // Fonction de comparaison pour le tri
+    auto comparer = [critere, ascendant](const QList<QVariant> &a, const QList<QVariant> &b) {
+        // Indices des colonnes (à adapter selon votre modèle)
+        const int COL_TYPE = 2;    // Colonne du type
+        const int COL_NOM = 0;     // Colonne du nom
+        const int COL_DATE = 3;     // Colonne de la date
+
+        if (critere == "type") {
+            int compareResult = a[COL_TYPE].toString().compare(b[COL_TYPE].toString(), Qt::CaseInsensitive);
+            return ascendant ? (compareResult < 0) : (compareResult > 0);
+        }
+        else if (critere == "nom") {
+            int compareResult = a[COL_NOM].toString().compare(b[COL_NOM].toString(), Qt::CaseInsensitive);
+            return ascendant ? (compareResult < 0) : (compareResult > 0);
+        }
+        else { // "date"
+            QDate dateA = QDate::fromString(a[COL_DATE].toString(), "dd/MM/yyyy");
+            QDate dateB = QDate::fromString(b[COL_DATE].toString(), "dd/MM/yyyy");
+
+            if (dateA.isValid() && dateB.isValid()) {
+                return ascendant ? (dateA < dateB) : (dateA > dateB);
+            }
+            // En cas de date invalide, on place en dernier
+            return ascendant ? dateA.isValid() : !dateA.isValid();
+        }
+    };
+
+    // Trier les lignes
+    std::sort(rows.begin(), rows.end(), comparer);
+
+    // Recréer un modèle avec les données triées
+    QStandardItemModel *sortedModel = new QStandardItemModel(this);
+    sortedModel->setColumnCount(sourceModel->columnCount());
+
+    // Copier les en-têtes
+    for (int col = 0; col < sourceModel->columnCount(); ++col) {
+        sortedModel->setHorizontalHeaderItem(col,
+                                             new QStandardItem(sourceModel->headerData(col, Qt::Horizontal).toString()));
+    }
+
+    // Remplir avec les données triées
+    for (const auto &row : rows) {
+        QList<QStandardItem *> items;
+        for (const auto &value : row) {
+            items.append(new QStandardItem(value.toString()));
+        }
+        sortedModel->appendRow(items);
+    }
+
+    // Appliquer le modèle trié à la vue
+    ui->tableView->setModel(sortedModel);
 }
 
 void MainWindow::afficherStatistiques() {
@@ -629,6 +813,8 @@ void MainWindow::afficherStatistiques() {
         QPieSlice *slice = series->append(type, count);
 
         // Style des tranches
+
+
         slice->setColor(colors[colorIndex % colors.size()]);
         slice->setBorderColor(Qt::white);
         slice->setBorderWidth(2);
@@ -747,7 +933,8 @@ void MainWindow::afficherEvenementsSurCalendrier() {
     ui->calendarWidget->update();
 }
 
-void MainWindow::afficherDetailsEvenement(const QDate &date) {
+
+/*void MainWindow::afficherDetailsEvenement(const QDate &date) {
     QString details;
 
     // Requêter la base de données pour trouver les événements pour la date sélectionnée
@@ -790,6 +977,112 @@ void MainWindow::afficherDetailsEvenement(const QDate &date) {
 
     // Afficher les détails dans une boîte de dialogue
     QMessageBox::information(this, "📅 Détails des événements", details);
+}*/
+void MainWindow::afficherDetailsEvenement(const QDate &date) {
+    // Configuration des couleurs par type d'événement
+    QMap<QString, QColor> typeColors = {
+        {"solde", QColor(200, 173, 127)},     // Rouge clair
+        {"promotion", QColor(70, 130, 180)}, // Vert clair
+        {"réduction", QColor(211, 211, 211)}  // Bleu clair
+    };
+
+    // Réinitialiser le format de toutes les dates
+    ui->calendarWidget->setDateTextFormat(QDate(), QTextCharFormat());
+
+    // Requête pour récupérer tous les événements des 3 types
+    QSqlQuery query;
+    query.prepare("SELECT ID_EVENT, NOM_EVENT, DESCRIPTION, TYPE, DATE_DEBUT, DATE_FIN, PRODUIT "
+                  "FROM EVENEMENTS "
+                  "WHERE TYPE IN ('solde', 'promotion', 'réduction')");
+
+    QString details;
+    bool hasEvents = false;
+
+    if (query.exec()) {
+        while (query.next()) {
+            int idEvent = query.value(0).toInt();
+            QString nomEvent = query.value(1).toString();
+            QString description = query.value(2).toString();
+            QString type = query.value(3).toString();
+            QDate dateDebut = query.value(4).toDate();
+            QDate dateFin = query.value(5).toDate();
+            int idProduit = query.value(6).toInt();
+
+            // Vérifier la validité des dates
+            if (!dateDebut.isValid() || !dateFin.isValid()) {
+                continue;
+            }
+
+            // Créer le format pour ce type d'événement
+            QTextCharFormat eventFormat;
+            QColor eventColor = typeColors.value(type, QColor(220, 220, 220)); // Gris par défaut
+
+            eventFormat.setBackground(eventColor);
+            eventFormat.setForeground(Qt::black);
+            eventFormat.setFontWeight(QFont::Bold);
+
+            // Configurer l'infobulle
+            QString tooltip = QString("<b>%1</b><br>"
+                                      "<b>Type:</b> %2<br>"
+                                      "<b>Période:</b> %3 - %4<br>"
+                                      "<b>Description:</b> %5")
+                                  .arg(nomEvent)
+                                  .arg(type)
+                                  .arg(dateDebut.toString("dd/MM/yyyy"))
+                                  .arg(dateFin.toString("dd/MM/yyyy"))
+                                  .arg(description);
+
+            // Appliquer le format à toute la période
+            for (QDate d = dateDebut; d <= dateFin; d = d.addDays(1)) {
+                QTextCharFormat existingFormat = ui->calendarWidget->dateTextFormat(d);
+
+                // Fusionner les infobulles si plusieurs événements
+                if (!existingFormat.toolTip().isEmpty()) {
+                    tooltip = existingFormat.toolTip() + "<hr>" + tooltip;
+                }
+
+                eventFormat.setToolTip(tooltip);
+                ui->calendarWidget->setDateTextFormat(d, eventFormat);
+            }
+
+            // Si la date sélectionnée fait partie de cet événement, ajouter aux détails
+            if (date >= dateDebut && date <= dateFin) {
+                details += QString("<div style='background-color:%1; padding:5px; margin-bottom:10px;'>"
+                                   "<b>%2</b><br>"
+                                   "<b>Type:</b> %3<br>"
+                                   "<b>Description:</b> %4<br>"
+                                   "<b>Du:</b> %5 <b>au:</b> %6<br>"
+                                   "<b>ID Produit:</b> %7"
+                                   "</div>")
+                               .arg(eventColor.name())
+                               .arg(nomEvent)
+                               .arg(type)
+                               .arg(description)
+                               .arg(dateDebut.toString("dd/MM/yyyy"))
+                               .arg(dateFin.toString("dd/MM/yyyy"))
+                               .arg(idProduit);
+
+                hasEvents = true;
+            }
+        }
+    } else {
+        details = "<div style='color:red;'>Erreur lors de la récupération des événements.</div>";
+        qDebug() << "Erreur SQL:" << query.lastError().text();
+    }
+
+    // Mettre à jour l'affichage du calendrier
+    ui->calendarWidget->update();
+
+    // Afficher les détails dans une boîte de dialogue
+    if (!hasEvents) {
+        details = "Aucun événement (solde, promotion ou réduction) pour cette date.";
+    }
+
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Détails des événements - " + date.toString("dd/MM/yyyy"));
+    msgBox.setTextFormat(Qt::RichText);
+    msgBox.setText(details.isEmpty() ? "Aucun événement trouvé." : details);
+    msgBox.exec();
 }
 
 
@@ -801,7 +1094,7 @@ void MainWindow::afficherAfficheEvenement() {
     }
 
     // Définir le chemin de l'affiche (ex: "affiche.jpg")
-    QString imagePath = ("C:\\Users\\MSI\\Documents\\projet\\affiche.png");
+    QString imagePath = ("C:\\Users\\MSI\\Documents\\projet - copie\\affiche.png");
     QPixmap affiche(imagePath);
 
     if (affiche.isNull()) {
@@ -851,14 +1144,133 @@ void MainWindow::afficherAfficheEvenement() {
     }
 }*/
 
-
-
-
 void MainWindow::masquerAfficheEvenement() {
     if (ui->labelAffiche) {
         ui->labelAffiche->clear(); // Efface l'affiche
     }
 }
+
+int MainWindow::connect_arduino() {
+    // Liste des ports série disponibles
+    foreach (const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts()) {
+        if (serialPortInfo.hasVendorIdentifier() && serialPortInfo.hasProductIdentifier()) {
+            if (serialPortInfo.vendorIdentifier() == 0x2341 && serialPortInfo.productIdentifier() == 0x0043) {
+                arduino->setPortName(serialPortInfo.portName());
+                arduino->open(QSerialPort::ReadWrite);
+                arduino->setBaudRate(QSerialPort::Baud9600);
+                arduino->setDataBits(QSerialPort::Data8);
+                arduino->setParity(QSerialPort::NoParity);
+                arduino->setStopBits(QSerialPort::OneStop);
+                arduino->setFlowControl(QSerialPort::NoFlowControl);
+                return 0; // Connexion réussie
+            }
+        }
+    }
+    return -1; // Échec de la connexion
+}
+
+QString MainWindow::getarduino_port_name() {
+    return arduino->portName();
+}
+
+QSerialPort* MainWindow::getserial() {
+    return arduino;
+}
+
+void MainWindow::update_label() {
+    // Ajouter les données reçues au tampon
+    dataBuffer += arduino->readAll();
+    qDebug() << "Données reçues d'Arduino :" << dataBuffer;
+
+    // Vérifier si le tampon contient une ligne complète
+    int newlineIndex = dataBuffer.indexOf("\r\n");
+    if (newlineIndex != -1) {
+        // Extraire le message complet et le traiter
+        QString completeMessage = dataBuffer.left(newlineIndex).trimmed();
+        dataBuffer.remove(0, newlineIndex + 2);
+
+        if (completeMessage == "NORMAL") {
+            ui->statuslabel->setText("Mode normal");
+            lastStatus = "NORMAL";
+        } else if (completeMessage == "VERIFIER_QUANTITE") {
+            ui->statuslabel->setText("Vérifier Quantité");
+            lastStatus = "VERIFIER_QUANTITE";
+            send_automatic_alert();  // 👈 Appel ici uniquement dans ce cas
+        } else {
+            ui->statuslabel->setText("Message inconnu : " + completeMessage);
+        }
+    }
+}
+
+
+/*
+void MainWindow::saveStatusToDatabase(const QString &status) {
+    // Vérifier si la base de données est ouverte
+    if (!db.isOpen()) {
+        qDebug() << "La base de données n'est pas ouverte.";
+        return;
+    }
+
+    // Préparer la requête SQL pour mettre à jour le champ 'statuts'
+    QSqlQuery query;
+    query.prepare("UPDATE stoks SET statuts = :statues WHERE ROWNUM = 1");
+
+    // Lier les valeurs aux paramètres
+    query.bindValue(":status", status);
+
+    // Exécuter la requête et vérifier si elle a réussi
+    if (!query.exec()) {
+        qDebug() << "Erreur lors de la mise à jour du statut dans la base de données : " << query.lastError().text();
+    } else {
+        qDebug() << "Statut mis à jour avec succès : " << status;
+    }
+}
+*/
+void MainWindow::send_automatic_alert() {
+    // Vérifier l'état du dernier message reçu
+    if (lastStatus == "VERIFIER_QUANTITE") {
+        int quantity = getQuantityFromDatabase();  // Obtenir la quantité depuis la base de données
+        qDebug() << "Quantité vérifiée pour alerte :" << quantity;
+
+        // Si la quantité est inférieure à 5, activer l'alerte pour Arduino
+        if (quantity < 5) {
+            arduino->write("QUANTITE_AUGMENTE");  // Buzzer 5s côté Arduino
+        } else {
+            arduino->write("MODE_NORMAL");  // Rien à faire si la quantité est suffisante
+        }
+    }
+}
+
+int MainWindow::getQuantityFromDatabase() {
+    // Vérifier si la base de données est ouverte
+    if (!db.isOpen()) {
+        qDebug() << "";
+        return 10;  // Valeur par défaut en cas d'erreur
+    }
+
+    // Préparer la requête pour obtenir la dernière quantité insérée
+    QSqlQuery query;
+    query.prepare("SELECT QUANTITE FROM (SELECT QUANTITE FROM STOCKS ORDER BY ID DESC) WHERE ROWNUM = 1");
+
+    // Exécuter la requête
+    if (query.exec()) {
+        if (query.next()) {
+            // Retourner la quantité obtenue
+            int quantite = query.value(0).toInt();
+            qDebug() << "Dernière quantité récupérée:" << quantite;
+            return quantite;
+        } else {
+            qDebug() << "Aucune donnée trouvée dans la table STOCKS.";
+            return 10;  // Retourner une valeur par défaut en cas d'erreur
+        }
+    } else {
+        qDebug() << "Erreur SQL : " << query.lastError().text();
+        return 10;  // Retourner une valeur par défaut en cas d'erreur d'exécution
+    }
+}
+
+
+
 
 
 

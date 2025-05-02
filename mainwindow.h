@@ -16,6 +16,7 @@
 #include <QTextDocument>
 #include <QTabWidget>
 #include <QTimer>
+#include <QSerialPort>
 
 
 QT_BEGIN_NAMESPACE
@@ -54,6 +55,9 @@ private slots:
     void masquerAfficheEvenement();
     QAbstractItemModel* obtenirModeleInitial();
     void switchToNews();
+    void update_label();
+    void send_automatic_alert();
+    void applyTableViewStyle();
 
 
 
@@ -61,10 +65,21 @@ private:
     Ui::MainWindow *ui;
     Event* event;
     int currentEventID ;
+    QSqlDatabase db;
     QSortFilterProxyModel *proxyModel;    // Modèle proxy pour le filtrage et le tri
     QAbstractItemModel *originalModel;
      QTimer *timerAffichage;
     QTimer *timerMasquage;
+     QSerialPort *arduino;  // Connexion à Arduino
+     QString dataBuffer;  // Tampon pour les données reçues
+     QString lastStatus;  // Dernier statut reçu
+     QTimer *alertTimer;  // Timer pour les alertes automatiques
+     // Méthodes utilitaires
+     int connect_arduino();
+     QString getarduino_port_name();
+     QSerialPort* getserial();
+     void saveStatusToDatabase(const QString &status);
+     int getQuantityFromDatabase();
 
 
 
