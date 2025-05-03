@@ -12,6 +12,8 @@ public:
     connection();
     bool createconnect();
     void closeconnect();
+    static QSqlDatabase db; // Déclaration globale de la base de données
+
 };
 
 #endif // CONNECTION_H

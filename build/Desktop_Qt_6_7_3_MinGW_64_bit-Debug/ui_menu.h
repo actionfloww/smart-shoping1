@@ -52,11 +52,11 @@ public:
         menu->resize(1800, 800);
         label_12 = new QLabel(menu);
         label_12->setObjectName("label_12");
-        label_12->setGeometry(QRect(0, -60, 231, 901));
+        label_12->setGeometry(QRect(0, -70, 201, 901));
         label_12->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp Image 2025-05-01 at 11.42.27.jpeg")));
         stackedWidget = new QStackedWidget(menu);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setGeometry(QRect(230, 0, 1691, 1200));
+        stackedWidget->setGeometry(QRect(190, 0, 1691, 1200));
         page = new QWidget();
         page->setObjectName("page");
         stackedWidget->addWidget(page);
@@ -71,43 +71,49 @@ public:
         stackedWidget->addWidget(gestion_produit);
         label_16 = new QLabel(menu);
         label_16->setObjectName("label_16");
-        label_16->setGeometry(QRect(20, 190, 51, 51));
+        label_16->setGeometry(QRect(20, 180, 51, 51));
         label_16->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_16->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.43.17-removebg-preview.png")));
         label_16->setScaledContents(true);
         label_14 = new QLabel(menu);
         label_14->setObjectName("label_14");
-        label_14->setGeometry(QRect(50, 10, 111, 111));
+        label_14->setGeometry(QRect(50, 30, 81, 71));
         label_14->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_14->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-02_at_10.03.33-removebg-preview.png")));
         label_14->setScaledContents(true);
         label_17 = new QLabel(menu);
         label_17->setObjectName("label_17");
-        label_17->setGeometry(QRect(12, 270, 61, 51));
+        label_17->setGeometry(QRect(10, 250, 61, 51));
         label_17->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_17->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.43.18-removebg-preview.png")));
         label_17->setScaledContents(true);
         pushButton_11 = new QPushButton(menu);
         pushButton_11->setObjectName("pushButton_11");
-        pushButton_11->setGeometry(QRect(80, 580, 121, 41));
+        pushButton_11->setGeometry(QRect(80, 540, 101, 41));
         pushButton_11->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
 "    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
 " font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "color: #0a0a55;    \n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #ffffff;  /* Couleur au survol */\n"
 "}"));
         pushButton_8 = new QPushButton(menu);
         pushButton_8->setObjectName("pushButton_8");
-        pushButton_8->setGeometry(QRect(80, 430, 121, 41));
+        pushButton_8->setGeometry(QRect(80, 400, 101, 41));
         pushButton_8->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
 "    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
 " font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "color: #0a0a55;    \n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #ffffff;  /* Couleur au survol */\n"
 "}"));
         label_15 = new QLabel(menu);
         label_15->setObjectName("label_15");
-        label_15->setGeometry(QRect(30, 110, 191, 51));
+        label_15->setGeometry(QRect(30, 90, 271, 51));
         label_15->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "    font-size: 16px;\n"
@@ -120,76 +126,91 @@ public:
 "}"));
         label_21 = new QLabel(menu);
         label_21->setObjectName("label_21");
-        label_21->setGeometry(QRect(10, 499, 63, 51));
+        label_21->setGeometry(QRect(10, 460, 63, 51));
         label_21->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_21->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.44.45-removebg-preview (1).png")));
         label_21->setScaledContents(true);
         label_19 = new QLabel(menu);
         label_19->setObjectName("label_19");
-        label_19->setGeometry(QRect(10, 420, 63, 51));
+        label_19->setGeometry(QRect(10, 390, 63, 51));
         label_19->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_19->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.43.19-removebg-preview.png")));
         label_19->setScaledContents(true);
         pushButton_10 = new QPushButton(menu);
         pushButton_10->setObjectName("pushButton_10");
-        pushButton_10->setGeometry(QRect(80, 510, 121, 41));
+        pushButton_10->setGeometry(QRect(80, 470, 101, 41));
         pushButton_10->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
 "    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
 " font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "color: #0a0a55;    \n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #ffffff;  /* Couleur au survol */\n"
 "}"));
         pushButton_6 = new QPushButton(menu);
         pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(80, 280, 121, 41));
+        pushButton_6->setGeometry(QRect(80, 260, 101, 41));
         pushButton_6->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
 "    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
 " font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "color: #0a0a55;    \n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #ffffff;  /* Couleur au survol */\n"
 "}"));
         pushButton_5 = new QPushButton(menu);
         pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(80, 200, 121, 41));
+        pushButton_5->setGeometry(QRect(80, 190, 101, 41));
         pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
 "    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
 " font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "color: #0a0a55;    \n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #ffffff;  /* Couleur au survol */\n"
 "}"));
         pushButton_12 = new QPushButton(menu);
         pushButton_12->setObjectName("pushButton_12");
-        pushButton_12->setGeometry(QRect(80, 660, 121, 41));
+        pushButton_12->setGeometry(QRect(80, 610, 101, 41));
         pushButton_12->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
 "    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
 " font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "color: #0a0a55;    \n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #ffffff;  /* Couleur au survol */\n"
 "}"));
         label_20 = new QLabel(menu);
         label_20->setObjectName("label_20");
-        label_20->setGeometry(QRect(-10, 550, 101, 91));
+        label_20->setGeometry(QRect(-10, 520, 91, 81));
         label_20->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_20->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.43.19__1_-removebg-preview.png")));
         label_20->setScaledContents(true);
         label_18 = new QLabel(menu);
         label_18->setObjectName("label_18");
-        label_18->setGeometry(QRect(10, 350, 61, 51));
+        label_18->setGeometry(QRect(10, 330, 61, 51));
         label_18->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_18->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.43.18__1_-removebg-preview.png")));
         label_18->setScaledContents(true);
         pushButton_9 = new QPushButton(menu);
         pushButton_9->setObjectName("pushButton_9");
-        pushButton_9->setGeometry(QRect(80, 350, 121, 41));
+        pushButton_9->setGeometry(QRect(80, 330, 101, 41));
         pushButton_9->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
 "    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
 " font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "color: #0a0a55;    \n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #ffffff;  /* Couleur au survol */\n"
 "}"));
         label_22 = new QLabel(menu);
         label_22->setObjectName("label_22");
-        label_22->setGeometry(QRect(0, 650, 81, 71));
+        label_22->setGeometry(QRect(0, 600, 81, 71));
         label_22->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_22->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.43.19__2_-removebg-preview (1).png")));
         label_22->setScaledContents(true);

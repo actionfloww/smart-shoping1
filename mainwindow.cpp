@@ -31,15 +31,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Configuration des icônes
-    ui->label->setPixmap(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\affiche.png"));
-    ui->label_21->setPixmap(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\B.jpeg"));
-    ui->label_2->setPixmap(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\employe.jpeg"));
-    ui->label_3->setPixmap(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\clientt.jpeg"));
-    ui->label_10->setPixmap(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\mag.jpeg"));
-    ui->label_4->setPixmap(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\produit.jpeg"));
-    ui->label_9->setPixmap(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\stock.jpeg"));
-
-    ui->label_20->setPixmap(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\FFFFFFG.png"));
 
     ui->calendar_4->setIcon(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\calendar.png"));
     ui->analytics_3->setIcon(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\analytics.png"));

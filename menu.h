@@ -6,6 +6,7 @@
 #include "mainwindow.h"
 #include "wins.h"
 #include "gestion_magasin.h"
+#include "gestion_produit.h"
 
 namespace Ui {
 class menu;
@@ -27,12 +28,15 @@ private slots:
 
     void on_pushButton_10_clicked();
 
+    void on_pushButton_9_clicked();
+
 private:
     Ui::menu *ui;
     wins *winners;
     MainWindow *mariem;
 
     gestion_magasin *magasin;
+    gestion_produit *produit;
 };
 
 #endif // MENU_H

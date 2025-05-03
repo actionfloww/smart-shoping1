@@ -20,11 +20,15 @@ SOURCES += \
     achat.cpp \
     client.cpp \
     connection.cpp \
+    dialog.cpp \
     email.cpp \
     gestion_magasin.cpp \
+    gestion_produit.cpp \
     magasins.cpp \
     main.cpp \
     menu.cpp \
+    pack.cpp \
+    produit.cpp \
     serialmanager.cpp \
     wins.cpp \
     Event.cpp \
@@ -37,10 +41,14 @@ HEADERS += \
     achat.h \
     client.h \
     connection.h \
+    dialog.h \
     email.h \
     gestion_magasin.h \
+    gestion_produit.h \
     magasins.h \
     menu.h \
+    pack.h \
+    produit.h \
     serialmanager.h \
     wins.h \
     Event.h \
@@ -49,8 +57,11 @@ HEADERS += \
     mainwindow.h
 
 FORMS += \
+    dialog.ui \
     gestion_magasin.ui \
+    gestion_produit.ui \
     menu.ui \
+    pack.ui \
     wins.ui \
     mainwindow.ui
 

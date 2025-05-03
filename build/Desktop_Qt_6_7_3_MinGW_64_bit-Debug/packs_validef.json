@@ -1,0 +1,15 @@
+[
+    {
+        "dateCreation": "03/05/2025",
+        "idMoinsVendu": 197,
+        "idPlusVendu": 199,
+        "nomPack": "Pack innovation inspiré de la gamme ELLE",
+        "pourcentageRemise": 10,
+        "prixMoinsVendu": 76,
+        "prixPack": 145.8,
+        "prixPlusVendu": 86,
+        "produitMoinsVendu": "vase",
+        "produitPlusVendu": "biblots",
+        "statut": "validé"
+    }
+]
