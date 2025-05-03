@@ -286,7 +286,7 @@ public:
 "}"));
         label_15 = new QLabel(gestion_magasin);
         label_15->setObjectName("label_15");
-        label_15->setGeometry(QRect(30, 160, 191, 51));
+        label_15->setGeometry(QRect(20, 140, 191, 51));
         label_15->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "    font-size: 16px;\n"
@@ -634,7 +634,7 @@ public:
         ordre->setStyleSheet(QString::fromUtf8("color:black;"));
         label_25 = new QLabel(page_magasin);
         label_25->setObjectName("label_25");
-        label_25->setGeometry(QRect(500, 60, 131, 20));
+        label_25->setGeometry(QRect(490, 70, 131, 20));
         label_25->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "    font-size: 16px;\n"

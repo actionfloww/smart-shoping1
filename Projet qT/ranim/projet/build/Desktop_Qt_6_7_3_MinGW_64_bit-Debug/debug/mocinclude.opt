@@ -1,5 +1,5 @@
 -IC:/QT/6.7.3/mingw_64/mkspecs/win32-g++
--IC:/Users/ranim/Desktop/Projet qT
+-IC:/Users/ranim/Desktop/integration
 -IC:/QT/6.7.3/mingw_64/include
 -IC:/QT/6.7.3/mingw_64/include/QtQuickWidgets
 -IC:/QT/6.7.3/mingw_64/include/QtLocation

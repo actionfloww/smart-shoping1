@@ -9,7 +9,7 @@ public:
     mailer(QString, QString, QString);
 
     static int sendEmail(QString,QString,QString);
- private:
+private:
     QString destinataire;
     QString object,body;
 };

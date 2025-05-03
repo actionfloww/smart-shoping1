@@ -32,7 +32,7 @@ public:
     QString getProprietaire() const { return proprietaire; }
     QDate getDateOuverture() const { return dateOuverture; }
     QString getEtat() const { return etat; }
-     QString getEmail() const { return email; }
+    QString getEmail() const { return email; }
     int getEtage() const { return etage; }
 
     // Setters

@@ -2,6 +2,7 @@
 #include <QApplication>
 #include "connection.h"
 #include <QMessageBox>
+#include "menu.h"
 
 int main(int argc, char *argv[])
 {
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
         return -1; // Quitter si la connexion échoue
     }
 
-    MainWindow w;
+    menu w;
     w.show();
 
     return a.exec();

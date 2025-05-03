@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/photo">
+        <file>ress/grr.jpeg</file>
+        <file>ress/bll.jpeg</file>
+        <file>ress/11.jpeg</file>
+        <file>ress/22.jpeg</file>
+        <file>ress/33.jpeg</file>
+        <file>ress/44.jpeg</file>
+        <file>ress/55.jpeg</file>
+        <file>ress/66.jpeg</file>
+        <file>ress/77.jpeg</file>
+        <file>ress/88.jpeg</file>
+        <file>ress/99.jpeg</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>ress/473830347_920693130176137_1801494331999240370_n-removebg-preview.png</file>
+        <file>image/analytics.png</file>
+        <file>image/bin.png</file>
+        <file>image/calendar.png</file>
+        <file>image/filter.png</file>
+        <file>image/logo.png</file>
+        <file>image/pdf.png</file>
+        <file>image/ranking-star (1).png</file>
+        <file>image/search.png</file>
+        <file>image/WhatsApp Image 2025-05-01 at 11.42.27 (1).jpeg</file>
+        <file>image/WhatsApp Image 2025-05-01 at 11.42.27.jpeg</file>
+        <file>image/WhatsApp_Image_2025-05-01_at_11.43.17-removebg-preview.png</file>
+        <file>image/WhatsApp_Image_2025-05-01_at_11.43.18__1_-removebg-preview.png</file>
+        <file>image/WhatsApp_Image_2025-05-01_at_11.43.18-removebg-preview.png</file>
+        <file>image/WhatsApp_Image_2025-05-01_at_11.43.19__1_-removebg-preview.png</file>
+        <file>image/WhatsApp_Image_2025-05-01_at_11.43.19__2_-removebg-preview (1).png</file>
+        <file>image/WhatsApp_Image_2025-05-01_at_11.43.19-removebg-preview.png</file>
+        <file>image/WhatsApp_Image_2025-05-01_at_11.43.20__1_-removebg-preview.png</file>
+        <file>image/WhatsApp_Image_2025-05-01_at_11.43.20-removebg-preview.png</file>
+        <file>image/WhatsApp_Image_2025-05-01_at_11.44.45-removebg-preview (1).png</file>
+        <file>image/WhatsApp_Image_2025-05-02_at_10.03.33-removebg-preview.png</file>
+        <file>map.qml</file>
+    </qresource>
+</RCC>

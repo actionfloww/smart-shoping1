@@ -1,20 +1,22 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "serialmanager.h" // arduino
+
 #include <QMainWindow>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QMessageBox>
+#include <QSortFilterProxyModel>
 #include <QPixmap>
 #include <QIcon>
-#include "magasins.h"
+#include "Event.h"
 #include <QMainWindow>
-
-#include <QQuickWidget>
-#include <QGeoPositionInfoSource>
-#include <QGeoServiceProvider>
-#include <QQmlContext>
-#include <QQmlEngine>
+#include <QFileDialog>
+#include <QPrinter>
+#include <QPainter>
+#include <QTextDocument>
+#include <QTabWidget>
+#include <QTimer>
+#include <QSerialPort>
 
 
 QT_BEGIN_NAMESPACE
@@ -35,47 +37,51 @@ private slots:
     void on_pushButton_clicked();
     void on_tab_affichage_clicked(const QModelIndex &index);
     void on_sup_clicked();
-    //void actualiserTableau();
     void on_update_clicked();
+    void on_sup_2_clicked();
+    //void actualiserTableau ();
     void viderFormulaire();
+    void generatePDF();
+    void rechercherEvent();
+    void refreshPage();
+    void trierParType();
+    void goToStatisticsPage();
+    void afficherStatistiques();
+    void switchToStatisticsPage();
+    void switchTocalender();
+    void afficherEvenementsSurCalendrier();
+    void afficherDetailsEvenement(const QDate &date) ;
+    void afficherAfficheEvenement();
+    void masquerAfficheEvenement();
+    QAbstractItemModel* obtenirModeleInitial();
+    void switchToNews();
+    void update_label();
+    void send_automatic_alert();
+    void applyTableViewStyle();
 
 
-    void on_tableView_clicked(const QModelIndex &index);
-
-    void on_lineEdit_3_textChanged(const QString &arg1);
-
-    void on_filter_clicked();
-
-    void on_PDF_clicked();
-
-    void on_pushButton_Map_clicked();
-    void onLocationSelected(double latitude, double longitude);
-
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_4_clicked();
-    void stat_type();
-    void stat_etat();
-    void on_Meilleur_clicked();
-    void handleIdChecked(const QString &id, bool exists, const QString &etage); // arduino
-
-    void on_bt_go_tostat_clicked();
-
-    void on_bt_acceuil_clicked();
-
-
-
-    void on_lineEdit_5_textChanged(const QString &arg1);
 
 private:
-    Ui::MainWindow *ui; // Déclaration de la variable ui
-    int currentMagasinID = -1;
-    Magasin magasin;
-    int ID_Magasin;
+    Ui::MainWindow *ui;
+    Event* event;
+    int currentEventID ;
+    QSqlDatabase db;
+    QSortFilterProxyModel *proxyModel;    // Modèle proxy pour le filtrage et le tri
+    QAbstractItemModel *originalModel;
+    QTimer *timerAffichage;
+    QTimer *timerMasquage;
+    QSerialPort *arduino;  // Connexion à Arduino
+    QString dataBuffer;  // Tampon pour les données reçues
+    QString lastStatus;  // Dernier statut reçu
+    QTimer *alertTimer;  // Timer pour les alertes automatiques
+    // Méthodes utilitaires
+    int connect_arduino();
+    QString getarduino_port_name();
+    QSerialPort* getserial();
+    void saveStatusToDatabase(const QString &status);
+    int getQuantityFromDatabase();
 
-    QQuickWidget *mapWidget;
-    void initializeMap();
-    SerialManager *serialManager;//arduino
+
 
 };
 

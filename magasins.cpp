@@ -11,7 +11,7 @@ Magasin::Magasin() {
 
 }
 Magasin::Magasin(int id,const QString& nom, const QString& empl, const QString& typ,
-        const QString& prop, const QDate& ouverture, const QString& et,const QString& email,const int& etage)
+                 const QString& prop, const QDate& ouverture, const QString& et,const QString& email,const int& etage)
 {
 
     this->idMagasin=id;
@@ -115,13 +115,13 @@ int Magasin::ChercherIDByNom(QString  nom, QString emplacement) {
     query.bindValue(":emp",emplacement);
 
     if(query.exec())
+    {
+        if(query.next())
         {
-            if(query.next())
-            {
-                    id= query.value(0).toInt();
-            }
+            id= query.value(0).toInt();
         }
-return id;
+    }
+    return id;
 }
 
 
