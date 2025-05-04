@@ -2,9 +2,12 @@ release/achat.o
 release/client.o
 release/connection.o
 release/dialog.o
+release/dialogfonctionnalites.o
 release/email.o
 release/gestion_magasin.o
 release/gestion_produit.o
+release/gestion_stock.o
+release/gestionstock.o
 release/magasins.o
 release/main.o
 release/menu.o
@@ -18,8 +21,10 @@ release/mainwindow.o
 release/arduino.o
 release/qrc_img.o
 release/moc_dialog.o
+release/moc_dialogfonctionnalites.o
 release/moc_gestion_magasin.o
 release/moc_gestion_produit.o
+release/moc_gestion_stock.o
 release/moc_menu.o
 release/moc_pack.o
 release/moc_produit.o

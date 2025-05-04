@@ -28,6 +28,7 @@ public:
     QWidget *page_2;
     QWidget *gestion_magasin;
     QWidget *gestion_produit;
+    QWidget *gestion_stock;
     QLabel *label_16;
     QLabel *label_14;
     QLabel *label_17;
@@ -69,6 +70,9 @@ public:
         gestion_produit = new QWidget();
         gestion_produit->setObjectName("gestion_produit");
         stackedWidget->addWidget(gestion_produit);
+        gestion_stock = new QWidget();
+        gestion_stock->setObjectName("gestion_stock");
+        stackedWidget->addWidget(gestion_stock);
         label_16 = new QLabel(menu);
         label_16->setObjectName("label_16");
         label_16->setGeometry(QRect(20, 180, 51, 51));
@@ -217,7 +221,7 @@ public:
 
         retranslateUi(menu);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(menu);

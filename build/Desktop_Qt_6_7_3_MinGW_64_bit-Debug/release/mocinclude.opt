@@ -17,6 +17,7 @@
 -IC:/QT/6.7.3/mingw_64/include/QtOpenGL
 -IC:/QT/6.7.3/mingw_64/include/QtGui/6.7.3
 -IC:/QT/6.7.3/mingw_64/include/QtGui/6.7.3/QtGui
+-IC:/QT/6.7.3/mingw_64/include/QtMultimedia
 -IC:/QT/6.7.3/mingw_64/include/QtGui
 -IC:/QT/6.7.3/mingw_64/include/QtSql
 -IC:/QT/6.7.3/mingw_64/include/QtQmlModels/6.7.3

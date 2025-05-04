@@ -39,12 +39,13 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>4</number>
    </property>
    <widget class="QWidget" name="page"/>
    <widget class="QWidget" name="page_2"/>
    <widget class="QWidget" name="gestion_magasin"/>
    <widget class="QWidget" name="gestion_produit"/>
+   <widget class="QWidget" name="gestion_stock"/>
   </widget>
   <widget class="QLabel" name="label_16">
    <property name="geometry">

@@ -417,6 +417,7 @@ Makefile: ../../interface1.pro C:/QT/6.7.3/mingw_64/mkspecs/win32-g++/qmake.conf
 		C:/QT/6.7.3/mingw_64/lib/Qt6QuickShapes.prl \
 		C:/QT/6.7.3/mingw_64/lib/Qt6Quick.prl \
 		C:/QT/6.7.3/mingw_64/lib/Qt6OpenGL.prl \
+		C:/QT/6.7.3/mingw_64/lib/Qt6Multimedia.prl \
 		C:/QT/6.7.3/mingw_64/lib/Qt6Gui.prl \
 		C:/QT/6.7.3/mingw_64/lib/Qt6Sql.prl \
 		C:/QT/6.7.3/mingw_64/lib/Qt6QmlModels.prl \
@@ -776,6 +777,7 @@ C:/QT/6.7.3/mingw_64/lib/Qt6PositioningQuick.prl:
 C:/QT/6.7.3/mingw_64/lib/Qt6QuickShapes.prl:
 C:/QT/6.7.3/mingw_64/lib/Qt6Quick.prl:
 C:/QT/6.7.3/mingw_64/lib/Qt6OpenGL.prl:
+C:/QT/6.7.3/mingw_64/lib/Qt6Multimedia.prl:
 C:/QT/6.7.3/mingw_64/lib/Qt6Gui.prl:
 C:/QT/6.7.3/mingw_64/lib/Qt6Sql.prl:
 C:/QT/6.7.3/mingw_64/lib/Qt6QmlModels.prl:

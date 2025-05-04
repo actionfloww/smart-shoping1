@@ -492,7 +492,7 @@ void gestion_magasin::on_pushButton_Map_clicked()
     qDebug() << "Nombre d'événements trouvés:" << events.size();
 
     // Définir la source QML
-    QUrl sourceUrl = QUrl("/Users/ranim/Desktop/Projet qT/map.qml");
+    QUrl sourceUrl = QUrl("/Users/aymen/OneDrive/Bureau/Produits/map.qml");
     qDebug() << "URL de la source QML:" << sourceUrl;
 
     // Passer les événements au contexte QML avant de charger le fichier

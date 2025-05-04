@@ -7,6 +7,15 @@ QT       += network
 QT       += serialport
 QT+= serialport sql printsupport  charts  quickwidgets location positioning printsupport quick network
 
+
+QT += printsupport gui widgets
+CONFIG += c++17
+QT += sql charts
+QT       += network
+QT += core gui multimedia widgets
+QT += multimedia
+QT += core gui sql serialport  ##
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 
@@ -21,9 +30,12 @@ SOURCES += \
     client.cpp \
     connection.cpp \
     dialog.cpp \
+    dialogfonctionnalites.cpp \
     email.cpp \
     gestion_magasin.cpp \
     gestion_produit.cpp \
+    gestion_stock.cpp \
+    gestionstock.cpp \
     magasins.cpp \
     main.cpp \
     menu.cpp \
@@ -42,9 +54,12 @@ HEADERS += \
     client.h \
     connection.h \
     dialog.h \
+    dialogfonctionnalites.h \
     email.h \
     gestion_magasin.h \
     gestion_produit.h \
+    gestion_stock.h \
+    gestionstock.h \
     magasins.h \
     menu.h \
     pack.h \
@@ -58,8 +73,10 @@ HEADERS += \
 
 FORMS += \
     dialog.ui \
+    dialogfonctionnalites.ui \
     gestion_magasin.ui \
     gestion_produit.ui \
+    gestion_stock.ui \
     menu.ui \
     pack.ui \
     wins.ui \

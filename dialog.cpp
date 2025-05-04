@@ -515,6 +515,56 @@ void Dialog::configureTransition(QWidget *window, const QString &title)
 
 void Dialog::on_pushButton_5_clicked()
 {
+    menu *menu1 = new menu();
+    configureTransition(menu1, "");
+    this->close();
+}
 
+
+void Dialog::on_pushButton_2_clicked()
+{
+    menu *menu1 = new menu();
+    configureTransition(menu1, "");
+    this->close();
+}
+
+
+void Dialog::on_pushButton_4_clicked()
+{
+    menu *menu1 = new menu();
+    configureTransition(menu1, "");
+    this->close();
+}
+
+
+void Dialog::on_pushButton_3_clicked()
+{
+    menu *menu1 = new menu();
+    configureTransition(menu1, "");
+    this->close();
+}
+
+
+void Dialog::on_pushButton_7_clicked()
+{
+    menu *menu1 = new menu();
+    configureTransition(menu1, "");
+    this->close();
+}
+
+
+void Dialog::on_pushButton_6_clicked()
+{
+    menu *menu1 = new menu();
+    configureTransition(menu1, "");
+    this->close();
+}
+
+
+void Dialog::on_pushButton_8_clicked()
+{
+    menu *menu1 = new menu();
+    configureTransition(menu1, "");
+    this->close();
 }
 

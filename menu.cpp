@@ -3,7 +3,7 @@
 
 menu::menu(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::menu),winners(nullptr),mariem(nullptr),magasin(nullptr),produit(nullptr)
+    , ui(new Ui::menu),winners(nullptr),mariem(nullptr),magasin(nullptr),produit(nullptr),stock(nullptr)
 {
     ui->setupUi(this);
     winners=new wins();
@@ -18,6 +18,11 @@ menu::menu(QWidget *parent)
 
     produit=new gestion_produit();
     ui->stackedWidget->addWidget(produit);
+
+    stock=new gestion_stock();
+    ui->stackedWidget->addWidget(stock);
+
+    ui->stackedWidget->setCurrentWidget(produit);
 
 
 }
@@ -53,6 +58,13 @@ void menu::on_pushButton_10_clicked()
 void menu::on_pushButton_9_clicked()
 {
     ui->stackedWidget->setCurrentWidget(produit);
+
+}
+
+
+void menu::on_pushButton_8_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(stock);
 
 }
 
