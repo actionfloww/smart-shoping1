@@ -18,6 +18,7 @@
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog),
+
     chart(new QChart()),
     chartView(new QChartView(chart)),
     pieChart(new QChart()),

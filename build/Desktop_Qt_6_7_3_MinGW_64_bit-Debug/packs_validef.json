@@ -11,5 +11,18 @@
         "produitMoinsVendu": "vase",
         "produitPlusVendu": "biblots",
         "statut": "validé"
+    },
+    {
+        "dateCreation": "04/05/2025",
+        "idMoinsVendu": 187,
+        "idPlusVendu": 196,
+        "nomPack": "Pack innovation inspiré de la gamme samsung",
+        "pourcentageRemise": 22,
+        "prixMoinsVendu": 120,
+        "prixPack": 130.26,
+        "prixPlusVendu": 47,
+        "produitMoinsVendu": "Smartphone",
+        "produitPlusVendu": "Ecouteur",
+        "statut": "validé"
     }
 ]

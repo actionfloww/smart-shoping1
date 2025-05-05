@@ -71,8 +71,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="img.qrc">
-       <normaloff>:/image_tasnim/mail.png</normaloff>:/image_tasnim/mail.png</iconset>
+      <iconset>
+       <normaloff>image_tasnim/mail.png</normaloff>image_tasnim/mail.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -149,8 +149,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="img.qrc">
-       <normaloff>:/image_tasnim/nt.jpg</normaloff>:/image_tasnim/nt.jpg</iconset>
+      <iconset>
+       <normaloff>image_tasnim/nt.jpg</normaloff>image_tasnim/nt.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -172,8 +172,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="img.qrc">
-       <normaloff>:/image_tasnim/st.png</normaloff>:/image_tasnim/st.png</iconset>
+      <iconset>
+       <normaloff>image_tasnim/st.png</normaloff>image_tasnim/st.png</iconset>
      </property>
      <property name="iconSize">
       <size>

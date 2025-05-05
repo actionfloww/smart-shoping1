@@ -50,8 +50,8 @@ pack::~pack()
 void pack::setupUI()
 {
     QWidget *grayZoneContainer = new QWidget(this);
-    grayZoneContainer->setGeometry(170, 140, 1175, 600);
-    grayZoneContainer->setStyleSheet("background: #f5f5f5; border-radius: 10px;");
+    grayZoneContainer->setGeometry(100, 140, 1175, 600);
+    grayZoneContainer->setStyleSheet("background: #cccccc; border-radius: 10px;");
 
     m_scrollArea = new QScrollArea(grayZoneContainer);
     m_scrollArea->setWidgetResizable(true);

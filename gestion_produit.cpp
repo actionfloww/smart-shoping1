@@ -16,6 +16,7 @@
 #include <QDesktopServices>
 #include <QDebug>
 #include <QOverload>
+#include <QApplication>
 
 gestion_produit::gestion_produit(QWidget *parent)
     : QMainWindow(parent)

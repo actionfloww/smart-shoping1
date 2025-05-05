@@ -61,6 +61,13 @@ private slots:
 
 
 
+
+    void on_analytics_3_clicked();
+
+    void on_calendar_4_clicked();
+
+    void on_P_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     Event* event;

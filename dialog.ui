@@ -16,9 +16,9 @@
   <widget class="QWidget" name="widgetTop3" native="true">
    <property name="geometry">
     <rect>
-     <x>960</x>
-     <y>70</y>
-     <width>401</width>
+     <x>840</x>
+     <y>50</y>
+     <width>491</width>
      <height>361</height>
     </rect>
    </property>
@@ -35,218 +35,11 @@ QWidget:hover {
 }</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_25">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>-10</y>
-     <width>91</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp_Image_2025-05-01_at_11.43.20__1_-removebg-preview.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>20</y>
-     <width>71</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp_Image_2025-05-02_at_10.03.33-removebg-preview.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_19">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>10</y>
-     <width>49</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp_Image_2025-05-01_at_11.43.20-removebg-preview.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_14">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>420</y>
-     <width>51</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp_Image_2025-05-01_at_11.44.45-removebg-preview (1).png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_15">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>350</y>
-     <width>51</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp_Image_2025-05-01_at_11.43.19-removebg-preview.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_8">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>550</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton {
-    border-radius: 15px;        /* Coins arrondis */
-    background-color: #c6c6c6; /* Conserve la couleur d'origine */
- font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>QUITTER</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>190</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton {
-    border-radius: 15px;        /* Coins arrondis */
-    background-color: #c6c6c6; /* Conserve la couleur d'origine */
- font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>EMPLOYES</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>250</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton {
-    border-radius: 15px;        /* Coins arrondis */
-    background-color: #c6c6c6; /* Conserve la couleur d'origine */
- font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>CLIENTS</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>590</x>
-     <y>0</y>
-     <width>61</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>:/images/Downloads/WhatsApp_Image_2025-04-04_at_19.44.19-removebg-preview.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QWidget" name="courbe" native="true">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>70</y>
+     <x>20</x>
+     <y>50</y>
      <width>801</width>
      <height>371</height>
     </rect>
@@ -264,394 +57,12 @@ QWidget:hover {
 }</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_13">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>300</y>
-     <width>49</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp_Image_2025-05-01_at_11.43.18__1_-removebg-preview.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>370</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton {
-    border-radius: 15px;        /* Coins arrondis */
-    background-color: #c6c6c6; /* Conserve la couleur d'origine */
- font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>STOCKS</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>310</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton {
-    border-radius: 15px;        /* Coins arrondis */
-    background-color: #f8fff7; /* Conserve la couleur d'origine */
- font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>PRODUITS</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>90</y>
-     <width>141</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {
-    font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-    font-size: 16px;
-    font-weight: normal;
-    font-style: italic;
-    color: #2c3e50;
-    letter-spacing: 0.5px;
-}</string>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; font-style:italic; color:#bdbdbd;&quot;&gt;Monova Mall&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_6">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>490</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton {
-    border-radius: 15px;        /* Coins arrondis */
-    background-color: #c6c6c6; /* Conserve la couleur d'origine */
- font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>EVENEMENT</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_43">
-   <property name="geometry">
-    <rect>
-     <x>1290</x>
-     <y>30</y>
-     <width>49</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;</string>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700; color:#ffffff;&quot;&gt;Admin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_10">
-   <property name="geometry">
-    <rect>
-     <x>-10</x>
-     <y>540</y>
-     <width>61</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp_Image_2025-05-01_at_11.43.19__2_-removebg-preview (1).png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>180</y>
-     <width>41</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp_Image_2025-05-01_at_11.43.17-removebg-preview.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="ACCEUIL">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>20</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton {
-    border-radius: 15px;        /* Coins arrondis */
-    background-color: #f8fff7; /* Conserve la couleur d'origine */
- font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-QPushButton:hover {
-    background-color: #c6c6c6;   /* Darker grey on hover */
-}</string>
-   </property>
-   <property name="text">
-    <string>ACCEUIL</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_12">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>240</y>
-     <width>41</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp_Image_2025-05-01_at_11.43.18-removebg-preview.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_7">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>430</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton {
-    border-radius: 15px;        /* Coins arrondis */
-    background-color: #c6c6c6; /* Conserve la couleur d'origine */
- font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>MAGASINS</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>-12</x>
-     <y>-15</y>
-     <width>161</width>
-     <height>821</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp Image 2025-05-01 at 11.42.27.jpeg</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_16">
-   <property name="geometry">
-    <rect>
-     <x>-20</x>
-     <y>470</y>
-     <width>81</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp_Image_2025-05-01_at_11.43.19__1_-removebg-preview.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_fonctionalite_4">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>20</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton {
-    border-radius: 15px;        /* Coins arrondis */
-    background-color: #c6c6c6; /* Conserve la couleur d'origine */
- font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-QPushButton:hover {
-    background-color: white;   /* Darker grey on hover */
-}
-</string>
-   </property>
-   <property name="text">
-    <string>STATISTIQUES</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>0</y>
-     <width>1291</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="img.qrc">:/image/WhatsApp Image 2025-05-01 at 11.42.27.jpeg</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>60</y>
-     <width>1291</width>
-     <height>751</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>:/images/Ressources/cff87cf7-fcc3-49f6-b133-8db62c629784.jfif</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QWidget" name="widgetConteneur2" native="true">
    <property name="geometry">
     <rect>
-     <x>960</x>
-     <y>440</y>
-     <width>401</width>
+     <x>840</x>
+     <y>420</y>
+     <width>491</width>
      <height>291</height>
     </rect>
    </property>
@@ -667,12 +78,31 @@ QWidget:hover {
     cursor: pointer;  /* Changement du curseur */
 }</string>
    </property>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>-730</x>
+      <y>-380</y>
+      <width>1291</width>
+      <height>751</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/images/Ressources/cff87cf7-fcc3-49f6-b133-8db62c629784.jfif</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QWidget" name="widgetConteneur" native="true">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>450</y>
+     <x>20</x>
+     <y>430</y>
      <width>801</width>
      <height>281</height>
     </rect>
@@ -692,90 +122,67 @@ QWidget:hover {
 </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_pack_2">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>20</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton {
-    border-radius: 15px;        /* Coins arrondis */
-    background-color: #c6c6c6; /* Conserve la couleur d'origine */
- font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
-}
-QPushButton:hover {
-    background-color: white;   /* Darker grey on hover */
-}
-</string>
-   </property>
-   <property name="text">
-    <string>OFFRES PACK</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>1250</x>
-     <y>10</y>
-     <width>49</width>
-     <height>51</height>
+     <x>-2</x>
+     <y>0</y>
+     <width>1371</width>
+     <height>771</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/images/Ressources/0de86780-dae2-4175-a752-c75985b139c6-removebg-preview.png</pixmap>
+    <pixmap resource="img.qrc">:/image/WhatsApp Image 2025-05-01 at 11.42.27 (1).jpeg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>0</y>
+     <width>461</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family:  &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; text-decoration: underline; color:#0a0a55;&quot;&gt;Analyse des Données Produits&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>488</x>
+     <y>10</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="img.qrc">:/Downloads/WhatsApp_Image_2025-05-04_at_18.46.55-removebg-preview.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
   </widget>
   <zorder>label</zorder>
-  <zorder>label_6</zorder>
-  <zorder>label_3</zorder>
   <zorder>widgetTop3</zorder>
-  <zorder>label_25</zorder>
-  <zorder>label_7</zorder>
-  <zorder>label_19</zorder>
-  <zorder>label_14</zorder>
-  <zorder>label_15</zorder>
-  <zorder>pushButton_8</zorder>
-  <zorder>pushButton_5</zorder>
-  <zorder>pushButton_2</zorder>
-  <zorder>label_4</zorder>
   <zorder>courbe</zorder>
-  <zorder>label_13</zorder>
-  <zorder>pushButton_4</zorder>
-  <zorder>pushButton_3</zorder>
-  <zorder>label_8</zorder>
-  <zorder>pushButton_6</zorder>
-  <zorder>label_43</zorder>
-  <zorder>label_10</zorder>
-  <zorder>label_9</zorder>
-  <zorder>ACCEUIL</zorder>
-  <zorder>label_12</zorder>
-  <zorder>pushButton_7</zorder>
-  <zorder>label_16</zorder>
-  <zorder>pushButton_fonctionalite_4</zorder>
   <zorder>widgetConteneur2</zorder>
   <zorder>widgetConteneur</zorder>
-  <zorder>pushButton_pack_2</zorder>
   <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
  </widget>
  <resources>
   <include location="img.qrc"/>

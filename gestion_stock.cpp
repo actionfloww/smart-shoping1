@@ -100,7 +100,7 @@ gestion_stock::gestion_stock(QWidget *parent) :
 
 
 
-    // Lancer la connexion à Arduino
+  /*  // Lancer la connexion à Arduino
     int ret = A.connect_arduino();
     switch (ret) {
     case 0:
@@ -116,7 +116,7 @@ gestion_stock::gestion_stock(QWidget *parent) :
 
     // Connecter le signal de réception de données Arduino au slot update_label
     QObject::connect(A.getserial(), SIGNAL(readyRead()), this, SLOT(update_label()));
-
+*/
     // Initialiser le timer pour les alertes automatiques (si nécessaire)
     alertTimer = new QTimer(this);
     connect(alertTimer, &QTimer::timeout, this, &gestion_stock::send_automatic_alert);

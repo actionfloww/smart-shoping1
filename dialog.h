@@ -8,7 +8,6 @@
 #include "pack.h"
 
 
-
 namespace Ui {
 class Dialog;
 }
@@ -54,7 +53,6 @@ private:
     QChartView *lineChartView;
     QChart *top3Chart;
     QChartView *top3ChartView;
-
     void creerDiagrammeBarres();
     void creerDiagrammeCirculaire();
     void creerCourbeCA();

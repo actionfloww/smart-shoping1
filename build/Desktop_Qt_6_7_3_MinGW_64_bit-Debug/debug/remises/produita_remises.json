@@ -1,2 +1,22 @@
 [
+    {
+        "categorie": "Alimentation",
+        "etat": "Faible",
+        "jours_restants": 16,
+        "nature_remise": "Expiration",
+        "nom": "gateau",
+        "pourcentage": 25,
+        "prix_original": 75,
+        "prix_remise": 56.25
+    },
+    {
+        "categorie": "Alimentation",
+        "etat": "Faible",
+        "jours_restants": 15,
+        "nature_remise": "Expiration",
+        "nom": "aa",
+        "pourcentage": 25,
+        "prix_original": 100,
+        "prix_remise": 75
+    }
 ]

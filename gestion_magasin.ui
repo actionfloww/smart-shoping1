@@ -251,10 +251,10 @@ color: #0a0a55;  </string>
       <widget class="QPushButton" name="pushButton">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>510</y>
-         <width>121</width>
-         <height>41</height>
+         <x>60</x>
+         <y>520</y>
+         <width>111</width>
+         <height>31</height>
         </rect>
        </property>
        <property name="font">
@@ -516,10 +516,10 @@ color:black;</string>
       <widget class="QPushButton" name="update">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>510</y>
+         <x>240</x>
+         <y>520</y>
          <width>121</width>
-         <height>41</height>
+         <height>31</height>
         </rect>
        </property>
        <property name="font">
@@ -750,6 +750,44 @@ color:black;</string>
         </property>
        </item>
       </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>208</x>
+         <y>520</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="img.qrc">:/image_zaineb/WhatsApp_Image_2025-04-11_at_21.33.01-removebg-preview.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>520</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="img.qrc">:/image_zaineb/WhatsApp_Image_2025-04-13_at_19.38.47-removebg-preview.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
       <zorder>label_3</zorder>
       <zorder>pushButton</zorder>
       <zorder>label_7</zorder>
@@ -769,6 +807,8 @@ color:black;</string>
       <zorder>lineEdit_4</zorder>
       <zorder>label_29</zorder>
       <zorder>ETAGE</zorder>
+      <zorder>label_11</zorder>
+      <zorder>label_2</zorder>
      </widget>
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
@@ -1021,7 +1061,7 @@ QPushButton:hover {
 color:black;</string>
       </property>
       <property name="placeholderText">
-       <string>cherchez</string>
+       <string>cherchez un magasin....</string>
       </property>
      </widget>
      <widget class="QPushButton" name="filter">

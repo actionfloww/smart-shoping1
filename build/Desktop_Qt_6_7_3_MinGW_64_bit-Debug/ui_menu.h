@@ -29,6 +29,7 @@ public:
     QWidget *gestion_magasin;
     QWidget *gestion_produit;
     QWidget *gestion_stock;
+    QWidget *gestion_employe;
     QLabel *label_16;
     QLabel *label_14;
     QLabel *label_17;
@@ -73,15 +74,18 @@ public:
         gestion_stock = new QWidget();
         gestion_stock->setObjectName("gestion_stock");
         stackedWidget->addWidget(gestion_stock);
+        gestion_employe = new QWidget();
+        gestion_employe->setObjectName("gestion_employe");
+        stackedWidget->addWidget(gestion_employe);
         label_16 = new QLabel(menu);
         label_16->setObjectName("label_16");
-        label_16->setGeometry(QRect(20, 180, 51, 51));
+        label_16->setGeometry(QRect(10, 320, 51, 51));
         label_16->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_16->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.43.17-removebg-preview.png")));
         label_16->setScaledContents(true);
         label_14 = new QLabel(menu);
         label_14->setObjectName("label_14");
-        label_14->setGeometry(QRect(50, 30, 81, 71));
+        label_14->setGeometry(QRect(50, 10, 81, 71));
         label_14->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_14->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-02_at_10.03.33-removebg-preview.png")));
         label_14->setScaledContents(true);
@@ -117,7 +121,7 @@ public:
 "}"));
         label_15 = new QLabel(menu);
         label_15->setObjectName("label_15");
-        label_15->setGeometry(QRect(30, 90, 271, 51));
+        label_15->setGeometry(QRect(20, 80, 281, 51));
         label_15->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "    font-size: 16px;\n"
@@ -166,7 +170,7 @@ public:
 "}"));
         pushButton_5 = new QPushButton(menu);
         pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(80, 190, 101, 41));
+        pushButton_5->setGeometry(QRect(80, 330, 101, 41));
         pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
 "    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
@@ -181,7 +185,7 @@ public:
         pushButton_12->setGeometry(QRect(80, 610, 101, 41));
         pushButton_12->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
-"    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
+"    background-color:  #c6c6c6; /* Conserve la couleur d'origine */\n"
 " font-family: \"Georgia\", \"Times New Roman\", serif;\n"
 "color: #0a0a55;    \n"
 "}\n"
@@ -196,13 +200,13 @@ public:
         label_20->setScaledContents(true);
         label_18 = new QLabel(menu);
         label_18->setObjectName("label_18");
-        label_18->setGeometry(QRect(10, 330, 61, 51));
+        label_18->setGeometry(QRect(10, 180, 61, 51));
         label_18->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
         label_18->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.43.18__1_-removebg-preview.png")));
         label_18->setScaledContents(true);
         pushButton_9 = new QPushButton(menu);
         pushButton_9->setObjectName("pushButton_9");
-        pushButton_9->setGeometry(QRect(80, 330, 101, 41));
+        pushButton_9->setGeometry(QRect(80, 190, 101, 41));
         pushButton_9->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
 "    background-color: #c6c6c6; /* Conserve la couleur d'origine */\n"
@@ -221,7 +225,7 @@ public:
 
         retranslateUi(menu);
 
-        stackedWidget->setCurrentIndex(4);
+        stackedWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(menu);
@@ -236,7 +240,7 @@ public:
         label_17->setText(QString());
         pushButton_11->setText(QCoreApplication::translate("menu", "EVENEMENT", nullptr));
         pushButton_8->setText(QCoreApplication::translate("menu", "STOCKS", nullptr));
-        label_15->setText(QCoreApplication::translate("menu", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700; color:#c6c6c6;\">Monova Mall</span></p></body></html>", nullptr));
+        label_15->setText(QCoreApplication::translate("menu", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:700; color:#c6c6c6;\">Monova Mall</span></p></body></html>", nullptr));
         label_21->setText(QString());
         label_19->setText(QString());
         pushButton_10->setText(QCoreApplication::translate("menu", "MAGASINS", nullptr));

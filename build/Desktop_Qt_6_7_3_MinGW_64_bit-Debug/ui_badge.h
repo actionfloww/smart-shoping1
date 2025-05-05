@@ -25,31 +25,32 @@ class Ui_badge
 {
 public:
     QGroupBox *groupBox;
-    QLabel *label_3;
-    QLabel *label_4;
+    QLabel *label;
+    QLabel *label_2;
     QTableWidget *tableWidget;
     QPushButton *enregistrer;
     QLineEdit *UID;
     QLineEdit *cin;
+    QPushButton *quitter;
     QLabel *statusLabel;
 
     void setupUi(QDialog *badge)
     {
         if (badge->objectName().isEmpty())
             badge->setObjectName("badge");
-        badge->resize(788, 523);
+        badge->resize(1011, 709);
         groupBox = new QGroupBox(badge);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(0, 0, 781, 511));
-        label_3 = new QLabel(groupBox);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(80, 80, 161, 51));
-        label_4 = new QLabel(groupBox);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(70, 150, 161, 20));
+        groupBox->setGeometry(QRect(20, 70, 961, 501));
+        label = new QLabel(groupBox);
+        label->setObjectName("label");
+        label->setGeometry(QRect(80, 80, 161, 51));
+        label_2 = new QLabel(groupBox);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(70, 150, 161, 20));
         tableWidget = new QTableWidget(groupBox);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(470, 100, 261, 151));
+        tableWidget->setGeometry(QRect(670, 80, 261, 151));
         enregistrer = new QPushButton(groupBox);
         enregistrer->setObjectName("enregistrer");
         enregistrer->setGeometry(QRect(140, 230, 83, 29));
@@ -59,9 +60,12 @@ public:
         cin = new QLineEdit(groupBox);
         cin->setObjectName("cin");
         cin->setGeometry(QRect(260, 150, 113, 28));
-        statusLabel = new QLabel(groupBox);
+        quitter = new QPushButton(groupBox);
+        quitter->setObjectName("quitter");
+        quitter->setGeometry(QRect(30, 430, 83, 29));
+        statusLabel = new QLabel(badge);
         statusLabel->setObjectName("statusLabel");
-        statusLabel->setGeometry(QRect(170, 340, 201, 20));
+        statusLabel->setGeometry(QRect(20, 0, 501, 91));
 
         retranslateUi(badge);
 
@@ -72,10 +76,11 @@ public:
     {
         badge->setWindowTitle(QCoreApplication::translate("badge", "Dialog", nullptr));
         groupBox->setTitle(QCoreApplication::translate("badge", "GroupBox", nullptr));
-        label_3->setText(QCoreApplication::translate("badge", "entre le UID de carte", nullptr));
-        label_4->setText(QCoreApplication::translate("badge", "entrer le cin de employer", nullptr));
+        label->setText(QCoreApplication::translate("badge", "entre le UID de carte", nullptr));
+        label_2->setText(QCoreApplication::translate("badge", "entrer le cin de employer", nullptr));
         enregistrer->setText(QCoreApplication::translate("badge", "enregistrer", nullptr));
-        statusLabel->setText(QCoreApplication::translate("badge", "TextLabel", nullptr));
+        quitter->setText(QCoreApplication::translate("badge", "quitter", nullptr));
+        statusLabel->setText(QCoreApplication::translate("badge", "TEXT", nullptr));
     } // retranslateUi
 
 };

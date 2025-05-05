@@ -32,15 +32,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Configuration des icônes
 
-    ui->calendar_4->setIcon(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\calendar.png"));
-    ui->analytics_3->setIcon(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\analytics.png"));
-    ui->pushButton_13->setIcon(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\tournant.png"));
-    ui->P_2->setIcon(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\pdf.png"));
-    ui->P_3->setIcon(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\newspaper.png"));
-    ui->sup_2->setIcon(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\update.png"));
-    ui->filter->setIcon(QPixmap("C:\\Users\\MSI\\Documents\\projet\\filter.png"));
-    ui->search_3->setIcon(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\search.png"));
-    ui->sup->setIcon(QPixmap("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\bin.png"));
 
     // Configuration du modèle proxy
     proxyModel->setSourceModel(event->afficher()); // Modèle de votre table
@@ -61,10 +52,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->filter, &QPushButton::clicked, this, &MainWindow::trierParType);
     connect(ui->pushButton_2, &QPushButton::clicked, this, &MainWindow::switchToStatisticsPage);
     connect(ui->analytics_3, &QPushButton::clicked, this, &MainWindow::goToStatisticsPage);
-    connect(ui->analytics_3, &QPushButton::clicked, this, &MainWindow::afficherStatistiques);
     // connect(ui->calendarWidget, &QCalendarWidget::clicked, this, &MainWindow::afficherDetailsEvenement);
-    connect(ui->calendar_4, &QPushButton::clicked, this, &MainWindow::switchTocalender);
-    connect(ui->P_3, &QPushButton::clicked, this, &MainWindow::switchToNews);
     connect(ui->calendarWidget, &QCalendarWidget::clicked, this, &MainWindow::afficherDetailsEvenement);
     connect(ui->lineEdit, &QLineEdit::textChanged, this, &MainWindow::rechercherEvent);
     connect(ui->comboBox_2, &QComboBox::currentTextChanged, this, &MainWindow::trierParType);
@@ -1085,7 +1073,7 @@ void MainWindow::afficherAfficheEvenement() {
     }
 
     // Définir le chemin de l'affiche (ex: "affiche.jpg")
-    QString imagePath = ("C:\\Users\\ahmed\\OneDrive\\Documents\\interface1\\affiche.png");
+    QString imagePath = ("/Users/aymen/OneDrive/Bureau/Produits/affiche.png");
     QPixmap affiche(imagePath);
 
     if (affiche.isNull()) {
@@ -1291,14 +1279,20 @@ int MainWindow::getQuantityFromDatabase() {
 
 
 
+void MainWindow::on_analytics_3_clicked()
+{
+    afficherStatistiques();
+}
 
 
+void MainWindow::on_calendar_4_clicked()
+{
+    switchTocalender();
+}
 
 
-
-
-
-
-
-
+void MainWindow::on_P_3_clicked()
+{
+    switchToNews();
+}
 

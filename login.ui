@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>login</class>
+ <widget class="QDialog" name="login">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>820</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>550</y>
+     <width>421</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> background-color: #162945; /* Dark background color */
+    color: white; /* Light text color */
+    border-radius: 40px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #162945; /* Border color matching background */
+    min-width: 120px;
+    font-family: &quot;Segoe UI&quot;, sans-serif;
+    text-align: center; /* Center-align text */</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="pushButton_Register">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>0</y>
+      <width>441</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #162945; /* Fond bleu foncé */
+    color: white; /* Texte blanc */
+    border: 2px solid #162945; /* Bordure assortie */
+ /* Coins arrondis */
+    padding: 15px 30px;
+    min-width: 120px;
+    
+    /* Propriétés texte */
+    font-size: 22px; 
+    font-weight: bold;
+    font-family:  &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;
+    
+    /* Alignement et espacement */
+    qproperty-alignment: AlignCenter; /* Centrage Qt */
+    margin-bottom: 20px;
+}
+
+QPushButton:hover {
+    background-color: #162945; /* Variation bleu plus clair */
+    border-color: #162945;
+}
+
+QPushButton:pressed {
+    background-color: #162945; /* Variation bleu plus foncé */
+    border-color: #162945;
+}</string>
+    </property>
+    <property name="text">
+     <string>&quot;  Connectez-vous, explorez plus  &quot;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>30</y>
+     <width>421</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+border-radius: 15px;
+background-color: #162945;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <widget class="QLineEdit" name="em">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>250</y>
+      <width>281</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QLineEdit {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    selection-background-color: #0078D7;
+    selection-color: white;
+    /* Simuler une ombre avec un dégradé */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+QLineEdit:focus {
+    border: 1px solid #0078D7;
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+    /* Effet de surbrillance au focus */
+    border-bottom: 2px solid #0078D7;
+}
+
+QLineEdit::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    font-size: 13px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Email ID</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="pa">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>330</y>
+      <width>281</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    selection-background-color: #0078D7;
+    selection-color: white;
+    /* Simuler une ombre avec un dégradé */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+QLineEdit:focus {
+    border: 1px solid #0078D7;
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+    /* Effet de surbrillance au focus */
+    border-bottom: 2px solid #0078D7;
+}
+
+QLineEdit::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    font-size: 13px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Mot de passe </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>48</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">   /* Chemin ABSOLU de l'image */
+    background-image: url(:/ma/ma.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+    
+    /* Taille fixe du QLabel */
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    
+    /* Style de l'avatar */
+   color: #d9d9d9; /* Couleur de l'icône */
+    font-size: 16px; /* Taille de l'icône */
+    padding-right: 8px; /* Espacement avec le champ */</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>48</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">   /* Chemin ABSOLU de l'image */
+    background-image: url(:/ps/ps.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+    
+    /* Taille fixe du QLabel */
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    
+    /* Style de l'avatar */
+color: #d9d9d9; /* Couleur de l'icône */
+    font-size: 16px; /* Taille de l'icône */
+    padding-right: 8px; /* Espacement avec le champ */
+   </string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>260</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="img.qrc">:/Downloads/WhatsApp_Image_2025-05-04_at_15.29.29-removebg-preview.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>310</y>
+      <width>101</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="img.qrc">:/Downloads/WhatsApp_Image_2025-05-04_at_15.36.51-removebg-preview (1).png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>148</x>
+      <y>40</y>
+      <width>131</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/Downloads/téléchargement__7_-removebg-preview.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>60</y>
+      <width>141</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="img.qrc">:/Downloads/WhatsApp_Image_2025-05-04_at_16.15.07-removebg-preview.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="log">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>400</y>
+      <width>160</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #E3E3E7; /* Couleur de fond */
+    border-radius: 20px; /* Bord arrondi */
+    padding: 8px 20px; /* Espacement interne */
+    font-size: 12px; /* Taille de police */
+    color: #000; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+
+background-color: #E3E3E7;
+color: rgb(4, 16, 59); /* Couleur du texte principal */
+ font-size: 18px; /* Taille de la police du titre */
+font-weight: bold; /* Texte en gras */
+ text-align: center; /* Centrer le texte */
+margin-bottom: 20px;
+font-family: &quot;Segoe UI&quot;, &quot;Roboto&quot;, Arial, sans-serif; /* Police simple et moderne */
+color: #000; /* Couleur du texte */
+font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif; /* Police modifiée */
+  color: #162945; /* Couleur de texte modifiée */</string>
+    </property>
+    <property name="text">
+     <string>Se connecter</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="forget">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>390</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    color: #FFFFFF; /* Blanc (correction de #white → #FFFFFF) */
+    font-size: 116px; /* Conservé */
+    font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif; /* Police serif comme demandé */
+    
+}
+
+QLabel:hover {
+    color: #FFFFFF; /* Blanc au survol (déjà présent) */
+    text-decoration: underline; /* Conservé */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>mot de passe oublié ?</string>
+    </property>
+   </widget>
+   <zorder>label_6</zorder>
+   <zorder>pa</zorder>
+   <zorder>label_3</zorder>
+   <zorder>em</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>log</zorder>
+   <zorder>forget</zorder>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>-20</y>
+     <width>1401</width>
+     <height>801</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>:/Downloads/WhatsApp Image 2025-05-04 at 16.22.41.jpeg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>-2</x>
+     <y>-5</y>
+     <width>1401</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="img.qrc">:/Downloads/WhatsApp Image 2025-05-04 at 16.34.21.jpeg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>190</y>
+     <width>321</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:72pt; font-weight:700; font-style:italic; color:#162945;&quot;&gt;onova&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>980</x>
+     <y>320</y>
+     <width>311</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:72pt; font-weight:700; font-style:italic; color:#b5bfeb;&quot;&gt;Mall&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>140</y>
+     <width>321</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="img.qrc">:/Downloads/WhatsApp_Image_2025-05-04_at_16.34.50-removebg-preview.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>990</x>
+     <y>460</y>
+     <width>701</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#dadada;&quot;&gt;Monova Mall, votre espace centralisé pour tout gérer : &lt;br/&gt;produits, événements, magasins et bien plus encore..&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <zorder>label_7</zorder>
+  <zorder>label_8</zorder>
+  <zorder>frame_2</zorder>
+  <zorder>frame</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_11</zorder>
+  <zorder>label_12</zorder>
+  <zorder>label_13</zorder>
+ </widget>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections/>
+</ui>

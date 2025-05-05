@@ -653,7 +653,7 @@ public:
         wins->setCentralWidget(centralwidget);
         menubar = new QMenuBar(wins);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1052, 25));
+        menubar->setGeometry(QRect(0, 0, 1052, 22));
         wins->setMenuBar(menubar);
         statusbar = new QStatusBar(wins);
         statusbar->setObjectName("statusbar");
@@ -661,7 +661,7 @@ public:
 
         retranslateUi(wins);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
         btnEnvoyerSMS_2->setDefault(false);
         buttonStats->setDefault(false);
         btnPDF->setDefault(false);

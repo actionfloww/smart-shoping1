@@ -27,19 +27,26 @@ CONFIG += console
 
 SOURCES += \
     achat.cpp \
+    badge.cpp \
     client.cpp \
+    confi.cpp \
     connection.cpp \
     dialog.cpp \
     dialogfonctionnalites.cpp \
     email.cpp \
+    employer.cpp \
+    forget.cpp \
+    gestion_employe.cpp \
     gestion_magasin.cpp \
     gestion_produit.cpp \
     gestion_stock.cpp \
     gestionstock.cpp \
+    login.cpp \
     magasins.cpp \
     main.cpp \
     menu.cpp \
     pack.cpp \
+    pasw.cpp \
     produit.cpp \
     serialmanager.cpp \
     wins.cpp \
@@ -51,20 +58,28 @@ SOURCES += \
 
 HEADERS += \
     achat.h \
+    badge.h \
     client.h \
+    confi.h \
     connection.h \
     dialog.h \
     dialogfonctionnalites.h \
     email.h \
+    employer.h \
+    forget.h \
+    gestion_employe.h \
     gestion_magasin.h \
     gestion_produit.h \
     gestion_stock.h \
     gestionstock.h \
+    login.h \
     magasins.h \
     menu.h \
     pack.h \
+    pasw.h \
     produit.h \
     serialmanager.h \
+    shareddata.h \
     wins.h \
     Event.h \
     arduino.h \
@@ -72,13 +87,19 @@ HEADERS += \
     mainwindow.h
 
 FORMS += \
+    badge.ui \
+    confi.ui \
     dialog.ui \
     dialogfonctionnalites.ui \
+    forget.ui \
+    gestion_employe.ui \
     gestion_magasin.ui \
     gestion_produit.ui \
     gestion_stock.ui \
+    login.ui \
     menu.ui \
     pack.ui \
+    pasw.ui \
     wins.ui \
     mainwindow.ui
 
@@ -89,3 +110,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     img.qrc
+

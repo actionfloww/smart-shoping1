@@ -91,6 +91,7 @@ public:
     QLabel *label_19;
     QLabel *label_3;
     QLabel *label_10;
+    QLabel *label_9;
 
     void setupUi(QMainWindow *gestion_produit)
     {
@@ -111,7 +112,7 @@ public:
         label_2->setScaledContents(true);
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(10, 130, 371, 581));
+        groupBox_2->setGeometry(QRect(10, 130, 371, 591));
         groupBox_2->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
 "	\n"
 "    border: 2px solid  #0a0a55; /* Couleur turquoise pour la bordure */\n"
@@ -251,7 +252,7 @@ public:
 ""));
         pushButton_Ajouter = new QPushButton(groupBox_2);
         pushButton_Ajouter->setObjectName("pushButton_Ajouter");
-        pushButton_Ajouter->setGeometry(QRect(250, 500, 101, 31));
+        pushButton_Ajouter->setGeometry(QRect(250, 520, 101, 31));
         pushButton_Ajouter->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border: 2px solid #0a0a55;   /* Grey border */\n"
 "    border-radius: 10px;         /* Round the corners */\n"
@@ -471,12 +472,12 @@ public:
         label_5->setScaledContents(true);
         label_25 = new QLabel(centralwidget);
         label_25->setObjectName("label_25");
-        label_25->setGeometry(QRect(220, 0, 91, 81));
+        label_25->setGeometry(QRect(220, -10, 91, 81));
         label_25->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.43.20__1_-removebg-preview.png")));
         label_25->setScaledContents(true);
         pushButton_pack = new QPushButton(centralwidget);
         pushButton_pack->setObjectName("pushButton_pack");
-        pushButton_pack->setGeometry(QRect(470, 30, 131, 31));
+        pushButton_pack->setGeometry(QRect(480, 20, 131, 31));
         pushButton_pack->setStyleSheet(QString::fromUtf8("\n"
 "QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
@@ -524,7 +525,7 @@ public:
         label_43->setStyleSheet(QString::fromUtf8("font-family: \"Georgia\", \"Times New Roman\", serif;"));
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName("groupBox_3");
-        groupBox_3->setGeometry(QRect(390, 519, 781, 201));
+        groupBox_3->setGeometry(QRect(390, 520, 781, 201));
         groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
 "	\n"
 "    border: 2px solid #8B0000; /* Couleur turquoise pour la bordure */\n"
@@ -563,7 +564,7 @@ public:
         label->setScaledContents(true);
         pushButton_17 = new QPushButton(centralwidget);
         pushButton_17->setObjectName("pushButton_17");
-        pushButton_17->setGeometry(QRect(80, 30, 121, 31));
+        pushButton_17->setGeometry(QRect(80, 20, 121, 31));
         pushButton_17->setStyleSheet(QString::fromUtf8("\n"
 "QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
@@ -577,7 +578,7 @@ public:
         pushButton_17->setFlat(false);
         pushButton_fonctionalite = new QPushButton(centralwidget);
         pushButton_fonctionalite->setObjectName("pushButton_fonctionalite");
-        pushButton_fonctionalite->setGeometry(QRect(290, 30, 121, 31));
+        pushButton_fonctionalite->setGeometry(QRect(290, 20, 121, 31));
         pushButton_fonctionalite->setStyleSheet(QString::fromUtf8("\n"
 "QPushButton {\n"
 "    border-radius: 15px;        /* Coins arrondis */\n"
@@ -592,7 +593,7 @@ public:
         pushButton_fonctionalite->setFlat(false);
         label_19 = new QLabel(centralwidget);
         label_19->setObjectName("label_19");
-        label_19->setGeometry(QRect(30, 20, 49, 41));
+        label_19->setGeometry(QRect(30, 10, 49, 41));
         label_19->setPixmap(QPixmap(QString::fromUtf8(":/image/WhatsApp_Image_2025-05-01_at_11.43.20-removebg-preview.png")));
         label_19->setScaledContents(true);
         label_3 = new QLabel(centralwidget);
@@ -605,6 +606,11 @@ public:
         label_10->setGeometry(QRect(1060, 10, 49, 51));
         label_10->setPixmap(QPixmap(QString::fromUtf8(":/image_zaineb/0de86780-dae2-4175-a752-c75985b139c6-removebg-preview.png")));
         label_10->setScaledContents(true);
+        label_9 = new QLabel(centralwidget);
+        label_9->setObjectName("label_9");
+        label_9->setGeometry(QRect(440, 10, 31, 31));
+        label_9->setPixmap(QPixmap(QString::fromUtf8(":/image/ranking-star (1).png")));
+        label_9->setScaledContents(true);
         gestion_produit->setCentralWidget(centralwidget);
 
         retranslateUi(gestion_produit);
@@ -678,6 +684,7 @@ public:
         label_19->setText(QString());
         label_3->setText(QString());
         label_10->setText(QString());
+        label_9->setText(QString());
     } // retranslateUi
 
 };

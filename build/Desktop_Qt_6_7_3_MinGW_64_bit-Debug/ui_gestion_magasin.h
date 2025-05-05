@@ -59,6 +59,8 @@ public:
     QLineEdit *email_prop;
     QLabel *label_29;
     QComboBox *ETAGE;
+    QLabel *label_11;
+    QLabel *label_2;
     QGroupBox *groupBox;
     QLabel *label_10;
     QLineEdit *updatee;
@@ -180,7 +182,7 @@ public:
 "}"));
         pushButton = new QPushButton(groupBox_2);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(30, 510, 121, 41));
+        pushButton->setGeometry(QRect(60, 520, 111, 31));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Georgia")});
         font1.setBold(true);
@@ -286,7 +288,7 @@ public:
 "color:black;"));
         update = new QPushButton(groupBox_2);
         update->setObjectName("update");
-        update->setGeometry(QRect(230, 510, 121, 41));
+        update->setGeometry(QRect(240, 520, 121, 31));
         update->setFont(font1);
         update->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border: 2px solid #0a0a55;   /* Grey border */\n"
@@ -364,6 +366,16 @@ public:
         ETAGE->setObjectName("ETAGE");
         ETAGE->setGeometry(QRect(170, 460, 121, 28));
         ETAGE->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_11 = new QLabel(groupBox_2);
+        label_11->setObjectName("label_11");
+        label_11->setGeometry(QRect(208, 520, 31, 31));
+        label_11->setPixmap(QPixmap(QString::fromUtf8(":/image_zaineb/WhatsApp_Image_2025-04-11_at_21.33.01-removebg-preview.png")));
+        label_11->setScaledContents(true);
+        label_2 = new QLabel(groupBox_2);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(20, 520, 31, 21));
+        label_2->setPixmap(QPixmap(QString::fromUtf8(":/image_zaineb/WhatsApp_Image_2025-04-13_at_19.38.47-removebg-preview.png")));
+        label_2->setScaledContents(true);
         label_3->raise();
         pushButton->raise();
         label_7->raise();
@@ -383,6 +395,8 @@ public:
         lineEdit_4->raise();
         label_29->raise();
         ETAGE->raise();
+        label_11->raise();
+        label_2->raise();
         groupBox = new QGroupBox(page_magasin);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(400, 100, 741, 511));
@@ -620,6 +634,8 @@ public:
         ETAGE->setItemText(1, QCoreApplication::translate("gestion_magasin", "2", nullptr));
         ETAGE->setItemText(2, QCoreApplication::translate("gestion_magasin", "3", nullptr));
 
+        label_11->setText(QString());
+        label_2->setText(QString());
         groupBox->setTitle(QString());
         label_10->setText(QCoreApplication::translate("gestion_magasin", "<html><head/><body><p><span style=\" font-size:11pt; font-weight:700; font-style:normal; color:#0a0a55;\">Map Des Magasins</span></p></body></html>", nullptr));
         pushButton_Map->setText(QCoreApplication::translate("gestion_magasin", "\360\237\223\215", nullptr));
@@ -637,7 +653,7 @@ public:
         ordre->setItemText(1, QCoreApplication::translate("gestion_magasin", "DESC", nullptr));
 
         label_25->setText(QCoreApplication::translate("gestion_magasin", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:700;\">Rechercher</span></p></body></html>", nullptr));
-        lineEdit_5->setPlaceholderText(QCoreApplication::translate("gestion_magasin", "cherchez", nullptr));
+        lineEdit_5->setPlaceholderText(QCoreApplication::translate("gestion_magasin", "cherchez un magasin....", nullptr));
         filter->setText(QString());
         PDF->setText(QString());
         page_magasin_stat->setTitle(QString());

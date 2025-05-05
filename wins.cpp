@@ -268,7 +268,7 @@ void wins::on_btnModifier_clicked()
 void wins::on_btnSupprimer_clicked()
 {
     QString idStr = ui->lineEditID->text();
-
+    qDebug()<<idStr;
     // Vérification si l'ID est valide
     if (idStr.isEmpty() || idStr.toInt() <= 0) {
         QMessageBox::critical(this, "Erreur", "ID_CLIENT doit être un nombre entier positif !");
@@ -599,7 +599,6 @@ void wins::envoyerSMSClientsInactifs()
                   "    AND a.DATEACHAT >= SYSDATE - 30"
                   ") "
                   "AND c.TELEPHONE IS NOT NULL");
-
     if (!query.exec()) {
         QMessageBox::critical(this, "Erreur", "Erreur SQL: " + query.lastError().text());
         return;

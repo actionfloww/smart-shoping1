@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>confi</class>
+ <widget class="QDialog" name="confi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>90</y>
+     <width>461</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+border-radius: 15px;
+background-color: #162945;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>220</y>
+      <width>371</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QLineEdit {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    selection-background-color: #0078D7;
+    selection-color: white;
+    /* Simuler une ombre avec un dégradé */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+QLineEdit:focus {
+    border: 1px solid #0078D7;
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+    /* Effet de surbrillance au focus */
+    border-bottom: 2px solid #0078D7;
+}
+
+QLineEdit::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    font-size: 13px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>code confirmation</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>390</y>
+      <width>331</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #E3E3E7; /* Couleur de fond */
+    border-radius: 20px; /* Bord arrondi */
+    padding: 8px 20px; /* Espacement interne */
+    font-size: 12px; /* Taille de police */
+    color: #000; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+
+background-color: #E3E3E7;
+color: rgb(4, 16, 59); /* Couleur du texte principal */
+ font-size: 18px; /* Taille de la police du titre */
+font-weight: bold; /* Texte en gras */
+ text-align: center; /* Centrer le texte */
+margin-bottom: 20px;
+font-family: &quot;Segoe UI&quot;, &quot;Roboto&quot;, Arial, sans-serif; /* Police simple et moderne */
+color: #000; /* Couleur du texte */
+font-family: &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif; /* Police modifiée */
+  color: #162945; /* Couleur de texte modifiée */</string>
+    </property>
+    <property name="text">
+     <string>Confirmer</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>70</y>
+      <width>331</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family:  &quot;Georgia&quot;, &quot;Times New Roman&quot;, serif;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700; font-style:italic; text-decoration: underline; color:#c6c6c6;&quot;&gt;Confirmation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>-390</x>
+     <y>0</y>
+     <width>1691</width>
+     <height>731</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="img.qrc">:/Downloads/WhatsApp Image 2025-05-04 at 16.34.21.jpeg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>frame</zorder>
+ </widget>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections/>
+</ui>

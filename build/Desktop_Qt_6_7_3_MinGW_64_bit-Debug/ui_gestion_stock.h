@@ -97,7 +97,7 @@ public:
         pushButton_15->setObjectName("pushButton_15");
         pushButton_15->setGeometry(QRect(210, 570, 71, 61));
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image_tasnim/mail.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon.addFile(QString::fromUtf8("image_tasnim/mail.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         pushButton_15->setIcon(icon);
         pushButton_15->setIconSize(QSize(50, 50));
         contenu = new QPlainTextEdit(frame);
@@ -117,14 +117,14 @@ public:
         pushButton_14->setObjectName("pushButton_14");
         pushButton_14->setGeometry(QRect(1140, 70, 81, 61));
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image_tasnim/nt.jpg"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon2.addFile(QString::fromUtf8("image_tasnim/nt.jpg"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         pushButton_14->setIcon(icon2);
         pushButton_14->setIconSize(QSize(50, 50));
         pushButton_13 = new QPushButton(frame);
         pushButton_13->setObjectName("pushButton_13");
         pushButton_13->setGeometry(QRect(1000, 70, 131, 61));
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/image_tasnim/st.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon3.addFile(QString::fromUtf8("image_tasnim/st.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         pushButton_13->setIcon(icon3);
         pushButton_13->setIconSize(QSize(50, 40));
         pushButton_17 = new QPushButton(frame);
